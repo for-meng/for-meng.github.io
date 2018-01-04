@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>小孟的博客</title>
+  <title>尛孟的博客</title>
   <icon>https://www.gravatar.com/avatar/3dc82ab4d3d62d142a265730033bc3a4</icon>
   <subtitle>想法总是无法付诸实践…</subtitle>
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>小孟</name>
+    <name>尛孟</name>
     <email>295565453@qq.com</email>
   </author>
   
