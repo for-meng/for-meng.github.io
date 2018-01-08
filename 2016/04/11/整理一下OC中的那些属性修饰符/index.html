@@ -81,17 +81,21 @@
 
 
 
-<meta name="description" content="在不考虑一切继承、分类的最简单最普通的情况下：  调用时刻: load:程序启动时,类被加载进内存就调用initialize:当第一次使用这个类或者其子类就会调用   调用次数 load:因为加载进内存只会加载一次，所以也只会调用一次initialize:不确定,具体根据子类和具体调用情况比如有个类,它有一个子类,第一次使用子类时,父类的initialize会被调用2次     上面说的只是普通">
+<meta name="description" content="首先从简单到复杂大致分个类1. 自定义getter | setter方法名修饰符 : getter和setter2. 原子性修饰符:atomic | nonatomic3. 读写性修饰符：readwrite | readonly4. setter相关修饰符：assign | retain | copy  方法名修饰符• getter=,setter=:指定该属性所使用的getter和setter">
 <meta property="og:type" content="article">
-<meta property="og:title" content="+load和+initialize的区别">
-<meta property="og:url" content="http://yoursite.com/2016/03/26/+load和+initialize的区别/index.html">
+<meta property="og:title" content="整理一下OC中的那些属性修饰符">
+<meta property="og:url" content="http://yoursite.com/2016/04/11/整理一下OC中的那些属性修饰符/index.html">
 <meta property="og:site_name" content="尛孟の博客">
-<meta property="og:description" content="在不考虑一切继承、分类的最简单最普通的情况下：  调用时刻: load:程序启动时,类被加载进内存就调用initialize:当第一次使用这个类或者其子类就会调用   调用次数 load:因为加载进内存只会加载一次，所以也只会调用一次initialize:不确定,具体根据子类和具体调用情况比如有个类,它有一个子类,第一次使用子类时,父类的initialize会被调用2次     上面说的只是普通">
+<meta property="og:description" content="首先从简单到复杂大致分个类1. 自定义getter | setter方法名修饰符 : getter和setter2. 原子性修饰符:atomic | nonatomic3. 读写性修饰符：readwrite | readonly4. setter相关修饰符：assign | retain | copy  方法名修饰符• getter=,setter=:指定该属性所使用的getter和setter">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-08T05:32:55.000Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1635441-e32c10016f1bcc5f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1635441-56af414fdfa50762.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1635441-d530c782a0075f82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-01-08T05:43:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="+load和+initialize的区别">
-<meta name="twitter:description" content="在不考虑一切继承、分类的最简单最普通的情况下：  调用时刻: load:程序启动时,类被加载进内存就调用initialize:当第一次使用这个类或者其子类就会调用   调用次数 load:因为加载进内存只会加载一次，所以也只会调用一次initialize:不确定,具体根据子类和具体调用情况比如有个类,它有一个子类,第一次使用子类时,父类的initialize会被调用2次     上面说的只是普通">
+<meta name="twitter:title" content="整理一下OC中的那些属性修饰符">
+<meta name="twitter:description" content="首先从简单到复杂大致分个类1. 自定义getter | setter方法名修饰符 : getter和setter2. 原子性修饰符:atomic | nonatomic3. 读写性修饰符：readwrite | readonly4. setter相关修饰符：assign | retain | copy  方法名修饰符• getter=,setter=:指定该属性所使用的getter和setter">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1635441-e32c10016f1bcc5f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -121,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/03/26/+load和+initialize的区别/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/04/11/整理一下OC中的那些属性修饰符/"/>
 
 
 
 
 
-  <title>+load和+initialize的区别 | 尛孟の博客</title>
+  <title>整理一下OC中的那些属性修饰符 | 尛孟の博客</title>
   
 
 
@@ -302,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/26/+load和+initialize的区别/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/11/整理一下OC中的那些属性修饰符/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="尛孟">
@@ -319,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">+load和+initialize的区别</h1>
+          <h1 class="post-title" itemprop="name headline">整理一下OC中的那些属性修饰符</h1>
         
 
         <div class="post-meta">
@@ -331,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-26T11:24:00+08:00">
-                2016-03-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-11T23:21:00+08:00">
+                2016-04-11
               </time>
             
 
@@ -349,7 +353,7 @@
 
           
           
-             <span id="/2016/03/26/+load和+initialize的区别/" class="leancloud_visitors" data-flag-title="+load和+initialize的区别">
+             <span id="/2016/04/11/整理一下OC中的那些属性修饰符/" class="leancloud_visitors" data-flag-title="整理一下OC中的那些属性修饰符">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -381,27 +385,36 @@
 
       
         <hr>
-<p><strong>在不考虑一切继承、分类的最简单最普通的情况下：</strong></p>
-<ul>
-<li>调用时刻:<blockquote>
-<p>load:程序启动时,类被加载进内存就调用<br>initialize:当第一次使用这个类或者其子类就会调用</p>
-</blockquote>
-</li>
-<li>调用次数<blockquote>
-<p>load:因为加载进内存只会加载一次，所以也只会调用一次<br>initialize:不确定,具体根据子类和具体调用情况<br><code>比如有个类,它有一个子类,第一次使用子类时,父类的initialize会被调用2次</code></p>
-</blockquote>
-</li>
-</ul>
+<h2 id="首先从简单到复杂大致分个类"><a href="#首先从简单到复杂大致分个类" class="headerlink" title="首先从简单到复杂大致分个类"></a>首先从简单到复杂大致分个类</h2><h6 id="1-自定义getter-setter方法名修饰符-getter和setter"><a href="#1-自定义getter-setter方法名修饰符-getter和setter" class="headerlink" title="1. 自定义getter | setter方法名修饰符 : getter和setter"></a>1. 自定义getter | setter方法名修饰符 : getter和setter</h6><h6 id="2-原子性修饰符-atomic-nonatomic"><a href="#2-原子性修饰符-atomic-nonatomic" class="headerlink" title="2. 原子性修饰符:atomic | nonatomic"></a>2. 原子性修饰符:atomic | nonatomic</h6><h6 id="3-读写性修饰符：readwrite-readonly"><a href="#3-读写性修饰符：readwrite-readonly" class="headerlink" title="3. 读写性修饰符：readwrite | readonly"></a>3. 读写性修饰符：readwrite | readonly</h6><h6 id="4-setter相关修饰符：assign-retain-copy"><a href="#4-setter相关修饰符：assign-retain-copy" class="headerlink" title="4. setter相关修饰符：assign | retain | copy"></a>4. setter相关修饰符：assign | retain | copy</h6><hr>
+<blockquote>
+<h4 id="方法名修饰符"><a href="#方法名修饰符" class="headerlink" title="方法名修饰符"></a>方法名修饰符</h4><p>• getter=<getmethodname>,setter=<setmethodname>:指定该属性所使用的getter和setter方法的名称</setmethodname></getmethodname></p>
 <hr>
-<p><strong>上面说的只是普通情况。但是呢，一个类可能继承于某个super类，还有可能有自己的分类，如果分类中也实现了load方法，它们的调用顺序是怎么样的呢？</strong></p>
-<blockquote>
-<p>这里需要知道—&gt;覆盖方法在分类中的体现<br>如果父类本身中的方法在子类中被重写，则会优先执行子类中的方法<br>如果类本身中的方法在分类中被重写，则会优先执行分类中的方法</p>
+<p>这两个属性修饰符用于设置自定义生成的getter和setter方法名，使用之后将不再使用系统默认的setter和getter方法名<br>• 用得不是很多，使用场景一般是对BOOL属性设置该getter方法，比如   isGood 这样用以方便判断时使用<br><img src="http://upload-images.jianshu.io/upload_images/1635441-e32c10016f1bcc5f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Snip20160411_11.png"></p>
 </blockquote>
-<p><strong>但是这里必须要知道一个特例-&gt;+load</strong></p>
+<hr>
 <blockquote>
-<p><code>系统首先会调用 super类的load方法，然后再调用该类自身的load方法，再次才会调用该类的分类重写的load方法，也即是说整个继承链包括分类扩展中的load方法都会被执行，只是执行顺序需要关注一下。</code></p>
+<h4 id="原子修饰符"><a href="#原子修饰符" class="headerlink" title="原子修饰符"></a>原子修饰符</h4><p>• atomic  :  原子属性,为setter方法加锁  (默认) (类似多线程中的互斥锁)<br>§ 线程安全,但需要消耗大量资源<br>• nonatomic  :  非原子属性,不为setter方法加锁<br>§ 非线程安全,适合内存小的移动设备</p>
 </blockquote>
-<h2 id="也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。"><a href="#也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。" class="headerlink" title="也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。"></a><strong>也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。</strong></h2>
+<hr>
+<blockquote>
+<h4 id="读写性修饰符"><a href="#读写性修饰符" class="headerlink" title="读写性修饰符"></a>读写性修饰符</h4><p>• readwrite:表明这个属性是可读可写的，系统为我们生成这个属性的setter和getter方法以及下划线开头的成员变量。<br>• readonly:表明这个属性只能读不能写，系统只为我们生成一个getter方法下划线开头的成员变量，不会创建setter方法</p>
+<hr>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意!"></a>注意!</h4><h6 id=""><a href="#" class="headerlink" title=""></a><figure class="highlight plain"><figcaption><span>用readwrite自动生成setter和getter方法以及下划线开头的成员变量的时候，如果手动实现了setter和getter方法，那么系统将不会生成下划线开头成员变量```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">![Snip20160411_16.png](http://upload-images.jianshu.io/upload_images/1635441-ed7e0ee1efc0fc53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line">![Snip20160411_17.png](http://upload-images.jianshu.io/upload_images/1635441-1a93659e77ca2568.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line">***</span><br><span class="line"> ###### ```• 同理，readonly自动生成getter 方法和_开头成员变量时，如果手动实现了getter方法，那么系统也不会再生成下划线开头的成员变量</span><br></pre></td></tr></table></figure></h6></blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1635441-56af414fdfa50762.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Snip20160411_18.png"><br><img src="http://upload-images.jianshu.io/upload_images/1635441-d530c782a0075f82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Snip20160411_19.png"></p>
+<hr>
+<blockquote>
+<p>##setter相关修饰符<br>• retain:针对对象类型进行内存管理(非ARC)。当给对象类型使用此修饰符时，setter方法会先将旧的对象属性release掉，再对新的对象进行一次赋值并进行一次retain操作<br>• assign:表示直接赋值， 基本数据类型、枚举、结构体(非OC对象) class类型<br>当一个对象被销毁时，指针不会被清空(所以修饰对象时容易造成坏内存 (非ARC下会用这个修饰对象)</p>
+<hr>
+<p>• copy:以前主要用在NSString类型和Block，建立一个索引计数为1的对象，然后释放旧对象。<br>• strong ：除NSString\block以外(注意!这是以前的说法)的OC对象 , 强引用以保证属性作用域结束后不被销毁<br>• weak : 当一个对象被销毁时，指针被清空<br>一般用在已经添加到父控件中的控件,因为父控件会对子控件进行引用,也就是retain,所以自己的作用域结束之后不会被释放<br>系统默认属性是assign。retain是指针的复制，copy是内容的复制</p>
+<hr>
+<h5 id="用copy修饰字符串时—-gt-gt"><a href="#用copy修饰字符串时—-gt-gt" class="headerlink" title="用copy修饰字符串时—-&gt;&gt;"></a>用copy修饰字符串时—-&gt;&gt;</h5><p>在setter方法中会判断 传入的字符串 是否是可变的<br>如果是可变的就分配新的内存再赋值<br>如果是不可变的就直接赋值地址<br>而实际上开发中其实大量使用的是不可变的字符串   所以最好使用 strong 修饰字符串,可以提升性能(减少一次判断)</p>
+<hr>
+<h5 id="用copy修饰Block时—-gt-首先要知道Block在非ARC和ARC下的区别"><a href="#用copy修饰Block时—-gt-首先要知道Block在非ARC和ARC下的区别" class="headerlink" title="用copy修饰Block时—-&gt;首先要知道Block在非ARC和ARC下的区别"></a>用copy修饰Block时—-&gt;首先要知道Block在非ARC和ARC下的区别</h5><h6 id="非ARC环境下"><a href="#非ARC环境下" class="headerlink" title="非ARC环境下:"></a>非ARC环境下:</h6><p>block访问外部局部变量,block存放栈里面<br>只要block访问变量,而且是整个app都存在的变量,那么肯定在全局区<br>在非ARC中.不能使用retain引用block,因为不会放在堆里面,在非ARC中只能使用copy,才会把block放在堆里面</p>
+<h6 id="ARC环境下"><a href="#ARC环境下" class="headerlink" title="ARC环境下:"></a>ARC环境下:</h6><p>只要block访问了外部局部变量,block就会存放到堆里面<br>可以使用strong去引用  因为本身就已经是存放在堆区了<br>也可以用copy，但是用stong性能更好</p>
+</blockquote>
+<hr>
+<h4 id="做个小总结-只说ARC环境下的"><a href="#做个小总结-只说ARC环境下的" class="headerlink" title="做个小总结(只说ARC环境下的)"></a>做个小总结(只说ARC环境下的)</h4><h6 id="-1"><a href="#-1" class="headerlink" title=""></a><figure class="highlight plain"><figcaption><span>, 没添加到父控件上的控件```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">###### ```用weak修饰已经被添加到父控件上的控件 以及 代理对象</span><br></pre></td></tr></table></figure></h6><h6 id="-2"><a href="#-2" class="headerlink" title=""></a><figure class="highlight plain"><figcaption><span>class类型   ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">###### ```用copy修饰一种情况下的NSString--&gt;不确定赋值过程中用的是可变还是不可变字符串</span><br></pre></td></tr></table></figure></h6><hr>
+
       
     </div>
     
@@ -425,14 +438,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/04/07/在使用TablView时碰到Nan错误/" rel="next" title="在使用TablView时碰到Nan错误">
+                <i class="fa fa-chevron-left"></i> 在使用TablView时碰到Nan错误
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/26/UITabBarController/" rel="prev" title="UITabBarController">
-                UITabBarController <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/12/iOS中常用的数学函数/" rel="prev" title="iOS中常用的数学函数">
+                iOS中常用的数学函数 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -554,7 +571,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。"><span class="nav-number">1.</span> <span class="nav-text">也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#首先从简单到复杂大致分个类"><span class="nav-number">1.</span> <span class="nav-text">首先从简单到复杂大致分个类</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-自定义getter-setter方法名修饰符-getter和setter"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">1. 自定义getter | setter方法名修饰符 : getter和setter</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-原子性修饰符-atomic-nonatomic"><span class="nav-number">1.0.0.0.2.</span> <span class="nav-text">2. 原子性修饰符:atomic | nonatomic</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-读写性修饰符：readwrite-readonly"><span class="nav-number">1.0.0.0.3.</span> <span class="nav-text">3. 读写性修饰符：readwrite | readonly</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-setter相关修饰符：assign-retain-copy"><span class="nav-number">1.0.0.0.4.</span> <span class="nav-text">4. setter相关修饰符：assign | retain | copy</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法名修饰符"><span class="nav-number">1.0.1.</span> <span class="nav-text">方法名修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原子修饰符"><span class="nav-number">1.0.2.</span> <span class="nav-text">原子修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#读写性修饰符"><span class="nav-number">1.0.3.</span> <span class="nav-text">读写性修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意"><span class="nav-number">1.0.4.</span> <span class="nav-text">注意!</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#"><span class="nav-number">1.0.4.0.1.</span> <span class="nav-text">用readwrite自动生成setter和getter方法以及下划线开头的成员变量的时候，如果手动实现了setter和getter方法，那么系统将不会生成下划线开头成员变量```1234![Snip20160411_16.png](http://upload-images.jianshu.io/upload_images/1635441-ed7e0ee1efc0fc53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)![Snip20160411_17.png](http://upload-images.jianshu.io/upload_images/1635441-1a93659e77ca2568.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)*** ###### ```• 同理，readonly自动生成getter 方法和_开头成员变量时，如果手动实现了getter方法，那么系统也不会再生成下划线开头的成员变量</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用copy修饰字符串时—-gt-gt"><span class="nav-number">1.0.4.1.</span> <span class="nav-text">用copy修饰字符串时—-&gt;&gt;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用copy修饰Block时—-gt-首先要知道Block在非ARC和ARC下的区别"><span class="nav-number">1.0.4.2.</span> <span class="nav-text">用copy修饰Block时—-&gt;首先要知道Block在非ARC和ARC下的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#非ARC环境下"><span class="nav-number">1.0.4.2.1.</span> <span class="nav-text">非ARC环境下:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ARC环境下"><span class="nav-number">1.0.4.2.2.</span> <span class="nav-text">ARC环境下:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#做个小总结-只说ARC环境下的"><span class="nav-number">1.0.5.</span> <span class="nav-text">做个小总结(只说ARC环境下的)</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#-1"><span class="nav-number">1.0.5.0.1.</span> <span class="nav-text">, 没添加到父控件上的控件```1###### ```用weak修饰已经被添加到父控件上的控件 以及 代理对象</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#-2"><span class="nav-number">1.0.5.0.2.</span> <span class="nav-text">class类型   ```1###### ```用copy修饰一种情况下的NSString--&gt;不确定赋值过程中用的是可变还是不可变字符串</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

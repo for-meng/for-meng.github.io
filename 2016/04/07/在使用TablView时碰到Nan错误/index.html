@@ -73,8 +73,6 @@
 
 
 
-  
-
 
   <link rel="alternate" href="/atom.xml" title="尛孟の博客" type="application/atom+xml" />
 
@@ -83,17 +81,17 @@
 
 
 
-<meta name="description" content="与人联系甚少">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="前几天做项目的时候遇到一个奇葩的问题，程序本来运行得好好的，然后突然就崩了，报了一个Nan错误 Terminating app due to uncaught exception &apos;CALayerInvalidGeometry&apos;, reason: &apos;CALayer position contains NaN: [187.5 nan]&apos;1   后来打了一大堆断点发现数据源方法返回cell高度的时">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在使用TablView时碰到Nan错误">
+<meta property="og:url" content="http://yoursite.com/2016/04/07/在使用TablView时碰到Nan错误/index.html">
 <meta property="og:site_name" content="尛孟の博客">
-<meta property="og:description" content="与人联系甚少">
+<meta property="og:description" content="前几天做项目的时候遇到一个奇葩的问题，程序本来运行得好好的，然后突然就崩了，报了一个Nan错误 Terminating app due to uncaught exception &apos;CALayerInvalidGeometry&apos;, reason: &apos;CALayer position contains NaN: [187.5 nan]&apos;1   后来打了一大堆断点发现数据源方法返回cell高度的时">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-04T10:08:48.000Z">
+<meta property="og:updated_time" content="2018-01-08T05:49:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="与人联系甚少">
+<meta name="twitter:title" content="在使用TablView时碰到Nan错误">
+<meta name="twitter:description" content="前几天做项目的时候遇到一个奇葩的问题，程序本来运行得好好的，然后突然就崩了，报了一个Nan错误 Terminating app due to uncaught exception &apos;CALayerInvalidGeometry&apos;, reason: &apos;CALayer position contains NaN: [187.5 nan]&apos;1   后来打了一大堆断点发现数据源方法返回cell高度的时">
 
 
 
@@ -123,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/04/07/在使用TablView时碰到Nan错误/"/>
 
 
 
 
 
-  <title>about | 尛孟の博客</title>
+  <title>在使用TablView时碰到Nan错误 | 尛孟の博客</title>
   
 
 
@@ -292,33 +290,164 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/07/在使用TablView时碰到Nan错误/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="尛孟">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="尛孟の博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">about</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">在使用TablView时碰到Nan错误</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-07T23:14:00+08:00">
+                2016-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+
+          
+            
+          
+
+          
+          
+             <span id="/2016/04/07/在使用TablView时碰到Nan错误/" class="leancloud_visitors" data-flag-title="在使用TablView时碰到Nan错误">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <hr>
+<blockquote>
+<p>前几天做项目的时候遇到一个奇葩的问题，程序本来运行得好好的，然后突然就崩了，报了一个Nan错误<br> <figure class="highlight plain"><figcaption><span>Terminating app due to uncaught exception 'CALayerInvalidGeometry', reason: 'CALayer position contains NaN: [187.5 nan]'</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>后来打了一大堆断点发现数据源方法返回cell高度的时候出现了Nan类型，结合该cell对应的模型才发现是网络数据返回了一个 0 数据，而我把这个数据作为除数来计算了，因此出现了Nan类型。</p>
+<h6 id="这种错误是在float经过函数运行出了不是数字的值，nan的意思就是not-a-number"><a href="#这种错误是在float经过函数运行出了不是数字的值，nan的意思就是not-a-number" class="headerlink" title="这种错误是在float经过函数运行出了不是数字的值，nan的意思就是not a number"></a>这种错误是在float经过函数运行出了不是数字的值，nan的意思就是not a number</h6><hr>
+<p>后来解决了问题再去百度的时候发现出现Nan错误的不止除以0这种情况，还有以下几种(以后要多注意一下)</p>
+<blockquote>
+<p>1.除以0<br>2.sizeWithFont的字符串为nil<br>3.数学函数不正确运算<br>解决方法除了排除数据源以及运算问题之外,还可以用isnan()函数判断是不是Nan类型<br><figure class="highlight plain"><figcaption><span>_x </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (!isnan(_x)) &#123;</span><br><span class="line">return _x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<hr>
+<p><a href="http://www.minroad.com/?p=403" target="_blank" rel="noopener">文中部分内容引自这里</a></p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/04/关于模拟器上键盘输入的一些小问题/" rel="next" title="关于模拟器上键盘输入的一些小问题">
+                <i class="fa fa-chevron-left"></i> 关于模拟器上键盘输入的一些小问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/11/整理一下OC中的那些属性修饰符/" rel="prev" title="整理一下OC中的那些属性修饰符">
+                整理一下OC中的那些属性修饰符 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -351,8 +480,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -401,6 +539,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#这种错误是在float经过函数运行出了不是数字的值，nan的意思就是not-a-number"><span class="nav-number">1.</span> <span class="nav-text">这种错误是在float经过函数运行出了不是数字的值，nan的意思就是not a number</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

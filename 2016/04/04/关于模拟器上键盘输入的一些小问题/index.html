@@ -81,17 +81,22 @@
 
 
 
-<meta name="description" content="在不考虑一切继承、分类的最简单最普通的情况下：  调用时刻: load:程序启动时,类被加载进内存就调用initialize:当第一次使用这个类或者其子类就会调用   调用次数 load:因为加载进内存只会加载一次，所以也只会调用一次initialize:不确定,具体根据子类和具体调用情况比如有个类,它有一个子类,第一次使用子类时,父类的initialize会被调用2次     上面说的只是普通">
+<meta name="description" content="平时用模拟器键盘输入的时候总会有一大堆令人无语的自动联想、纠错、拼写检查…不胜其烦！本来一直以为是输入法的问题，后来才发现原来是苹果做的小优化…… 不知道大家平时在做测试的时候有没有经常遇到下面的这些这种情况呢~~  没错就是它，有时候做登录界面测试是时老是弹出来，输完自己正确的账号或密码之后以为可以了结果它一个回马枪”帮”你把错误”修正”了，我还要重新输一遍还要小心翼翼地点那个小叉叉,妈的智障！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="+load和+initialize的区别">
-<meta property="og:url" content="http://yoursite.com/2016/03/26/+load和+initialize的区别/index.html">
+<meta property="og:title" content="关于模拟器上键盘输入的一些小问题">
+<meta property="og:url" content="http://yoursite.com/2016/04/04/关于模拟器上键盘输入的一些小问题/index.html">
 <meta property="og:site_name" content="尛孟の博客">
-<meta property="og:description" content="在不考虑一切继承、分类的最简单最普通的情况下：  调用时刻: load:程序启动时,类被加载进内存就调用initialize:当第一次使用这个类或者其子类就会调用   调用次数 load:因为加载进内存只会加载一次，所以也只会调用一次initialize:不确定,具体根据子类和具体调用情况比如有个类,它有一个子类,第一次使用子类时,父类的initialize会被调用2次     上面说的只是普通">
+<meta property="og:description" content="平时用模拟器键盘输入的时候总会有一大堆令人无语的自动联想、纠错、拼写检查…不胜其烦！本来一直以为是输入法的问题，后来才发现原来是苹果做的小优化…… 不知道大家平时在做测试的时候有没有经常遇到下面的这些这种情况呢~~  没错就是它，有时候做登录界面测试是时老是弹出来，输完自己正确的账号或密码之后以为可以了结果它一个回马枪”帮”你把错误”修正”了，我还要重新输一遍还要小心翼翼地点那个小叉叉,妈的智障！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-08T05:32:55.000Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1635441-7131343f41481873.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1635441-8719af5ab3ae1757.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1635441-8fc979e16f310b3a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1635441-f94e2edc998f209f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-01-08T05:48:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="+load和+initialize的区别">
-<meta name="twitter:description" content="在不考虑一切继承、分类的最简单最普通的情况下：  调用时刻: load:程序启动时,类被加载进内存就调用initialize:当第一次使用这个类或者其子类就会调用   调用次数 load:因为加载进内存只会加载一次，所以也只会调用一次initialize:不确定,具体根据子类和具体调用情况比如有个类,它有一个子类,第一次使用子类时,父类的initialize会被调用2次     上面说的只是普通">
+<meta name="twitter:title" content="关于模拟器上键盘输入的一些小问题">
+<meta name="twitter:description" content="平时用模拟器键盘输入的时候总会有一大堆令人无语的自动联想、纠错、拼写检查…不胜其烦！本来一直以为是输入法的问题，后来才发现原来是苹果做的小优化…… 不知道大家平时在做测试的时候有没有经常遇到下面的这些这种情况呢~~  没错就是它，有时候做登录界面测试是时老是弹出来，输完自己正确的账号或密码之后以为可以了结果它一个回马枪”帮”你把错误”修正”了，我还要重新输一遍还要小心翼翼地点那个小叉叉,妈的智障！">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1635441-7131343f41481873.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -121,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/03/26/+load和+initialize的区别/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/04/04/关于模拟器上键盘输入的一些小问题/"/>
 
 
 
 
 
-  <title>+load和+initialize的区别 | 尛孟の博客</title>
+  <title>关于模拟器上键盘输入的一些小问题 | 尛孟の博客</title>
   
 
 
@@ -302,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/26/+load和+initialize的区别/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/04/关于模拟器上键盘输入的一些小问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="尛孟">
@@ -319,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">+load和+initialize的区别</h1>
+          <h1 class="post-title" itemprop="name headline">关于模拟器上键盘输入的一些小问题</h1>
         
 
         <div class="post-meta">
@@ -331,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-26T11:24:00+08:00">
-                2016-03-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-04T12:38:00+08:00">
+                2016-04-04
               </time>
             
 
@@ -349,7 +354,7 @@
 
           
           
-             <span id="/2016/03/26/+load和+initialize的区别/" class="leancloud_visitors" data-flag-title="+load和+initialize的区别">
+             <span id="/2016/04/04/关于模拟器上键盘输入的一些小问题/" class="leancloud_visitors" data-flag-title="关于模拟器上键盘输入的一些小问题">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -380,28 +385,50 @@
       
 
       
-        <hr>
-<p><strong>在不考虑一切继承、分类的最简单最普通的情况下：</strong></p>
-<ul>
-<li>调用时刻:<blockquote>
-<p>load:程序启动时,类被加载进内存就调用<br>initialize:当第一次使用这个类或者其子类就会调用</p>
+        <h5 id="平时用模拟器键盘输入的时候总会有一大堆令人无语的自动联想、纠错、拼写检查…不胜其烦！本来一直以为是输入法的问题，后来才发现原来是苹果做的小优化……"><a href="#平时用模拟器键盘输入的时候总会有一大堆令人无语的自动联想、纠错、拼写检查…不胜其烦！本来一直以为是输入法的问题，后来才发现原来是苹果做的小优化……" class="headerlink" title="平时用模拟器键盘输入的时候总会有一大堆令人无语的自动联想、纠错、拼写检查…不胜其烦！本来一直以为是输入法的问题，后来才发现原来是苹果做的小优化……"></a>平时用模拟器键盘输入的时候总会有一大堆令人无语的自动联想、纠错、拼写检查…不胜其烦！本来一直以为是输入法的问题，后来才发现原来是苹果做的小优化……</h5><hr>
+<h6 id="不知道大家平时在做测试的时候有没有经常遇到下面的这些这种情况呢"><a href="#不知道大家平时在做测试的时候有没有经常遇到下面的这些这种情况呢" class="headerlink" title="不知道大家平时在做测试的时候有没有经常遇到下面的这些这种情况呢~~"></a>不知道大家平时在做测试的时候有没有经常遇到下面的这些这种情况呢~~</h6><hr>
+<blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1635441-7131343f41481873.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="C$3)4P28AJ`2WY)0@N~562G.jpg"><br>没错就是它，有时候做登录界面测试是时老是弹出来，输完自己正确的账号或密码之后以为可以了结果它一个回马枪”帮”你把错误”修正”了，我还要重新输一遍还要小心翼翼地点那个小叉叉,妈的智障！</p>
+<blockquote>
+<p>######@property(nonatomic) UITextAutocorrectionType autocorrectionType;<br>找了半天，原来是这个自动纠错属性在作怪，查看了一下它的枚举值，也就一个默认一个yes一个no，高兴得我立马把它改UITextAutocorrectionTypeNo，结果当然是整个世界都清净啦~~(≧▽≦)/~啦啦啦</p>
 </blockquote>
-</li>
-<li>调用次数<blockquote>
-<p>load:因为加载进内存只会加载一次，所以也只会调用一次<br>initialize:不确定,具体根据子类和具体调用情况<br><code>比如有个类,它有一个子类,第一次使用子类时,父类的initialize会被调用2次</code></p>
 </blockquote>
-</li>
-</ul>
 <hr>
-<p><strong>上面说的只是普通情况。但是呢，一个类可能继承于某个super类，还有可能有自己的分类，如果分类中也实现了load方法，它们的调用顺序是怎么样的呢？</strong></p>
 <blockquote>
-<p>这里需要知道—&gt;覆盖方法在分类中的体现<br>如果父类本身中的方法在子类中被重写，则会优先执行子类中的方法<br>如果类本身中的方法在分类中被重写，则会优先执行分类中的方法</p>
-</blockquote>
-<p><strong>但是这里必须要知道一个特例-&gt;+load</strong></p>
+<h6 id="另外，除了上面那个比较坑的之外，还有下面这个"><a href="#另外，除了上面那个比较坑的之外，还有下面这个" class="headerlink" title="另外，除了上面那个比较坑的之外，还有下面这个"></a>另外，除了上面那个比较坑的之外，还有下面这个</h6><p><img src="http://upload-images.jianshu.io/upload_images/1635441-8719af5ab3ae1757.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Snip20160404_4.png"><br>这个自动联想功能嘛，有人喜欢有人嫌…不过有时候真的挺烦它的，联想的东西几乎没卵用，顺手把它干掉吧~</p>
 <blockquote>
-<p><code>系统首先会调用 super类的load方法，然后再调用该类自身的load方法，再次才会调用该类的分类重写的load方法，也即是说整个继承链包括分类扩展中的load方法都会被执行，只是执行顺序需要关注一下。</code></p>
+<h6 id="property-nonatomic-UITextAutocapitalizationType-autocapitalizationType"><a href="#property-nonatomic-UITextAutocapitalizationType-autocapitalizationType" class="headerlink" title="@property(nonatomic)UITextAutocapitalizationType autocapitalizationType;"></a>@property(nonatomic)UITextAutocapitalizationType autocapitalizationType;</h6><p>它有四个枚举值<br>UITextAutocapitalizationTypeNone,            不进行联想<br>UITextAutocapitalizationTypeWords,           单词联想<br>UITextAutocapitalizationTypeSentences,     整句联想<br>UITextAutocapitalizationTypeAllCharacters, 所有字节都联想</p>
 </blockquote>
-<h2 id="也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。"><a href="#也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。" class="headerlink" title="也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。"></a><strong>也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。</strong></h2>
+</blockquote>
+<hr>
+<blockquote>
+<h6 id="然后是在找这些个属性的时候发现的其他属性-感觉挺有用的，这些平时在Storyboard也能见到的，只不过代码似乎用得比较少"><a href="#然后是在找这些个属性的时候发现的其他属性-感觉挺有用的，这些平时在Storyboard也能见到的，只不过代码似乎用得比较少" class="headerlink" title="然后是在找这些个属性的时候发现的其他属性,感觉挺有用的，这些平时在Storyboard也能见到的，只不过代码似乎用得比较少~~"></a>然后是在找这些个属性的时候发现的其他属性,感觉挺有用的，这些平时在Storyboard也能见到的，只不过代码似乎用得比较少~~</h6><blockquote>
+<h6 id="property-nonatomic-UITextSpellCheckingType-spellCheckingType"><a href="#property-nonatomic-UITextSpellCheckingType-spellCheckingType" class="headerlink" title="@property(nonatomic) UITextSpellCheckingType spellCheckingType"></a>@property(nonatomic) UITextSpellCheckingType spellCheckingType</h6><p>自动拼写检查，好像平时没怎么见它发挥作用…</p>
+</blockquote>
+<hr>
+<blockquote>
+<h6 id="property-nonatomic-UIKeyboardAppearance-keyboardAppearance"><a href="#property-nonatomic-UIKeyboardAppearance-keyboardAppearance" class="headerlink" title="@property(nonatomic) UIKeyboardAppearance keyboardAppearance;"></a>@property(nonatomic) UIKeyboardAppearance keyboardAppearance;</h6><p>键盘外观？？？其实也就一个日用一个夜用~~</p>
+</blockquote>
+<hr>
+<blockquote>
+<h6 id="property-nonatomic-BOOL-enablesReturnKeyAutomatically"><a href="#property-nonatomic-BOOL-enablesReturnKeyAutomatically" class="headerlink" title="@property(nonatomic) BOOL enablesReturnKeyAutomatically;"></a>@property(nonatomic) BOOL enablesReturnKeyAutomatically;</h6><p>以前我一直以为这个Return按钮的disable状态要自己控制，今天才发现原来苹果已经做好了,只要输入内容长度为0按钮就不可用…</p>
+</blockquote>
+<hr>
+<blockquote>
+<h6 id="property-nonatomic-getter-isSecureTextEntry-BOOL-secureTextEntry"><a href="#property-nonatomic-getter-isSecureTextEntry-BOOL-secureTextEntry" class="headerlink" title="@property(nonatomic,getter=isSecureTextEntry) BOOL secureTextEntry;"></a>@property(nonatomic,getter=isSecureTextEntry) BOOL secureTextEntry;</h6><p>安全输入，也就是暗文,做密码输入用的</p>
+</blockquote>
+<hr>
+<blockquote>
+<h6 id="property-nonatomic-UIKeyboardType-keyboardType"><a href="#property-nonatomic-UIKeyboardType-keyboardType" class="headerlink" title="@property(nonatomic) UIKeyboardType keyboardType;"></a>@property(nonatomic) UIKeyboardType keyboardType;</h6><p>键盘类型，自己测试了，但是有一些感觉跟其他的键盘长得一模一样，也不知道区别在哪里，就没有做记录了<br><img src="http://upload-images.jianshu.io/upload_images/1635441-8fc979e16f310b3a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Snip20160404_6.png"></p>
+</blockquote>
+<hr>
+<blockquote>
+<h6 id="property-nonatomic-UIKeyboardType-keyboardType-1"><a href="#property-nonatomic-UIKeyboardType-keyboardType-1" class="headerlink" title="@property(nonatomic) UIKeyboardType keyboardType;"></a>@property(nonatomic) UIKeyboardType keyboardType;</h6><p>Return按钮的类型，这里列举几个常用的，其他的就自己看吧  ~<br><img src="http://upload-images.jianshu.io/upload_images/1635441-f94e2edc998f209f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Snip20160404_8.png"></p>
+</blockquote>
+</blockquote>
+<hr>
+<h6 id="这些个属性都是定义在UITextInputTraits协议里面的，而且UITextField-和-UITextView-都遵守了，所以都可以使用。不过呢，其实这些在Storyboard里面都可以找得到的…"><a href="#这些个属性都是定义在UITextInputTraits协议里面的，而且UITextField-和-UITextView-都遵守了，所以都可以使用。不过呢，其实这些在Storyboard里面都可以找得到的…" class="headerlink" title="这些个属性都是定义在UITextInputTraits协议里面的，而且UITextField 和 UITextView 都遵守了，所以都可以使用。不过呢，其实这些在Storyboard里面都可以找得到的…"></a>这些个属性都是定义在UITextInputTraits协议里面的，而且UITextField 和 UITextView 都遵守了，所以都可以使用。不过呢，其实这些在Storyboard里面都可以找得到的…</h6><hr>
+
       
     </div>
     
@@ -425,14 +452,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/03/30/关于MJRefresh/" rel="next" title="关于MJRefresh">
+                <i class="fa fa-chevron-left"></i> 关于MJRefresh
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/26/UITabBarController/" rel="prev" title="UITabBarController">
-                UITabBarController <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/07/在使用TablView时碰到Nan错误/" rel="prev" title="在使用TablView时碰到Nan错误">
+                在使用TablView时碰到Nan错误 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -554,7 +585,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。"><span class="nav-number">1.</span> <span class="nav-text">也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#平时用模拟器键盘输入的时候总会有一大堆令人无语的自动联想、纠错、拼写检查…不胜其烦！本来一直以为是输入法的问题，后来才发现原来是苹果做的小优化……"><span class="nav-number">1.</span> <span class="nav-text">平时用模拟器键盘输入的时候总会有一大堆令人无语的自动联想、纠错、拼写检查…不胜其烦！本来一直以为是输入法的问题，后来才发现原来是苹果做的小优化……</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#不知道大家平时在做测试的时候有没有经常遇到下面的这些这种情况呢"><span class="nav-number">1.1.</span> <span class="nav-text">不知道大家平时在做测试的时候有没有经常遇到下面的这些这种情况呢~~</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#另外，除了上面那个比较坑的之外，还有下面这个"><span class="nav-number">1.2.</span> <span class="nav-text">另外，除了上面那个比较坑的之外，还有下面这个</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#property-nonatomic-UITextAutocapitalizationType-autocapitalizationType"><span class="nav-number">1.3.</span> <span class="nav-text">@property(nonatomic)UITextAutocapitalizationType autocapitalizationType;</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#然后是在找这些个属性的时候发现的其他属性-感觉挺有用的，这些平时在Storyboard也能见到的，只不过代码似乎用得比较少"><span class="nav-number">1.4.</span> <span class="nav-text">然后是在找这些个属性的时候发现的其他属性,感觉挺有用的，这些平时在Storyboard也能见到的，只不过代码似乎用得比较少~~</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#property-nonatomic-UITextSpellCheckingType-spellCheckingType"><span class="nav-number">1.5.</span> <span class="nav-text">@property(nonatomic) UITextSpellCheckingType spellCheckingType</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#property-nonatomic-UIKeyboardAppearance-keyboardAppearance"><span class="nav-number">1.6.</span> <span class="nav-text">@property(nonatomic) UIKeyboardAppearance keyboardAppearance;</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#property-nonatomic-BOOL-enablesReturnKeyAutomatically"><span class="nav-number">1.7.</span> <span class="nav-text">@property(nonatomic) BOOL enablesReturnKeyAutomatically;</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#property-nonatomic-getter-isSecureTextEntry-BOOL-secureTextEntry"><span class="nav-number">1.8.</span> <span class="nav-text">@property(nonatomic,getter=isSecureTextEntry) BOOL secureTextEntry;</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#property-nonatomic-UIKeyboardType-keyboardType"><span class="nav-number">1.9.</span> <span class="nav-text">@property(nonatomic) UIKeyboardType keyboardType;</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#property-nonatomic-UIKeyboardType-keyboardType-1"><span class="nav-number">1.10.</span> <span class="nav-text">@property(nonatomic) UIKeyboardType keyboardType;</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#这些个属性都是定义在UITextInputTraits协议里面的，而且UITextField-和-UITextView-都遵守了，所以都可以使用。不过呢，其实这些在Storyboard里面都可以找得到的…"><span class="nav-number">1.11.</span> <span class="nav-text">这些个属性都是定义在UITextInputTraits协议里面的，而且UITextField 和 UITextView 都遵守了，所以都可以使用。不过呢，其实这些在Storyboard里面都可以找得到的…</span></a></li></ol></li></ol></div>
             
 
           </div>

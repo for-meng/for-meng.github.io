@@ -73,8 +73,6 @@
 
 
 
-  
-
 
   <link rel="alternate" href="/atom.xml" title="尛孟の博客" type="application/atom+xml" />
 
@@ -83,17 +81,17 @@
 
 
 
-<meta name="description" content="与人联系甚少">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="通知 NSNotification、通知中心 NSNotificationCenter◦    任何对象之间都可以传递消息(一般在层级结构比较深又需要传值的情况)  使用范围▪    1个对象可以发通知给多个对象▪    1个对象可以接受多个对象发出的通知◦    要求:必须得保证通知的名字在发出和监听时是一致的   KVO◦    仅仅是能监听对象属性的改变（灵活度不如通知和代理）  代理模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代理&#x2F;通知&#x2F;KVO 的区别">
+<meta property="og:url" content="http://yoursite.com/2016/04/17/代理:通知:KVO 的区别/index.html">
 <meta property="og:site_name" content="尛孟の博客">
-<meta property="og:description" content="与人联系甚少">
+<meta property="og:description" content="通知 NSNotification、通知中心 NSNotificationCenter◦    任何对象之间都可以传递消息(一般在层级结构比较深又需要传值的情况)  使用范围▪    1个对象可以发通知给多个对象▪    1个对象可以接受多个对象发出的通知◦    要求:必须得保证通知的名字在发出和监听时是一致的   KVO◦    仅仅是能监听对象属性的改变（灵活度不如通知和代理）  代理模式">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-04T10:08:48.000Z">
+<meta property="og:updated_time" content="2018-01-08T05:47:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="与人联系甚少">
+<meta name="twitter:title" content="代理&#x2F;通知&#x2F;KVO 的区别">
+<meta name="twitter:description" content="通知 NSNotification、通知中心 NSNotificationCenter◦    任何对象之间都可以传递消息(一般在层级结构比较深又需要传值的情况)  使用范围▪    1个对象可以发通知给多个对象▪    1个对象可以接受多个对象发出的通知◦    要求:必须得保证通知的名字在发出和监听时是一致的   KVO◦    仅仅是能监听对象属性的改变（灵活度不如通知和代理）  代理模式">
 
 
 
@@ -123,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/04/17/代理:通知:KVO 的区别/"/>
 
 
 
 
 
-  <title>about | 尛孟の博客</title>
+  <title>代理/通知/KVO 的区别 | 尛孟の博客</title>
   
 
 
@@ -292,33 +290,166 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/17/代理:通知:KVO 的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="尛孟">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="尛孟の博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">about</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">代理/通知/KVO 的区别</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-17T01:15:00+08:00">
+                2016-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+
+          
+            
+          
+
+          
+          
+             <span id="/2016/04/17/代理:通知:KVO 的区别/" class="leancloud_visitors" data-flag-title="代理/通知/KVO 的区别">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <hr>
+<h6 id="通知-NSNotification、通知中心-NSNotificationCenter"><a href="#通知-NSNotification、通知中心-NSNotificationCenter" class="headerlink" title="通知 NSNotification、通知中心 NSNotificationCenter"></a>通知 NSNotification、通知中心 NSNotificationCenter</h6><p>◦    任何对象之间都可以传递消息(一般在层级结构比较深又需要传值的情况)</p>
+<ul>
+<li>使用范围<br>▪    1个对象可以发通知给多个对象<br>▪    1个对象可以接受多个对象发出的通知<br>◦    要求:必须得保证通知的名字在发出和监听时是一致的</li>
+</ul>
+<hr>
+<h6 id="KVO"><a href="#KVO" class="headerlink" title="KVO"></a>KVO</h6><p>◦    仅仅是能监听对象属性的改变（灵活度不如通知和代理）</p>
+<hr>
+<h6 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h6><ul>
+<li>使用范围<br>▪    1个对象只能设置一个代理(假设这个对象只有1个代理属性)<br>▪    1个对象能成为多个对象的代理</li>
+</ul>
+<hr>
+<h6 id="如何选择"><a href="#如何选择" class="headerlink" title="如何选择?"></a>如何选择?</h6><p>◦    代理比通知规范，非常适合多人开发以及代码维护<br>◦    如果要通知多个对象,就用通知</p>
+<p>◦    建议使用代理多于通知,能使用代理尽量使用代理<br>◦    当层级结构非常深，难以拿到对应对象时使用通知</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/16/纠正网上大部分文章对UITableView分割线的不正确认识/" rel="next" title="new article">
+                <i class="fa fa-chevron-left"></i> new article
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/18/沙盒文件夹的作用和选择/" rel="prev" title="沙盒文件夹的作用和选择">
+                沙盒文件夹的作用和选择 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -351,8 +482,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -401,6 +541,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#通知-NSNotification、通知中心-NSNotificationCenter"><span class="nav-number">1.</span> <span class="nav-text">通知 NSNotification、通知中心 NSNotificationCenter</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#KVO"><span class="nav-number">2.</span> <span class="nav-text">KVO</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#代理模式"><span class="nav-number">3.</span> <span class="nav-text">代理模式</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何选择"><span class="nav-number">4.</span> <span class="nav-text">如何选择?</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
