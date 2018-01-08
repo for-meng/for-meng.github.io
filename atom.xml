@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-01-03T09:39:59.000Z</updated>
+  <updated>2018-01-08T05:38:44.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,19 +17,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2018/01/03/hello-world/"/>
-    <id>http://yoursite.com/2018/01/03/hello-world/</id>
-    <published>2018-01-03T09:39:59.000Z</published>
-    <updated>2018-01-03T09:39:59.000Z</updated>
+    <title>UITabBarController</title>
+    <link href="http://yoursite.com/2016/03/26/UITabBarController/"/>
+    <id>http://yoursite.com/2016/03/26/UITabBarController/</id>
+    <published>2016-03-26T07:02:00.000Z</published>
+    <updated>2018-01-08T05:38:44.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>UITabBarController也有一个tabBar始终显示在最前面</p><hr><p><strong>从不同点看</strong></p><blockquote><p><strong>显示子控制器的View</strong></p><ol><li>UINavigationController只有在需要显示某个控制器的View的时候才会加载该View并且把原本显示的View移除(这里只是移除View，但是控制器并没有移除)</li><li>UITabBarController则是在一开始显示的时候就把所有的View都加载进内存，需要显示某个View的时候就直接拿过来，原本的View也不会被移除</li></ol><hr><p><strong>导航条和标签栏</strong></p><ul><li>导航条的y值是从20开始的, 但内部有一个UIImageView子控件超过导航条高度，因此看到的是64高度，此外 导航条底部还有一个子控件 -&gt; 一根线(一张阴影图片)</li><li>一个导航控制器只有一个NavigationBar也就是所有的子控制器共用同一个导航条，导航条显示的内容和栈顶控制器有关,所以导航条上显示的内容由栈顶控制器控制</li><li>标签栏的高度为49，它的子控件除了与子控制器相对应的UITabBarButton按钮还有 背景UIImageView和分割线UIVIew</li><li>在子控制器中是无法拿到TabBar的,只能拿到UItabBarItem 来设置</li></ul></blockquote><hr><p><strong><code>暂时了解的也就这些了，以后认识更加深刻再来补上...</code></strong></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+        &lt;p&gt;UITabBarController也有一个tabBar始终显示在最前面&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;从不同点看&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;显示子控制器的View&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;UIN
       
     
     </summary>
