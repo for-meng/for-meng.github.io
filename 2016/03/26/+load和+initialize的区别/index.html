@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="######在不考虑一切继承、分类的最简单最普通的情况下：  调用时刻: load:程序启动时,类被加载进内存就调用initialize:当第一次使用这个类或者其子类就会调用   调用次数 load:因为加载进内存只会加载一次，所以也只会调用一次initialize:不确定,具体根据子类和具体调用情况比如有个类,它有一个子类,第一次使用子类时,父类的initialize会被调用2次     ##">
+<meta name="description" content="在不考虑一切继承、分类的最简单最普通的情况下：  调用时刻: load:程序启动时,类被加载进内存就调用initialize:当第一次使用这个类或者其子类就会调用   调用次数 load:因为加载进内存只会加载一次，所以也只会调用一次initialize:不确定,具体根据子类和具体调用情况比如有个类,它有一个子类,第一次使用子类时,父类的initialize会被调用2次     上面说的只是普通">
 <meta property="og:type" content="article">
 <meta property="og:title" content="+load和+initialize的区别">
-<meta property="og:url" content="http://yoursite.com/2016/03/26/new-article/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/03/26/+load和+initialize的区别/index.html">
 <meta property="og:site_name" content="尛孟の博客">
-<meta property="og:description" content="######在不考虑一切继承、分类的最简单最普通的情况下：  调用时刻: load:程序启动时,类被加载进内存就调用initialize:当第一次使用这个类或者其子类就会调用   调用次数 load:因为加载进内存只会加载一次，所以也只会调用一次initialize:不确定,具体根据子类和具体调用情况比如有个类,它有一个子类,第一次使用子类时,父类的initialize会被调用2次     ##">
+<meta property="og:description" content="在不考虑一切继承、分类的最简单最普通的情况下：  调用时刻: load:程序启动时,类被加载进内存就调用initialize:当第一次使用这个类或者其子类就会调用   调用次数 load:因为加载进内存只会加载一次，所以也只会调用一次initialize:不确定,具体根据子类和具体调用情况比如有个类,它有一个子类,第一次使用子类时,父类的initialize会被调用2次     上面说的只是普通">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-08T05:27:08.000Z">
+<meta property="og:updated_time" content="2018-01-08T05:32:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="+load和+initialize的区别">
-<meta name="twitter:description" content="######在不考虑一切继承、分类的最简单最普通的情况下：  调用时刻: load:程序启动时,类被加载进内存就调用initialize:当第一次使用这个类或者其子类就会调用   调用次数 load:因为加载进内存只会加载一次，所以也只会调用一次initialize:不确定,具体根据子类和具体调用情况比如有个类,它有一个子类,第一次使用子类时,父类的initialize会被调用2次     ##">
+<meta name="twitter:description" content="在不考虑一切继承、分类的最简单最普通的情况下：  调用时刻: load:程序启动时,类被加载进内存就调用initialize:当第一次使用这个类或者其子类就会调用   调用次数 load:因为加载进内存只会加载一次，所以也只会调用一次initialize:不确定,具体根据子类和具体调用情况比如有个类,它有一个子类,第一次使用子类时,父类的initialize会被调用2次     上面说的只是普通">
 
 
 
@@ -121,7 +121,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/03/26/new-article/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/03/26/+load和+initialize的区别/"/>
 
 
 
@@ -302,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/26/new-article/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/26/+load和+initialize的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="尛孟">
@@ -349,7 +349,7 @@
 
           
           
-             <span id="/2016/03/26/new-article/" class="leancloud_visitors" data-flag-title="+load和+initialize的区别">
+             <span id="/2016/03/26/+load和+initialize的区别/" class="leancloud_visitors" data-flag-title="+load和+initialize的区别">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -381,7 +381,7 @@
 
       
         <hr>
-<p>######在不考虑一切继承、分类的最简单最普通的情况下：</p>
+<p><strong>在不考虑一切继承、分类的最简单最普通的情况下：</strong></p>
 <ul>
 <li>调用时刻:<blockquote>
 <p>load:程序启动时,类被加载进内存就调用<br>initialize:当第一次使用这个类或者其子类就会调用</p>
@@ -393,15 +393,15 @@
 </li>
 </ul>
 <hr>
-<p>######上面说的只是普通情况。但是呢，一个类可能继承于某个super类，还有可能有自己的分类，如果分类中也实现了load方法，它们的调用顺序是怎么样的呢？</p>
+<p><strong>上面说的只是普通情况。但是呢，一个类可能继承于某个super类，还有可能有自己的分类，如果分类中也实现了load方法，它们的调用顺序是怎么样的呢？</strong></p>
 <blockquote>
 <p>这里需要知道—&gt;覆盖方法在分类中的体现<br>如果父类本身中的方法在子类中被重写，则会优先执行子类中的方法<br>如果类本身中的方法在分类中被重写，则会优先执行分类中的方法</p>
 </blockquote>
-<p>######但是这里必须要知道一个特例-&gt;+load</p>
+<p><strong>但是这里必须要知道一个特例-&gt;+load</strong></p>
 <blockquote>
 <p><code>系统首先会调用 super类的load方法，然后再调用该类自身的load方法，再次才会调用该类的分类重写的load方法，也即是说整个继承链包括分类扩展中的load方法都会被执行，只是执行顺序需要关注一下。</code></p>
 </blockquote>
-<h2 id="也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。"><a href="#也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。" class="headerlink" title="#####也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。"></a>#####也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。</h2>
+<h2 id="也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。"><a href="#也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。" class="headerlink" title="也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。"></a><strong>也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。</strong></h2>
       
     </div>
     
@@ -554,7 +554,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。"><span class="nav-number">1.</span> <span class="nav-text">#####也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。"><span class="nav-number">1.</span> <span class="nav-text">也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。</span></a></li></ol></div>
             
 
           </div>
