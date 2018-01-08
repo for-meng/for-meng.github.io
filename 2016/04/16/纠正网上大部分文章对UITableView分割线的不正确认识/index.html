@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://i4.bvimg.com/627154/935f75e4710580e0.png">
 <meta property="og:image" content="http://i4.bvimg.com/627154/1b4be2a5e95fd599.png">
 <meta property="og:image" content="http://i4.bvimg.com/627154/d27a8a6ae045078b.png">
-<meta property="og:updated_time" content="2018-01-08T07:57:36.000Z">
+<meta property="og:updated_time" content="2018-01-08T08:00:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="纠正网上大部分文章对UITableView分割线的不正确认识">
 <meta name="twitter:description" content="本篇文章主要有两个内容:1. 正确认识全屏分割线的设置  2. 去除没有数据的Cell或者指定Cell的分割线 毕竟这里只是我自己本人的看法和总结  –  有什么建议或者觉得我说得不好的地方，欢迎互相探讨。毕竟探讨越多提升越大~~   —-PART One—-首先是我一直觉得很不爽的全屏分割线(为何不爽,看完这一部分大家应该也能理解我的感受)  自定义Cell的情况 把系统的分割线隐藏,然后自己">
@@ -425,7 +425,7 @@
 <p><img src="http://i4.bvimg.com/627154/1b4be2a5e95fd599.png" alt="UITableViewSeparator_3.png"></p>
 <p>效果很容易就达到了~~</p>
 <p><img src="http://i4.bvimg.com/627154/d27a8a6ae045078b.png" alt="UITableViewSeparator_4.png"></p>
-<p>**最后说几句—关于preservesSuperviewLayoutMargins属性还是无法理解它的作用…看了苹果文档，大概意思是如果设为Yes的话,则父控件内容的左边距会留出一个最小间距出来。虽然我说了Cell的父控件是UITableviewWrapperView，而且在CellForRow数据源方法中也拿不到它(因为Cell要在该方法返回后才被系统使用并添加到父控件上)，但是即使我在其他能拿到的地方拿到它了，并且设置了它的layoutMargins =UIEdgeInsetsZero和Cell的preservesSuperviewLayoutMargins = YES，可惜却也完全没有效果…如果大家有什么见解希望能告知一声<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">![UITableViewSeparator_5.png](http://i4.bvimg.com/627154/cdd2de1c0d66c7ad.png)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">&gt;### 至此，我的个人见解说完了，谢谢大家的阅读</span><br></pre></td></tr></table></figure></p>
+<p>**最后说几句—关于preservesSuperviewLayoutMargins属性还是无法理解它的作用…看了苹果文档，大概意思是如果设为Yes的话,则父控件内容的左边距会留出一个最小间距出来。虽然我说了Cell的父控件是UITableviewWrapperView，而且在CellForRow数据源方法中也拿不到它(因为Cell要在该方法返回后才被系统使用并添加到父控件上)，但是即使我在其他能拿到的地方拿到它了，并且设置了它的layoutMargins =UIEdgeInsetsZero和Cell的preservesSuperviewLayoutMargins = YES，可惜却也完全没有效果…如果大家有什么见解希望能告知一声<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">![UITableViewSeparator_5.png](http://i4.bvimg.com/627154/cdd2de1c0d66c7ad.png)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">### 至此，我的个人见解说完了，谢谢大家的阅读</span><br></pre></td></tr></table></figure></p>
 <hr>
 
       
