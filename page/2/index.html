@@ -384,14 +384,12 @@
       
         
           
-          UITabBarController也有一个tabBar始终显示在最前面
+          
+UITabBarController与UINavigationController有些类似又有些区别，因此最好通过两个控制器的对比来了解其结构。
+从共同点看
 
-从不同点看
-
-显示子控制器的View
-
-UINavigationController只有在需要显示某个控制器的View的时候才会加载该View并且把原本显示的View移除(这里只是移除View，但是控制器并没有移除)
-UIT
+它们都是通过一个childViewControllers数组来存储子控制器以强引用它们，然后把它们对应的View显示到屏幕上
+UINavi
           ...
           <!--noindex-->
           <div class="post-button text-center">

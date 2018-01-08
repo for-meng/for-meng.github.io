@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="UITabBarController也有一个tabBar始终显示在最前面  从不同点看  显示子控制器的View  UINavigationController只有在需要显示某个控制器的View的时候才会加载该View并且把原本显示的View移除(这里只是移除View，但是控制器并没有移除) UITabBarController则是在一开始显示的时候就把所有的View都加载进内存，需要显示某个Vi">
+<meta name="description" content="UITabBarController与UINavigationController有些类似又有些区别，因此最好通过两个控制器的对比来了解其结构。 从共同点看  它们都是通过一个childViewControllers数组来存储子控制器以强引用它们，然后把它们对应的View显示到屏幕上 UINavigationController有一个NavigationBar始终显示在最前面，UITabBarC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UITabBarController">
 <meta property="og:url" content="http://yoursite.com/2016/03/26/UITabBarController/index.html">
 <meta property="og:site_name" content="尛孟の博客">
-<meta property="og:description" content="UITabBarController也有一个tabBar始终显示在最前面  从不同点看  显示子控制器的View  UINavigationController只有在需要显示某个控制器的View的时候才会加载该View并且把原本显示的View移除(这里只是移除View，但是控制器并没有移除) UITabBarController则是在一开始显示的时候就把所有的View都加载进内存，需要显示某个Vi">
+<meta property="og:description" content="UITabBarController与UINavigationController有些类似又有些区别，因此最好通过两个控制器的对比来了解其结构。 从共同点看  它们都是通过一个childViewControllers数组来存储子控制器以强引用它们，然后把它们对应的View显示到屏幕上 UINavigationController有一个NavigationBar始终显示在最前面，UITabBarC">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-08T05:38:44.000Z">
+<meta property="og:updated_time" content="2018-01-08T05:58:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UITabBarController">
-<meta name="twitter:description" content="UITabBarController也有一个tabBar始终显示在最前面  从不同点看  显示子控制器的View  UINavigationController只有在需要显示某个控制器的View的时候才会加载该View并且把原本显示的View移除(这里只是移除View，但是控制器并没有移除) UITabBarController则是在一开始显示的时候就把所有的View都加载进内存，需要显示某个Vi">
+<meta name="twitter:description" content="UITabBarController与UINavigationController有些类似又有些区别，因此最好通过两个控制器的对比来了解其结构。 从共同点看  它们都是通过一个childViewControllers数组来存储子控制器以强引用它们，然后把它们对应的View显示到屏幕上 UINavigationController有一个NavigationBar始终显示在最前面，UITabBarC">
 
 
 
@@ -380,18 +380,22 @@
       
 
       
-        <p>UITabBarController也有一个tabBar始终显示在最前面</p>
-<hr>
-<p><strong>从不同点看</strong></p>
-<blockquote>
-<p><strong>显示子控制器的View</strong></p>
+        <hr>
+<h5 id="UITabBarController与UINavigationController有些类似又有些区别，因此最好通过两个控制器的对比来了解其结构。"><a href="#UITabBarController与UINavigationController有些类似又有些区别，因此最好通过两个控制器的对比来了解其结构。" class="headerlink" title="UITabBarController与UINavigationController有些类似又有些区别，因此最好通过两个控制器的对比来了解其结构。"></a>UITabBarController与UINavigationController有些类似又有些区别，因此最好通过两个控制器的对比来了解其结构。</h5><hr>
+<h4 id="从共同点看"><a href="#从共同点看" class="headerlink" title="从共同点看"></a>从共同点看</h4><blockquote>
 <ol>
+<li>它们都是通过一个childViewControllers数组来存储子控制器以强引用它们，然后把它们对应的View显示到屏幕上</li>
+<li>UINavigationController有一个NavigationBar始终显示在最前面，<br>UITabBarController也有一个tabBar始终显示在最前面</li>
+</ol>
+</blockquote>
+<hr>
+<h4 id="从不同点看"><a href="#从不同点看" class="headerlink" title="从不同点看"></a>从不同点看</h4><blockquote>
+<h6 id="显示子控制器的View"><a href="#显示子控制器的View" class="headerlink" title="显示子控制器的View"></a>显示子控制器的View</h6><ol>
 <li>UINavigationController只有在需要显示某个控制器的View的时候才会加载该View并且把原本显示的View移除(这里只是移除View，但是控制器并没有移除)</li>
 <li>UITabBarController则是在一开始显示的时候就把所有的View都加载进内存，需要显示某个View的时候就直接拿过来，原本的View也不会被移除</li>
 </ol>
 <hr>
-<p><strong>导航条和标签栏</strong></p>
-<ul>
+<h6 id="导航条和标签栏"><a href="#导航条和标签栏" class="headerlink" title="导航条和标签栏"></a>导航条和标签栏</h6><ul>
 <li>导航条的y值是从20开始的, 但内部有一个UIImageView子控件超过导航条高度，因此看到的是64高度，此外 导航条底部还有一个子控件 -&gt; 一根线(一张阴影图片)</li>
 <li>一个导航控制器只有一个NavigationBar也就是所有的子控制器共用同一个导航条，导航条显示的内容和栈顶控制器有关,所以导航条上显示的内容由栈顶控制器控制</li>
 <li>标签栏的高度为49，它的子控件除了与子控制器相对应的UITabBarButton按钮还有 背景UIImageView和分割线UIVIew</li>
@@ -399,8 +403,7 @@
 </ul>
 </blockquote>
 <hr>
-<p><strong><code>暂时了解的也就这些了，以后认识更加深刻再来补上...</code></strong></p>
-
+<h3 id="暂时了解的也就这些了，以后认识更加深刻再来补上"><a href="#暂时了解的也就这些了，以后认识更加深刻再来补上" class="headerlink" title="暂时了解的也就这些了，以后认识更加深刻再来补上..."></a><code>暂时了解的也就这些了，以后认识更加深刻再来补上...</code></h3>
       
     </div>
     
@@ -488,8 +491,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -538,6 +550,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#UITabBarController与UINavigationController有些类似又有些区别，因此最好通过两个控制器的对比来了解其结构。"><span class="nav-number">1.</span> <span class="nav-text">UITabBarController与UINavigationController有些类似又有些区别，因此最好通过两个控制器的对比来了解其结构。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从共同点看"><span class="nav-number"></span> <span class="nav-text">从共同点看</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从不同点看"><span class="nav-number"></span> <span class="nav-text">从不同点看</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#显示子控制器的View"><span class="nav-number">0.1.</span> <span class="nav-text">显示子控制器的View</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#导航条和标签栏"><span class="nav-number">0.2.</span> <span class="nav-text">导航条和标签栏</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#暂时了解的也就这些了，以后认识更加深刻再来补上"><span class="nav-number"></span> <span class="nav-text">暂时了解的也就这些了，以后认识更加深刻再来补上...</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
