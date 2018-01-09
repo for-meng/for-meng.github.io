@@ -94,7 +94,7 @@
 <meta property="og:image" content="http://www.z4a.net/images/2018/01/09/property_3.png">
 <meta property="og:image" content="http://www.z4a.net/images/2018/01/09/property_4.png">
 <meta property="og:image" content="http://www.z4a.net/images/2018/01/09/property_5.png">
-<meta property="og:updated_time" content="2018-01-09T13:05:42.000Z">
+<meta property="og:updated_time" content="2018-01-09T13:07:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="整理一下OC中的那些属性修饰符">
 <meta name="twitter:description" content="首先从简单到复杂大致分个类1. 自定义getter | setter方法名修饰符 : getter和setter2. 原子性修饰符:atomic | nonatomic3. 读写性修饰符：readwrite | readonly4. setter相关修饰符：assign | retain | copy  方法名修饰符• getter=,setter=:指定该属性所使用的getter和setter">
@@ -435,7 +435,11 @@
 <hr>
 <p>两个属性修饰符用于设置自定义生成的getter和setter方法名，使用之后将不再使用系统默认的setter和getter方法名</p>
 <p>• 用得不是很多，使用场景一般是对BOOL属性设置该getter方法，比如   isGood 这样用以方便判断时使用</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://www.z4a.net/images/2018/01/09/property_1.png" alt="property_1.png"></h2><h4 id="原子修饰符"><a href="#原子修饰符" class="headerlink" title="原子修饰符"></a>原子修饰符</h4><p>•<strong>atomic  :  原子属性,为setter方法加锁  (默认) (类似多线程中的互斥锁)</strong></p>
+<p><img src="http://www.z4a.net/images/2018/01/09/property_1.png" alt="property_1.png"></p>
+</blockquote>
+<hr>
+<blockquote>
+<h4 id="原子修饰符"><a href="#原子修饰符" class="headerlink" title="原子修饰符"></a>原子修饰符</h4><p>•<strong>atomic  :  原子属性,为setter方法加锁  (默认) (类似多线程中的互斥锁)</strong></p>
 <p> <code>§ 线程安全,但需要消耗大量资源</code></p>
 <p>• <strong>nonatomic  :  非原子属性,不为setter方法加锁</strong></p>
 <p><code>§ 非线程安全,适合内存小的移动设备</code></p>
@@ -461,14 +465,10 @@
 <p><code>系统默认属性是assign。retain是指针的复制，copy是内容的复制</code></p>
 </blockquote>
 <hr>
-<ul>
-<li>###用copy修饰字符串时——&gt;</li>
-</ul>
+<p>###用copy修饰字符串时——&gt;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在setter方法中会判断 传入的字符串 是否是可变的</span><br><span class="line">如果是可变的就分配新的内存再赋值</span><br><span class="line">如果是不可变的就直接赋值地址</span><br><span class="line">而实际上开发中其实大量使用的是不可变的字符串   所以最好使用 strong 修饰字符串,可以提升性能(减少一次判断)</span><br></pre></td></tr></table></figure>
 <hr>
-<ul>
-<li>###用copy修饰Block时—-&gt;首先要知道Block在非ARC和ARC下的区别</li>
-</ul>
+<p>###用copy修饰Block时—-&gt;首先要知道Block在非ARC和ARC下的区别</p>
 <p><strong><em>非ARC环境下:</em></strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">block访问外部局部变量,block存放栈里面</span><br><span class="line">只要block访问变量,而且是整个app都存在的变量,那么肯定在全局区</span><br><span class="line">在非ARC中.不能使用retain引用block,因为不会放在堆里面,在非ARC中只能使用copy,才会把block放在堆里面</span><br></pre></td></tr></table></figure>
 <p><strong><em>ARC环境下:</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">只要block访问了外部局部变量,block就会存放到堆里面</span><br><span class="line">可以使用strong去引用  因为本身就已经是存放在堆区了</span><br><span class="line">也可以用copy，但是用stong性能更好</span><br></pre></td></tr></table></figure></p>
@@ -656,7 +656,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#首先从简单到复杂大致分个类"><span class="nav-number">1.</span> <span class="nav-text">首先从简单到复杂大致分个类</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-自定义getter-setter方法名修饰符-getter和setter"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">1. 自定义getter | setter方法名修饰符 : getter和setter</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-原子性修饰符-atomic-nonatomic"><span class="nav-number">1.0.0.0.2.</span> <span class="nav-text">2. 原子性修饰符:atomic | nonatomic</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-读写性修饰符：readwrite-readonly"><span class="nav-number">1.0.0.0.3.</span> <span class="nav-text">3. 读写性修饰符：readwrite | readonly</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-setter相关修饰符：assign-retain-copy"><span class="nav-number">1.0.0.0.4.</span> <span class="nav-text">4. setter相关修饰符：assign | retain | copy</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法名修饰符"><span class="nav-number">1.0.1.</span> <span class="nav-text">方法名修饰符</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原子修饰符"><span class="nav-number">2.0.1.</span> <span class="nav-text">原子修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#读写性修饰符"><span class="nav-number">2.0.2.</span> <span class="nav-text">读写性修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意"><span class="nav-number">2.0.3.</span> <span class="nav-text">注意!</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#setter相关修饰符"><span class="nav-number">3.</span> <span class="nav-text">setter相关修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#做个小总结-只说ARC环境下的"><span class="nav-number">3.0.1.</span> <span class="nav-text">做个小总结(只说ARC环境下的)</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#首先从简单到复杂大致分个类"><span class="nav-number">1.</span> <span class="nav-text">首先从简单到复杂大致分个类</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-自定义getter-setter方法名修饰符-getter和setter"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">1. 自定义getter | setter方法名修饰符 : getter和setter</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-原子性修饰符-atomic-nonatomic"><span class="nav-number">1.0.0.0.2.</span> <span class="nav-text">2. 原子性修饰符:atomic | nonatomic</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-读写性修饰符：readwrite-readonly"><span class="nav-number">1.0.0.0.3.</span> <span class="nav-text">3. 读写性修饰符：readwrite | readonly</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-setter相关修饰符：assign-retain-copy"><span class="nav-number">1.0.0.0.4.</span> <span class="nav-text">4. setter相关修饰符：assign | retain | copy</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法名修饰符"><span class="nav-number">1.0.1.</span> <span class="nav-text">方法名修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原子修饰符"><span class="nav-number">1.0.2.</span> <span class="nav-text">原子修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#读写性修饰符"><span class="nav-number">1.0.3.</span> <span class="nav-text">读写性修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意"><span class="nav-number">1.0.4.</span> <span class="nav-text">注意!</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#setter相关修饰符"><span class="nav-number">2.</span> <span class="nav-text">setter相关修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#做个小总结-只说ARC环境下的"><span class="nav-number">2.0.1.</span> <span class="nav-text">做个小总结(只说ARC环境下的)</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
