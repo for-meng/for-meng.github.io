@@ -91,7 +91,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://i4.bvimg.com/627154/6d4a2262677168e9.png">
 <meta property="og:image" content="http://i4.bvimg.com/627154/a1317af9f25964fc.png">
-<meta property="og:updated_time" content="2018-01-09T12:23:59.000Z">
+<meta property="og:updated_time" content="2018-01-09T12:26:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html中的文本级&#x2F;容器级标签与css中的块级&#x2F;行内元素">
 <meta name="twitter:description" content="html中的文本级/容器级标签与css中的块级/行内元素  块级元素    霸占一行，不能与其他任何元素并列 能  接受宽、高 如果不设置宽度，那么宽度将默认变为父亲的100%。    行内元素    与  其他行内元素并排 不能  设置宽、高。默认的宽度，就是文字的宽度。    在HTML中，已经将标签分过类：文本级、容器级。   文本级：p、span、a、b、i、u、em  容器级：div、">
@@ -458,10 +458,23 @@
 <li>行内元素可以设置为块级元素</li>
 </ul>
 </blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line"></span><br><span class="line">	display: inline;</span><br><span class="line"></span><br><span class="line">	background-color: pink;</span><br><span class="line"></span><br><span class="line">	width: 500px;</span><br><span class="line"></span><br><span class="line">	height: 500px;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">	display: inline;</span><br><span class="line">	background-color: pink;</span><br><span class="line">	width: 500px;</span><br><span class="line">	height: 500px;&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>display</strong>是“显示模式”的意思，用来改变元素的行内、块级性质</p>
 <p><strong><em>inline</em></strong>就是“行内”。</p>
-<p>一旦，给一个标签设置  <figure class="highlight plain"><figcaption><span>inline``` ;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">那么，这个标签将立即变为行内元素。此时它和一个span无异：</span><br><span class="line"></span><br><span class="line">&gt; &gt; + 此时这个div不能设置宽度、高度；</span><br><span class="line">&gt; &gt;</span><br><span class="line">&gt; &gt;</span><br><span class="line">&gt; &gt; + 此时这个div可以和别人并排了同样的道理，</span><br><span class="line"></span><br><span class="line">```html</span><br><span class="line">span&#123;</span><br><span class="line">display: block;</span><br><span class="line">width: 200px;</span><br><span class="line">height: 200px;</span><br><span class="line">background-color: pink;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>一旦，给一个标签设置  <code>display: inline</code>;</p>
+<p>那么，这个标签将立即变为行内元素。此时它和一个span无异：</p>
+<blockquote>
+<blockquote>
+<ul>
+<li>此时这个div不能设置宽度、高度；</li>
+</ul>
+<ul>
+<li>此时这个div可以和别人并排了同样的道理，</li>
+</ul>
+</blockquote>
+</blockquote>
+<hr>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">span&#123;</span><br><span class="line">	display: block;</span><br><span class="line">	width: 200px;</span><br><span class="line">	height: 200px;</span><br><span class="line">	background-color: pink;&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>“block”</strong>是“块”的意思让标签变为块级元素。此时这个标签，和一个div无异：</p>
 <blockquote>
 <blockquote>
