@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS开发," />
 
 
 
@@ -81,23 +81,18 @@
 
 
 
-<meta name="description" content="首先从简单到复杂大致分个类1. 自定义getter | setter方法名修饰符 : getter和setter2. 原子性修饰符:atomic | nonatomic3. 读写性修饰符：readwrite | readonly4. setter相关修饰符：assign | retain | copy  方法名修饰符• getter=,setter=:指定该属性所使用的getter和setter">
+<meta name="description" content="沙盒大家都知道，但是平时要存储数据时总不知道存到哪里去才是正确的选择，这次就来聊聊每一个文件夹的作用和使用时该怎么选择  先来了解每一个文件夹的基本作用    • Documents：保存应用运行时生成的需要持久化的数据，iTunes同步设备时会备份该目录。• tmp：保存应用运行时所需的临时数据，使用完毕后再将相应的文件从该目录删除。应用没有运行时，系统也可能会清除该目录下的文件。iTune">
+<meta name="keywords" content="iOS开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="整理一下OC中的那些属性修饰符">
-<meta property="og:url" content="http://yoursite.com/2016/04/11/整理一下OC中的那些属性修饰符/index.html">
+<meta property="og:title" content="沙盒文件夹的作用和选择">
+<meta property="og:url" content="http://yoursite.com/2016/04/18/沙盒文件夹的作用和选择/index.html">
 <meta property="og:site_name" content="尛孟的博客">
-<meta property="og:description" content="首先从简单到复杂大致分个类1. 自定义getter | setter方法名修饰符 : getter和setter2. 原子性修饰符:atomic | nonatomic3. 读写性修饰符：readwrite | readonly4. setter相关修饰符：assign | retain | copy  方法名修饰符• getter=,setter=:指定该属性所使用的getter和setter">
+<meta property="og:description" content="沙盒大家都知道，但是平时要存储数据时总不知道存到哪里去才是正确的选择，这次就来聊聊每一个文件夹的作用和使用时该怎么选择  先来了解每一个文件夹的基本作用    • Documents：保存应用运行时生成的需要持久化的数据，iTunes同步设备时会备份该目录。• tmp：保存应用运行时所需的临时数据，使用完毕后再将相应的文件从该目录删除。应用没有运行时，系统也可能会清除该目录下的文件。iTune">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://i4.bvimg.com/627154/fbe80d014339d3c2.png">
-<meta property="og:image" content="http://i4.bvimg.com/627154/d4316b39b24da52f.png">
-<meta property="og:image" content="http://i4.bvimg.com/627154/332667ffa370f62f.png">
-<meta property="og:image" content="http://i4.bvimg.com/627154/2ccb3fa0a7c7429c.png">
-<meta property="og:image" content="http://i4.bvimg.com/627154/ee846e4d119b9dd0.png">
-<meta property="og:updated_time" content="2018-01-08T08:14:15.000Z">
+<meta property="og:updated_time" content="2018-01-09T03:44:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="整理一下OC中的那些属性修饰符">
-<meta name="twitter:description" content="首先从简单到复杂大致分个类1. 自定义getter | setter方法名修饰符 : getter和setter2. 原子性修饰符:atomic | nonatomic3. 读写性修饰符：readwrite | readonly4. setter相关修饰符：assign | retain | copy  方法名修饰符• getter=,setter=:指定该属性所使用的getter和setter">
-<meta name="twitter:image" content="http://i4.bvimg.com/627154/fbe80d014339d3c2.png">
+<meta name="twitter:title" content="沙盒文件夹的作用和选择">
+<meta name="twitter:description" content="沙盒大家都知道，但是平时要存储数据时总不知道存到哪里去才是正确的选择，这次就来聊聊每一个文件夹的作用和使用时该怎么选择  先来了解每一个文件夹的基本作用    • Documents：保存应用运行时生成的需要持久化的数据，iTunes同步设备时会备份该目录。• tmp：保存应用运行时所需的临时数据，使用完毕后再将相应的文件从该目录删除。应用没有运行时，系统也可能会清除该目录下的文件。iTune">
 
 
 
@@ -127,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/04/11/整理一下OC中的那些属性修饰符/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/04/18/沙盒文件夹的作用和选择/"/>
 
 
 
 
 
-  <title>整理一下OC中的那些属性修饰符 | 尛孟的博客</title>
+  <title>沙盒文件夹的作用和选择 | 尛孟的博客</title>
   
 
 
@@ -308,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/11/整理一下OC中的那些属性修饰符/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/18/沙盒文件夹的作用和选择/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="尛孟">
@@ -325,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">整理一下OC中的那些属性修饰符</h1>
+          <h1 class="post-title" itemprop="name headline">沙盒文件夹的作用和选择</h1>
         
 
         <div class="post-meta">
@@ -337,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-11T23:21:00+08:00">
-                2016-04-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-18T18:56:00+08:00">
+                2016-04-18
               </time>
             
 
@@ -348,6 +343,39 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS开发/文件-夹-操作/" itemprop="url" rel="index">
+                    <span itemprop="name">文件(夹)操作</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -355,7 +383,7 @@
 
           
           
-             <span id="/2016/04/11/整理一下OC中的那些属性修饰符/" class="leancloud_visitors" data-flag-title="整理一下OC中的那些属性修饰符">
+             <span id="/2016/04/18/沙盒文件夹的作用和选择/" class="leancloud_visitors" data-flag-title="沙盒文件夹的作用和选择">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -387,39 +415,22 @@
 
       
         <hr>
-<h2 id="首先从简单到复杂大致分个类"><a href="#首先从简单到复杂大致分个类" class="headerlink" title="首先从简单到复杂大致分个类"></a>首先从简单到复杂大致分个类</h2><h6 id="1-自定义getter-setter方法名修饰符-getter和setter"><a href="#1-自定义getter-setter方法名修饰符-getter和setter" class="headerlink" title="1. 自定义getter | setter方法名修饰符 : getter和setter"></a>1. 自定义getter | setter方法名修饰符 : getter和setter</h6><h6 id="2-原子性修饰符-atomic-nonatomic"><a href="#2-原子性修饰符-atomic-nonatomic" class="headerlink" title="2. 原子性修饰符:atomic | nonatomic"></a>2. 原子性修饰符:atomic | nonatomic</h6><h6 id="3-读写性修饰符：readwrite-readonly"><a href="#3-读写性修饰符：readwrite-readonly" class="headerlink" title="3. 读写性修饰符：readwrite | readonly"></a>3. 读写性修饰符：readwrite | readonly</h6><h6 id="4-setter相关修饰符：assign-retain-copy"><a href="#4-setter相关修饰符：assign-retain-copy" class="headerlink" title="4. setter相关修饰符：assign | retain | copy"></a>4. setter相关修饰符：assign | retain | copy</h6><hr>
 <blockquote>
-<h4 id="方法名修饰符"><a href="#方法名修饰符" class="headerlink" title="方法名修饰符"></a>方法名修饰符</h4><p>• getter=<getmethodname>,setter=<setmethodname>:指定该属性所使用的getter和setter方法的名称</setmethodname></getmethodname></p>
+<h6 id="沙盒大家都知道，但是平时要存储数据时总不知道存到哪里去才是正确的选择，这次就来聊聊每一个文件夹的作用和使用时该怎么选择"><a href="#沙盒大家都知道，但是平时要存储数据时总不知道存到哪里去才是正确的选择，这次就来聊聊每一个文件夹的作用和使用时该怎么选择" class="headerlink" title="沙盒大家都知道，但是平时要存储数据时总不知道存到哪里去才是正确的选择，这次就来聊聊每一个文件夹的作用和使用时该怎么选择"></a>沙盒大家都知道，但是平时要存储数据时总不知道存到哪里去才是正确的选择，这次就来聊聊每一个文件夹的作用和使用时该怎么选择</h6></blockquote>
 <hr>
-<p>这两个属性修饰符用于设置自定义生成的getter和setter方法名，使用之后将不再使用系统默认的setter和getter方法名<br>• 用得不是很多，使用场景一般是对BOOL属性设置该getter方法，比如   isGood 这样用以方便判断时使用<br><img src="http://i4.bvimg.com/627154/fbe80d014339d3c2.png" alt="property_1.png"></p>
-</blockquote>
-<hr>
-<blockquote>
-<h4 id="原子修饰符"><a href="#原子修饰符" class="headerlink" title="原子修饰符"></a>原子修饰符</h4><p>• atomic  :  原子属性,为setter方法加锁  (默认) (类似多线程中的互斥锁)<br>    § 线程安全,但需要消耗大量资源<br>• nonatomic  :  非原子属性,不为setter方法加锁<br>    § 非线程安全,适合内存小的移动设备</p>
-</blockquote>
+<h6 id="先来了解每一个文件夹的基本作用"><a href="#先来了解每一个文件夹的基本作用" class="headerlink" title="先来了解每一个文件夹的基本作用"></a>先来了解每一个文件夹的基本作用</h6><blockquote>
+<p>   • Documents：保存应用运行时生成的需要持久化的数据，iTunes同步设备时会备份该目录。<br>• tmp：保存应用运行时所需的临时数据，使用完毕后再将相应的文件从该目录删除。应用没有运行时，系统也可能会清除该目录下的文件。iTunes同步设备时不会备份该目录<br>• Library/Caches：保存应用运行时生成的需要持久化的数据，iTunes同步设备时不会备份该目录。一般存储体积大、不需要备份的非重要数据<br>• Library/Preference：保存应用的所有偏好设置，iOS的Settings(设置)应用会在该目录中查找应用的设置信息。iTunes同步设备时会备份该目录</p>
+<h6 id="（看完还是不知道到底存哪里比较好啊喂-╯’-‘-╯︵-┻━┻-）"><a href="#（看完还是不知道到底存哪里比较好啊喂-╯’-‘-╯︵-┻━┻-）" class="headerlink" title="（看完还是不知道到底存哪里比较好啊喂(╯’ - ‘)╯︵ ┻━┻ ）"></a>（看完还是不知道到底存哪里比较好啊喂(╯’ - ‘)╯︵ ┻━┻ ）</h6></blockquote>
 <hr>
 <blockquote>
-<h4 id="读写性修饰符"><a href="#读写性修饰符" class="headerlink" title="读写性修饰符"></a>读写性修饰符</h4><p>• readwrite:表明这个属性是可读可写的，系统为我们生成这个属性的setter和getter方法以及下划线开头的成员变量。<br>• readonly:表明这个属性只能读不能写，系统只为我们生成一个getter方法下划线开头的成员变量，不会创建setter方法</p>
+<h6 id="–-Documents"><a href="#–-Documents" class="headerlink" title="– Documents"></a>– Documents</h6><p>– 需要保存由”应用程序本身”产生的文件或者数据，例如：游戏进度、涂鸦软件的绘图信息<br>– 目录中的文件会被自动保存在 iClioud<br>– 注意 ： 不要保存从网络上下载的文件，否则会无法上架</p>
+<hr>
+<h6 id="–-Caches"><a href="#–-Caches" class="headerlink" title="– Caches"></a>– Caches</h6><p>– 保存临时文件，”后续需要使用”，例如：缓存图片、离线数据(地图数据等)<br>– 系统不会清零 cache 目录中的文件  –&gt; 因此要求程序开发时，”必须提供 cache 目录的清理解决方案”</p>
+<hr>
+<h6 id="–-Preference"><a href="#–-Preference" class="headerlink" title="– Preference"></a>– Preference</h6><p>– 用户偏好设置，使用 NSUserDefault 直接读写</p>
+<hr>
+<h6 id="–-Tmp"><a href="#–-Tmp" class="headerlink" title="– Tmp"></a>– Tmp</h6><p>– 保存临时文件，”后续不需要使用”<br>– tmp  目录中的文件，系统会自动清零<br>– 重新启动手机时，tmp  目录会被情况<br>– 系统磁盘空间不足时，系统也会自动清理</p>
 </blockquote>
-<hr>
-<h4 id="注意"><a href="#注意" class="headerlink" title="注意!"></a>注意!</h4><p> <strong>用readwrite自动生成setter和getter方法以及下划线开头的成员变量的时候，如果手动实现了setter和getter方法，那么系统将不会生成下划线开头成员变量</strong></p>
-<p><img src="http://i4.bvimg.com/627154/d4316b39b24da52f.png" alt="property_2.png"><br><img src="http://i4.bvimg.com/627154/332667ffa370f62f.png" alt="property_3.png"></p>
-<hr>
-<p><strong>同理，readonly自动生成getter 方法和_开头成员变量时，如果手动实现了getter方法，那么系统也不会再生成下划线开头的成员变量</strong></p>
-<p><img src="http://i4.bvimg.com/627154/2ccb3fa0a7c7429c.png" alt="property_4.png"><br><img src="http://i4.bvimg.com/627154/ee846e4d119b9dd0.png" alt="property_5.png"></p>
-<hr>
-<blockquote>
-<h2 id="setter相关修饰符"><a href="#setter相关修饰符" class="headerlink" title="setter相关修饰符"></a>setter相关修饰符</h2><p>• retain:针对对象类型进行内存管理(非ARC)。当给对象类型使用此修饰符时，setter方法会先将旧的对象属性release掉，再对新的对象进行一次赋值并进行一次retain操作<br>• assign:表示直接赋值， 基本数据类型、枚举、结构体(非OC对象) class类型<br>当一个对象被销毁时，指针不会被清空(所以修饰对象时容易造成坏内存 (非ARC下会用这个修饰对象)</p>
-<hr>
-<p>• copy:以前主要用在NSString类型和Block，建立一个索引计数为1的对象，然后释放旧对象。<br>• strong ：除NSString\block以外(注意!这是以前的说法)的OC对象 , 强引用以保证属性作用域结束后不被销毁<br>• weak : 当一个对象被销毁时，指针被清空<br>一般用在已经添加到父控件中的控件,因为父控件会对子控件进行引用,也就是retain,所以自己的作用域结束之后不会被释放<br>系统默认属性是assign。retain是指针的复制，copy是内容的复制</p>
-<hr>
-<h5 id="用copy修饰字符串时—-gt"><a href="#用copy修饰字符串时—-gt" class="headerlink" title="用copy修饰字符串时—-&gt;"></a>用copy修饰字符串时—-&gt;</h5><p>在setter方法中会判断 传入的字符串 是否是可变的<br>如果是可变的就分配新的内存再赋值<br>如果是不可变的就直接赋值地址<br>而实际上开发中其实大量使用的是不可变的字符串   所以最好使用 strong 修饰字符串,可以提升性能(减少一次判断)</p>
-<hr>
-<h5 id="用copy修饰Block时—-gt-首先要知道Block在非ARC和ARC下的区别"><a href="#用copy修饰Block时—-gt-首先要知道Block在非ARC和ARC下的区别" class="headerlink" title="用copy修饰Block时—-&gt;首先要知道Block在非ARC和ARC下的区别"></a>用copy修饰Block时—-&gt;首先要知道Block在非ARC和ARC下的区别</h5><h6 id="非ARC环境下"><a href="#非ARC环境下" class="headerlink" title="非ARC环境下:"></a>非ARC环境下:</h6><p>block访问外部局部变量,block存放栈里面<br>只要block访问变量,而且是整个app都存在的变量,那么肯定在全局区<br>在非ARC中.不能使用retain引用block,因为不会放在堆里面,在非ARC中只能使用copy,才会把block放在堆里面</p>
-<h6 id="ARC环境下"><a href="#ARC环境下" class="headerlink" title="ARC环境下:"></a>ARC环境下:</h6><p>只要block访问了外部局部变量,block就会存放到堆里面<br>可以使用strong去引用  因为本身就已经是存放在堆区了<br>也可以用copy，但是用stong性能更好</p>
-</blockquote>
-<hr>
-<h4 id="做个小总结-只说ARC环境下的"><a href="#做个小总结-只说ARC环境下的" class="headerlink" title="做个小总结(只说ARC环境下的)"></a>做个小总结(只说ARC环境下的)</h4><p> <strong>用strong修饰OC对象以及NSString和Block , 没添加到父控件上的控件</strong><br> <strong>用weak修饰已经被添加到父控件上的控件 以及 代理对象</strong><br> <strong>用assign基本数据类型、枚举、结构体(非OC对象)   class类型</strong><br> <strong>用copy修饰一种情况下的NSString–&gt;不确定赋值过程中用的是可变还是不可变字符串</strong></p>
 <hr>
 
       
@@ -436,6 +447,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/iOS开发/" rel="tag"># iOS开发</a>
+          
+        </div>
+      
 
       
       
@@ -445,8 +462,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/07/在使用TablView时碰到Nan错误/" rel="next" title="在使用TablView时碰到Nan错误">
-                <i class="fa fa-chevron-left"></i> 在使用TablView时碰到Nan错误
+              <a href="/2016/04/17/代理:通知:KVO 的区别/" rel="next" title="代理/通知/KVO 的区别">
+                <i class="fa fa-chevron-left"></i> 代理/通知/KVO 的区别
               </a>
             
           </div>
@@ -454,10 +471,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/12/iOS中常用的数学函数/" rel="prev" title="iOS中常用的数学函数">
-                iOS中常用的数学函数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -596,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#首先从简单到复杂大致分个类"><span class="nav-number">1.</span> <span class="nav-text">首先从简单到复杂大致分个类</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-自定义getter-setter方法名修饰符-getter和setter"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">1. 自定义getter | setter方法名修饰符 : getter和setter</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-原子性修饰符-atomic-nonatomic"><span class="nav-number">1.0.0.0.2.</span> <span class="nav-text">2. 原子性修饰符:atomic | nonatomic</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-读写性修饰符：readwrite-readonly"><span class="nav-number">1.0.0.0.3.</span> <span class="nav-text">3. 读写性修饰符：readwrite | readonly</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-setter相关修饰符：assign-retain-copy"><span class="nav-number">1.0.0.0.4.</span> <span class="nav-text">4. setter相关修饰符：assign | retain | copy</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法名修饰符"><span class="nav-number">1.0.1.</span> <span class="nav-text">方法名修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原子修饰符"><span class="nav-number">1.0.2.</span> <span class="nav-text">原子修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#读写性修饰符"><span class="nav-number">1.0.3.</span> <span class="nav-text">读写性修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意"><span class="nav-number">1.0.4.</span> <span class="nav-text">注意!</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#setter相关修饰符"><span class="nav-number">2.</span> <span class="nav-text">setter相关修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用copy修饰字符串时—-gt"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">用copy修饰字符串时—-&gt;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用copy修饰Block时—-gt-首先要知道Block在非ARC和ARC下的区别"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">用copy修饰Block时—-&gt;首先要知道Block在非ARC和ARC下的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#非ARC环境下"><span class="nav-number">2.0.0.2.1.</span> <span class="nav-text">非ARC环境下:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ARC环境下"><span class="nav-number">2.0.0.2.2.</span> <span class="nav-text">ARC环境下:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#做个小总结-只说ARC环境下的"><span class="nav-number">2.0.1.</span> <span class="nav-text">做个小总结(只说ARC环境下的)</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#沙盒大家都知道，但是平时要存储数据时总不知道存到哪里去才是正确的选择，这次就来聊聊每一个文件夹的作用和使用时该怎么选择"><span class="nav-number">1.</span> <span class="nav-text">沙盒大家都知道，但是平时要存储数据时总不知道存到哪里去才是正确的选择，这次就来聊聊每一个文件夹的作用和使用时该怎么选择</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#先来了解每一个文件夹的基本作用"><span class="nav-number">2.</span> <span class="nav-text">先来了解每一个文件夹的基本作用</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#（看完还是不知道到底存哪里比较好啊喂-╯’-‘-╯︵-┻━┻-）"><span class="nav-number">3.</span> <span class="nav-text">（看完还是不知道到底存哪里比较好啊喂(╯’ - ‘)╯︵ ┻━┻ ）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#–-Documents"><span class="nav-number">4.</span> <span class="nav-text">– Documents</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#–-Caches"><span class="nav-number">5.</span> <span class="nav-text">– Caches</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#–-Preference"><span class="nav-number">6.</span> <span class="nav-text">– Preference</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#–-Tmp"><span class="nav-number">7.</span> <span class="nav-text">– Tmp</span></a></li></ol></div>
             
 
           </div>
