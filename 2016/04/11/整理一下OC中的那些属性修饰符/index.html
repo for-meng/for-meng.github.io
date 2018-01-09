@@ -89,16 +89,16 @@
 <meta property="og:site_name" content="尛孟的博客">
 <meta property="og:description" content="首先从简单到复杂大致分个类1. 自定义getter | setter方法名修饰符 : getter和setter2. 原子性修饰符:atomic | nonatomic3. 读写性修饰符：readwrite | readonly4. setter相关修饰符：assign | retain | copy  方法名修饰符• getter=,setter=:指定该属性所使用的getter和setter">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://i4.bvimg.com/627154/fbe80d014339d3c2.png">
-<meta property="og:image" content="http://i4.bvimg.com/627154/d4316b39b24da52f.png">
-<meta property="og:image" content="http://i4.bvimg.com/627154/332667ffa370f62f.png">
-<meta property="og:image" content="http://i4.bvimg.com/627154/2ccb3fa0a7c7429c.png">
-<meta property="og:image" content="http://i4.bvimg.com/627154/ee846e4d119b9dd0.png">
-<meta property="og:updated_time" content="2018-01-09T03:54:24.000Z">
+<meta property="og:image" content="http://www.z4a.net/images/2018/01/09/property_1.png">
+<meta property="og:image" content="http://www.z4a.net/images/2018/01/09/property_2.png">
+<meta property="og:image" content="http://www.z4a.net/images/2018/01/09/property_3.png">
+<meta property="og:image" content="http://www.z4a.net/images/2018/01/09/property_4.png">
+<meta property="og:image" content="http://www.z4a.net/images/2018/01/09/property_5.png">
+<meta property="og:updated_time" content="2018-01-09T12:52:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="整理一下OC中的那些属性修饰符">
 <meta name="twitter:description" content="首先从简单到复杂大致分个类1. 自定义getter | setter方法名修饰符 : getter和setter2. 原子性修饰符:atomic | nonatomic3. 读写性修饰符：readwrite | readonly4. setter相关修饰符：assign | retain | copy  方法名修饰符• getter=,setter=:指定该属性所使用的getter和setter">
-<meta name="twitter:image" content="http://i4.bvimg.com/627154/fbe80d014339d3c2.png">
+<meta name="twitter:image" content="http://www.z4a.net/images/2018/01/09/property_1.png">
 
 
 
@@ -433,22 +433,21 @@
 <blockquote>
 <h4 id="方法名修饰符"><a href="#方法名修饰符" class="headerlink" title="方法名修饰符"></a>方法名修饰符</h4><p>• getter=<getmethodname>,setter=<setmethodname>:指定该属性所使用的getter和setter方法的名称</setmethodname></getmethodname></p>
 <hr>
-<p>这两个属性修饰符用于设置自定义生成的getter和setter方法名，使用之后将不再使用系统默认的setter和getter方法名<br>• 用得不是很多，使用场景一般是对BOOL属性设置该getter方法，比如   isGood 这样用以方便判断时使用<br><img src="http://i4.bvimg.com/627154/fbe80d014339d3c2.png" alt="property_1.png"></p>
+<p>这两个属性修饰符用于设置自定义生成的getter和setter方法名，使用之后将不再使用系统默认的setter和getter方法名<br>• 用得不是很多，使用场景一般是对BOOL属性设置该getter方法，比如   isGood 这样用以方便判断时使用<br><img src="http://www.z4a.net/images/2018/01/09/property_1.png" alt="property_1.png"></p>
 </blockquote>
 <hr>
 <blockquote>
-<h4 id="原子修饰符"><a href="#原子修饰符" class="headerlink" title="原子修饰符"></a>原子修饰符</h4><p>• atomic  :  原子属性,为setter方法加锁  (默认) (类似多线程中的互斥锁)<br>    § 线程安全,但需要消耗大量资源<br>• nonatomic  :  非原子属性,不为setter方法加锁<br>    § 非线程安全,适合内存小的移动设备</p>
-</blockquote>
-<hr>
-<blockquote>
+<h4 id="原子修饰符"><a href="#原子修饰符" class="headerlink" title="原子修饰符"></a>原子修饰符</h4><p>• atomic  :  原子属性,为setter方法加锁  (默认) (类似多线程中的互斥锁)<br>    § 线程安全,但需要消耗大量资源<br>• nonatomic  :  非原子属性,不为setter方法加锁</p>
+<pre><code>§ 非线程安全,适合内存小的移动设备
+</code></pre><hr>
 <h4 id="读写性修饰符"><a href="#读写性修饰符" class="headerlink" title="读写性修饰符"></a>读写性修饰符</h4><p>• readwrite:表明这个属性是可读可写的，系统为我们生成这个属性的setter和getter方法以及下划线开头的成员变量。<br>• readonly:表明这个属性只能读不能写，系统只为我们生成一个getter方法下划线开头的成员变量，不会创建setter方法</p>
 </blockquote>
 <hr>
 <h4 id="注意"><a href="#注意" class="headerlink" title="注意!"></a>注意!</h4><p> <strong>用readwrite自动生成setter和getter方法以及下划线开头的成员变量的时候，如果手动实现了setter和getter方法，那么系统将不会生成下划线开头成员变量</strong></p>
-<p><img src="http://i4.bvimg.com/627154/d4316b39b24da52f.png" alt="property_2.png"><br><img src="http://i4.bvimg.com/627154/332667ffa370f62f.png" alt="property_3.png"></p>
+<p><img src="http://www.z4a.net/images/2018/01/09/property_2.png" alt="property_2.png"><br><img src="http://www.z4a.net/images/2018/01/09/property_3.png" alt="property_3.png"></p>
 <hr>
 <p><strong>同理，readonly自动生成getter 方法和_开头成员变量时，如果手动实现了getter方法，那么系统也不会再生成下划线开头的成员变量</strong></p>
-<p><img src="http://i4.bvimg.com/627154/2ccb3fa0a7c7429c.png" alt="property_4.png"><br><img src="http://i4.bvimg.com/627154/ee846e4d119b9dd0.png" alt="property_5.png"></p>
+<p><img src="http://www.z4a.net/images/2018/01/09/property_4.png" alt="property_4.png"><br><img src="http://www.z4a.net/images/2018/01/09/property_5.png" alt="property_5.png"></p>
 <hr>
 <blockquote>
 <h2 id="setter相关修饰符"><a href="#setter相关修饰符" class="headerlink" title="setter相关修饰符"></a>setter相关修饰符</h2><p>• retain:针对对象类型进行内存管理(非ARC)。当给对象类型使用此修饰符时，setter方法会先将旧的对象属性release掉，再对新的对象进行一次赋值并进行一次retain操作<br>• assign:表示直接赋值， 基本数据类型、枚举、结构体(非OC对象) class类型<br>当一个对象被销毁时，指针不会被清空(所以修饰对象时容易造成坏内存 (非ARC下会用这个修饰对象)</p>
