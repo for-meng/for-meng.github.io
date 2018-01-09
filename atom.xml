@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-01-09T03:38:39.000Z</updated>
+  <updated>2018-01-08T05:47:46.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,35 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>沙盒文件夹的作用和选择</title>
-    <link href="http://yoursite.com/2016/04/18/%E6%B2%99%E7%9B%92%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E4%BD%9C%E7%94%A8%E5%92%8C%E9%80%89%E6%8B%A9/"/>
-    <id>http://yoursite.com/2016/04/18/沙盒文件夹的作用和选择/</id>
-    <published>2016-04-18T10:56:00.000Z</published>
-    <updated>2018-01-09T03:38:39.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr><blockquote><h6 id="沙盒大家都知道，但是平时要存储数据时总不知道存到哪里去才是正确的选择，这次就来聊聊每一个文件夹的作用和使用时该怎么选择"><a href="#沙盒大家都知道，但是平时要存储数据时总不知道存到哪里去才是正确的选择，这次就来聊聊每一个文件夹的作用和使用时该怎么选择" class="headerlink" title="沙盒大家都知道，但是平时要存储数据时总不知道存到哪里去才是正确的选择，这次就来聊聊每一个文件夹的作用和使用时该怎么选择"></a>沙盒大家都知道，但是平时要存储数据时总不知道存到哪里去才是正确的选择，这次就来聊聊每一个文件夹的作用和使用时该怎么选择</h6></blockquote><hr><h6 id="先来了解每一个文件夹的基本作用"><a href="#先来了解每一个文件夹的基本作用" class="headerlink" title="先来了解每一个文件夹的基本作用"></a>先来了解每一个文件夹的基本作用</h6><blockquote><p>   • Documents：保存应用运行时生成的需要持久化的数据，iTunes同步设备时会备份该目录。<br>• tmp：保存应用运行时所需的临时数据，使用完毕后再将相应的文件从该目录删除。应用没有运行时，系统也可能会清除该目录下的文件。iTunes同步设备时不会备份该目录<br>• Library/Caches：保存应用运行时生成的需要持久化的数据，iTunes同步设备时不会备份该目录。一般存储体积大、不需要备份的非重要数据<br>• Library/Preference：保存应用的所有偏好设置，iOS的Settings(设置)应用会在该目录中查找应用的设置信息。iTunes同步设备时会备份该目录</p><h6 id="（看完还是不知道到底存哪里比较好啊喂-╯’-‘-╯︵-┻━┻-）"><a href="#（看完还是不知道到底存哪里比较好啊喂-╯’-‘-╯︵-┻━┻-）" class="headerlink" title="（看完还是不知道到底存哪里比较好啊喂(╯’ - ‘)╯︵ ┻━┻ ）"></a>（看完还是不知道到底存哪里比较好啊喂(╯’ - ‘)╯︵ ┻━┻ ）</h6></blockquote><hr><blockquote><h6 id="–-Documents"><a href="#–-Documents" class="headerlink" title="– Documents"></a>– Documents</h6><p>– 需要保存由”应用程序本身”产生的文件或者数据，例如：游戏进度、涂鸦软件的绘图信息<br>– 目录中的文件会被自动保存在 iClioud<br>– 注意 ： 不要保存从网络上下载的文件，否则会无法上架</p><hr><h6 id="–-Caches"><a href="#–-Caches" class="headerlink" title="– Caches"></a>– Caches</h6><p>– 保存临时文件，”后续需要使用”，例如：缓存图片、离线数据(地图数据等)<br>– 系统不会清零 cache 目录中的文件  –&gt; 因此要求程序开发时，”必须提供 cache 目录的清理解决方案”</p><hr><h6 id="–-Preference"><a href="#–-Preference" class="headerlink" title="– Preference"></a>– Preference</h6><p>– 用户偏好设置，使用 NSUserDefault 直接读写</p><hr><h6 id="–-Tmp"><a href="#–-Tmp" class="headerlink" title="– Tmp"></a>– Tmp</h6><p>– 保存临时文件，”后续不需要使用”<br>– tmp  目录中的文件，系统会自动清零<br>– 重新启动手机时，tmp  目录会被情况<br>– 系统磁盘空间不足时，系统也会自动清理</p></blockquote><hr>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;hr&gt;
-&lt;blockquote&gt;
-&lt;h6 id=&quot;沙盒大家都知道，但是平时要存储数据时总不知道存到哪里去才是正确的选择，这次就来聊聊每一个文件夹的作用和使用时该怎么选择&quot;&gt;&lt;a href=&quot;#沙盒大家都知道，但是平时要存储数据时总不知道存到哪里去才是正确的选择，这次就来聊聊每一
-      
-    
-    </summary>
-    
-      <category term="iOS开发" scheme="http://yoursite.com/categories/iOS%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
-    
-      <category term="文件(夹)操作" scheme="http://yoursite.com/tags/%E6%96%87%E4%BB%B6-%E5%A4%B9-%E6%93%8D%E4%BD%9C/"/>
-    
-  </entry>
   
   <entry>
     <title>代理/通知/KVO 的区别</title>
