@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-01-09T12:45:23.000Z</updated>
+  <updated>2018-01-10T05:23:24.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>调起QQ临时会话</title>
+    <link href="http://yoursite.com/2018/01/10/%E8%B0%83%E8%B5%B7QQ%E4%B8%B4%E6%97%B6%E4%BC%9A%E8%AF%9D/"/>
+    <id>http://yoursite.com/2018/01/10/调起QQ临时会话/</id>
+    <published>2018-01-10T03:27:52.000Z</published>
+    <updated>2018-01-10T05:23:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h3 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h3><p>前段时间项目中有个需求,在App内调起QQ客户端和客服发起临时会话.</p><ol><li>QQ开发者平台,并没有找到App调用QQ客户端发起临时会话方法,(只提供了网页端接入方法)</li><li>网上搜到的一些方法,大部分都粗秒淡写,要么可以调用QQ客户端,不能成功发送消息,要么是其他问题.</li></ol><p>并且大部分只是说明了调起普通版QQ的方法,当用户没有安装普通QQ而且安装了国际版QQi或者TIM的时候那些方法都是无效的</p><ol><li>网上还有说接收临时消息的QQ号要开通QQ推广功能,没有开通的是接收不了陌生人消息的…但是我自己用个人QQ都可以….</li></ol><hr><blockquote><p><strong>注意  </strong>调起临时会话的话记得考虑用户没安装QQ而是安装了国际版QQi或者TIM，因为他们的Scheme是不一样的….此外，从外部APP打开TIM会导致TIM卡死（我不知道这是神马bug，然而网上大部分只是打开QQ没考虑后两种情况所以也查不到什么原因，官网自然也是啥都没提到…）</p></blockquote><p>####使用方法</p><ul><li><strong>将各版本Schemes添加到项目plist文件白名单中(iOS9新出要求),方法如下:</strong><ul><li>在项目info.plist添加LSApplicationQueriesSchemes字段 类型Array</li><li>在此Array中添加各个需要的QQ版本的Schemes</li></ul></li></ul><p><img src="http://www.z4a.net/images/2018/01/10/_20180110115213.png" alt="各版本QQSchemes"></p><ul><li><strong>直接上代码:</strong></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">if (![self OpenUrl:[NSString stringWithFormat:@&quot;mqq://im/chat?chat_type=wpa&amp;uin=%@&amp;version=1&amp;src_type=web&quot;,ServiceQQNumber]]) &#123;//QQ</span><br><span class="line">if(![self OpenUrl:[NSString stringWithFormat:@&quot;mqqiapi://im/chat?chat_type=wpa&amp;uin=%@&amp;version=1&amp;src_type=web&quot;,ServiceQQNumber]])&#123;//国际版QQi</span><br><span class="line">//if(![self OpenUrl:@&quot;TIM://&quot;])&#123;//TIM    //测试打开后会卡死</span><br><span class="line">             [xxHUD showError:@&quot;无法打开,清先安装QQ&quot;];</span><br><span class="line">                // &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">- (BOOL)OpenUrl:(NSString *)url&#123;</span><br><span class="line">if([[UIApplication sharedApplication] canOpenURL:[NSURL  URLWithString:url]])&#123;</span><br><span class="line">[[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];</span><br><span class="line">        return YES;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return NO;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言:&quot;&gt;&lt;/a&gt;前言:&lt;/h3&gt;&lt;p&gt;前段时间项目中有个需求,在App内调起QQ客户端和客服发起临时会话.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;QQ开发者平台,并没有找到Ap
+      
+    
+    </summary>
+    
+      <category term="iOS开发" scheme="http://yoursite.com/categories/iOSDevelopment/"/>
+    
+      <category term="项目/日常问题" scheme="http://yoursite.com/categories/iOSDevelopment/Project-daily/"/>
+    
+    
+      <category term="iOS开发" scheme="http://yoursite.com/tags/iOS%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>html中的文本级/容器级标签与css中的块级/行内元素</title>
     <link href="http://yoursite.com/2018/01/09/html%E4%B8%AD%E7%9A%84%E6%96%87%E6%9C%AC%E7%BA%A7:%E5%AE%B9%E5%99%A8%E7%BA%A7%E6%A0%87%E7%AD%BE%E4%B8%8Ecss%E4%B8%AD%E7%9A%84%E5%9D%97%E7%BA%A7:%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0/"/>
     <id>http://yoursite.com/2018/01/09/html中的文本级:容器级标签与css中的块级:行内元素/</id>
     <published>2018-01-09T07:59:34.000Z</published>
-    <updated>2018-01-09T12:45:23.000Z</updated>
+    <updated>2018-01-10T03:14:01.000Z</updated>
     
-    <content type="html"><![CDATA[<hr><h3 id="html中的文本级-容器级标签与css中的块级-行内元素"><a href="#html中的文本级-容器级标签与css中的块级-行内元素" class="headerlink" title="html中的文本级/容器级标签与css中的块级/行内元素"></a>html中的文本级/容器级标签与css中的块级/行内元素</h3><hr><ol><li><strong>块级元素</strong></li></ol><blockquote><ul><li>霸占一行，不能与其他任何元素并列</li><li>能  接受宽、高</li><li>如果不设置宽度，那么宽度将默认变为<em>父亲</em>的100%。</li></ul></blockquote><ol><li><strong>行内元素</strong></li></ol><blockquote><ul><li>与  其他行内元素并排</li><li>不能  设置宽、高。默认的宽度，就是文字的宽度。</li></ul></blockquote><hr><p>在HTML中，已经将标签分过类：<strong>文本级、容器级。</strong></p><blockquote><ul><li><p>文本级：p、span、a、b、i、u、em</p></li><li><p>容器级：div、h系列、li、dt、ddCSS的分类和上面的很像，就p不一样：</p><p><strong><em>所有的文本级标签，都是行内元素，除了p，p是个文本级，但是是个块级元素。</em></strong></p><p><strong><em>所有的容器级标签都是块级元素。</em></strong></p></li></ul></blockquote><p><img src="http://www.z4a.net/images/2018/01/09/html.png" alt="html标签区分"></p><p><img src="http://www.z4a.net/images/2018/01/09/css.png" alt="css区分元素"></p><ol><li><strong>块级元素和行内元素的相互转换</strong></li></ol><blockquote><ul><li>块级元素可以设置为行内元素</li><li>行内元素可以设置为块级元素</li></ul></blockquote><hr><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">display: inline;</span><br><span class="line">background-color: pink;</span><br><span class="line">width: 500px;</span><br><span class="line">height: 500px;&#125;</span><br></pre></td></tr></table></figure><p><strong>display</strong>是“显示模式”的意思，用来改变元素的行内、块级性质</p><p><strong><em>inline</em></strong>就是“行内”。</p><p>一旦，给一个标签设置  <code>display: inline</code>;</p><p>那么，这个标签将立即变为行内元素。此时它和一个span无异：</p><blockquote><blockquote><ul><li>此时这个div不能设置宽度、高度；</li></ul><ul><li>此时这个div可以和别人并排了同样的道理，</li></ul></blockquote></blockquote><hr><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">span&#123;</span><br><span class="line">display: block;</span><br><span class="line">width: 200px;</span><br><span class="line">height: 200px;</span><br><span class="line">background-color: pink;&#125;</span><br></pre></td></tr></table></figure><p><strong>“block”</strong>是“块”的意思让标签变为块级元素。此时这个标签，和一个div无异：</p><blockquote><blockquote><ul><li>此时这个span能够设置宽度、高度</li><li>此时这个span必须霸占一行了，别人无法和他并排</li><li>如果不设置宽度，将撑满父亲</li></ul></blockquote></blockquote><hr><p>标准流里面限制非常多，标签的性质恶心。比如，如果需要盒子并排、并且需要设置宽高。所以，移民！脱离标准流！</p><p>css中一共有三种手段，使一个元素脱离标准文档流：</p><blockquote><ol><li><strong>浮动</strong></li><li><strong>绝对定位</strong></li><li><strong>固定定位</strong></li></ol></blockquote>]]></content>
+    <content type="html"><![CDATA[<hr><h3 id="html中的文本级-容器级标签与css中的块级-行内元素"><a href="#html中的文本级-容器级标签与css中的块级-行内元素" class="headerlink" title="html中的文本级/容器级标签与css中的块级/行内元素"></a>html中的文本级/容器级标签与css中的块级/行内元素</h3><hr><ol><li><strong>块级元素</strong></li></ol><blockquote><ul><li>霸占一行，不能与其他任何元素并列</li><li>能 接受宽、高</li><li>如果不设置宽度，那么宽度将默认变为<em>父亲</em>的100%。</li></ul></blockquote><ol><li><strong>行内元素</strong></li></ol><blockquote><ul><li>与  其他行内元素并排</li><li>不能  设置宽、高。默认的宽度，就是文字的宽度。</li></ul></blockquote><hr><p>在HTML中，已经将标签分过类：<strong>文本级、容器级。</strong></p><blockquote><ul><li><p>文本级：p、span、a、b、i、u、em</p></li><li><p>容器级：div、h系列、li、dt、ddCSS的分类和上面的很像，就p不一样：</p><p><strong><em>所有的文本级标签，都是行内元素，除了p，p是个文本级，但是是个块级元素。</em></strong></p><p><strong><em>所有的容器级标签都是块级元素。</em></strong></p></li></ul></blockquote><p><img src="http://www.z4a.net/images/2018/01/09/html.png" alt="html标签区分"></p><p><img src="http://www.z4a.net/images/2018/01/09/css.png" alt="css区分元素"></p><ol><li><strong>块级元素和行内元素的相互转换</strong></li></ol><blockquote><ul><li>块级元素可以设置为行内元素</li><li>行内元素可以设置为块级元素</li></ul></blockquote><hr><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">display: inline;</span><br><span class="line">background-color: pink;</span><br><span class="line">width: 500px;</span><br><span class="line">height: 500px;&#125;</span><br></pre></td></tr></table></figure><p><strong>display</strong>是“显示模式”的意思，用来改变元素的行内、块级性质</p><p><strong><em>inline</em></strong>就是“行内”。</p><p>一旦，给一个标签设置  <code>display: inline</code>;</p><p>那么，这个标签将立即变为行内元素。此时它和一个span无异：</p><blockquote><blockquote><ul><li>此时这个div不能设置宽度、高度；</li></ul><ul><li>此时这个div可以和别人并排了同样的道理，</li></ul></blockquote></blockquote><hr><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">span&#123;</span><br><span class="line">display: block;</span><br><span class="line">width: 200px;</span><br><span class="line">height: 200px;</span><br><span class="line">background-color: pink;&#125;</span><br></pre></td></tr></table></figure><p><strong>“block”</strong>是“块”的意思让标签变为块级元素。此时这个标签，和一个div无异：</p><blockquote><blockquote><ul><li>此时这个span能够设置宽度、高度</li><li>此时这个span必须霸占一行了，别人无法和他并排</li><li>如果不设置宽度，将撑满父亲</li></ul></blockquote></blockquote><hr><p>标准流里面限制非常多，标签的性质恶心。比如，如果需要盒子并排、并且需要设置宽高。所以，移民！脱离标准流！</p><p>css中一共有三种手段，使一个元素脱离标准文档流：</p><blockquote><ol><li><strong>浮动</strong></li><li><strong>绝对定位</strong></li><li><strong>固定定位</strong></li></ol></blockquote>]]></content>
     
     <summary type="html">
     

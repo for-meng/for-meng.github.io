@@ -81,18 +81,20 @@
 
 
 
-<meta name="description" content="在不考虑一切继承、分类的最简单最普通的情况下：  调用时刻: load:程序启动时,类被加载进内存就调用initialize:当第一次使用这个类或者其子类就会调用   调用次数 load:因为加载进内存只会加载一次，所以也只会调用一次initialize:不确定,具体根据子类和具体调用情况比如有个类,它有一个子类,第一次使用子类时,父类的initialize会被调用2次     上面说的只是普通">
+<meta name="description" content="前言:前段时间项目中有个需求,在App内调起QQ客户端和客服发起临时会话.  QQ开发者平台,并没有找到App调用QQ客户端发起临时会话方法,(只提供了网页端接入方法) 网上搜到的一些方法,大部分都粗秒淡写,要么可以调用QQ客户端,不能成功发送消息,要么是其他问题.  并且大部分只是说明了调起普通版QQ的方法,当用户没有安装普通QQ而且安装了国际版QQi或者TIM的时候那些方法都是无效的  网上">
 <meta name="keywords" content="iOS开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="+load和+initialize的区别">
-<meta property="og:url" content="http://yoursite.com/2016/03/26/+load和+initialize的区别/index.html">
+<meta property="og:title" content="调起QQ临时会话">
+<meta property="og:url" content="http://yoursite.com/2018/01/10/调起QQ临时会话/index.html">
 <meta property="og:site_name" content="尛孟的博客">
-<meta property="og:description" content="在不考虑一切继承、分类的最简单最普通的情况下：  调用时刻: load:程序启动时,类被加载进内存就调用initialize:当第一次使用这个类或者其子类就会调用   调用次数 load:因为加载进内存只会加载一次，所以也只会调用一次initialize:不确定,具体根据子类和具体调用情况比如有个类,它有一个子类,第一次使用子类时,父类的initialize会被调用2次     上面说的只是普通">
+<meta property="og:description" content="前言:前段时间项目中有个需求,在App内调起QQ客户端和客服发起临时会话.  QQ开发者平台,并没有找到App调用QQ客户端发起临时会话方法,(只提供了网页端接入方法) 网上搜到的一些方法,大部分都粗秒淡写,要么可以调用QQ客户端,不能成功发送消息,要么是其他问题.  并且大部分只是说明了调起普通版QQ的方法,当用户没有安装普通QQ而且安装了国际版QQi或者TIM的时候那些方法都是无效的  网上">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-09T03:53:11.000Z">
+<meta property="og:image" content="http://www.z4a.net/images/2018/01/10/_20180110115213.png">
+<meta property="og:updated_time" content="2018-01-10T05:23:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="+load和+initialize的区别">
-<meta name="twitter:description" content="在不考虑一切继承、分类的最简单最普通的情况下：  调用时刻: load:程序启动时,类被加载进内存就调用initialize:当第一次使用这个类或者其子类就会调用   调用次数 load:因为加载进内存只会加载一次，所以也只会调用一次initialize:不确定,具体根据子类和具体调用情况比如有个类,它有一个子类,第一次使用子类时,父类的initialize会被调用2次     上面说的只是普通">
+<meta name="twitter:title" content="调起QQ临时会话">
+<meta name="twitter:description" content="前言:前段时间项目中有个需求,在App内调起QQ客户端和客服发起临时会话.  QQ开发者平台,并没有找到App调用QQ客户端发起临时会话方法,(只提供了网页端接入方法) 网上搜到的一些方法,大部分都粗秒淡写,要么可以调用QQ客户端,不能成功发送消息,要么是其他问题.  并且大部分只是说明了调起普通版QQ的方法,当用户没有安装普通QQ而且安装了国际版QQi或者TIM的时候那些方法都是无效的  网上">
+<meta name="twitter:image" content="http://www.z4a.net/images/2018/01/10/_20180110115213.png">
 
 
 
@@ -122,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/03/26/+load和+initialize的区别/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/10/调起QQ临时会话/"/>
 
 
 
@@ -131,7 +133,7 @@
 <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
 
-  <title>+load和+initialize的区别 | 尛孟的博客</title>
+  <title>调起QQ临时会话 | 尛孟的博客</title>
   
 
 
@@ -306,7 +308,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/26/+load和+initialize的区别/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/10/调起QQ临时会话/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="尛孟">
@@ -323,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">+load和+initialize的区别</h1>
+          <h1 class="post-title" itemprop="name headline">调起QQ临时会话</h1>
         
 
         <div class="post-meta">
@@ -335,8 +337,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-26T11:24:00+08:00">
-                2016-03-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-10T11:27:52+08:00">
+                2018-01-10
               </time>
             
 
@@ -369,8 +371,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOSDevelopment/Analysis/" itemprop="url" rel="index">
-                    <span itemprop="name">原理分析</span>
+                  <a href="/categories/iOSDevelopment/Project-daily/" itemprop="url" rel="index">
+                    <span itemprop="name">项目/日常问题</span>
                   </a>
                 </span>
 
@@ -386,7 +388,7 @@
 
           
           
-             <span id="/2016/03/26/+load和+initialize的区别/" class="leancloud_visitors" data-flag-title="+load和+initialize的区别">
+             <span id="/2018/01/10/调起QQ临时会话/" class="leancloud_visitors" data-flag-title="调起QQ临时会话">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -423,27 +425,32 @@
 
       
         <hr>
-<p><strong>在不考虑一切继承、分类的最简单最普通的情况下：</strong></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h3><p>前段时间项目中有个需求,在App内调起QQ客户端和客服发起临时会话.</p>
+<ol>
+<li>QQ开发者平台,并没有找到App调用QQ客户端发起临时会话方法,(只提供了网页端接入方法)</li>
+<li>网上搜到的一些方法,大部分都粗秒淡写,要么可以调用QQ客户端,不能成功发送消息,要么是其他问题.</li>
+</ol>
+<p>并且大部分只是说明了调起普通版QQ的方法,当用户没有安装普通QQ而且安装了国际版QQi或者TIM的时候那些方法都是无效的</p>
+<ol>
+<li>网上还有说接收临时消息的QQ号要开通QQ推广功能,没有开通的是接收不了陌生人消息的…但是我自己用个人QQ都可以….</li>
+</ol>
+<hr>
+<blockquote>
+<p><strong>注意  </strong>调起临时会话的话记得考虑用户没安装QQ而是安装了国际版QQi或者TIM，因为他们的Scheme是不一样的….此外，从外部APP打开TIM会导致TIM卡死（我不知道这是神马bug，然而网上大部分只是打开QQ没考虑后两种情况所以也查不到什么原因，官网自然也是啥都没提到…）</p>
+</blockquote>
+<p>####使用方法</p>
 <ul>
-<li>调用时刻:<blockquote>
-<p>load:程序启动时,类被加载进内存就调用<br>initialize:当第一次使用这个类或者其子类就会调用</p>
-</blockquote>
-</li>
-<li>调用次数<blockquote>
-<p>load:因为加载进内存只会加载一次，所以也只会调用一次<br>initialize:不确定,具体根据子类和具体调用情况<br><code>比如有个类,它有一个子类,第一次使用子类时,父类的initialize会被调用2次</code></p>
-</blockquote>
+<li><strong>将各版本Schemes添加到项目plist文件白名单中(iOS9新出要求),方法如下:</strong><ul>
+<li>在项目info.plist添加LSApplicationQueriesSchemes字段 类型Array</li>
+<li>在此Array中添加各个需要的QQ版本的Schemes</li>
+</ul>
 </li>
 </ul>
-<hr>
-<p><strong>上面说的只是普通情况。但是呢，一个类可能继承于某个super类，还有可能有自己的分类，如果分类中也实现了load方法，它们的调用顺序是怎么样的呢？</strong></p>
-<blockquote>
-<p>这里需要知道—&gt;覆盖方法在分类中的体现<br>如果父类本身中的方法在子类中被重写，则会优先执行子类中的方法<br>如果类本身中的方法在分类中被重写，则会优先执行分类中的方法</p>
-</blockquote>
-<p><strong>但是这里必须要知道一个特例-&gt;+load</strong></p>
-<blockquote>
-<p><code>系统首先会调用 super类的load方法，然后再调用该类自身的load方法，再次才会调用该类的分类重写的load方法，也即是说整个继承链包括分类扩展中的load方法都会被执行，只是执行顺序需要关注一下。</code></p>
-</blockquote>
-<h2 id="也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。"><a href="#也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。" class="headerlink" title="也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。"></a><strong>也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。</strong></h2>
+<p><img src="http://www.z4a.net/images/2018/01/10/_20180110115213.png" alt="各版本QQSchemes"></p>
+<ul>
+<li><strong>直接上代码:</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">if (![self OpenUrl:[NSString stringWithFormat:@&quot;mqq://im/chat?chat_type=wpa&amp;uin=%@&amp;version=1&amp;src_type=web&quot;,ServiceQQNumber]]) &#123;//QQ</span><br><span class="line">	if(![self OpenUrl:[NSString stringWithFormat:@&quot;mqqiapi://im/chat?chat_type=wpa&amp;uin=%@&amp;version=1&amp;src_type=web&quot;,ServiceQQNumber]])&#123;//国际版QQi</span><br><span class="line">		//if(![self OpenUrl:@&quot;TIM://&quot;])&#123;//TIM    //测试打开后会卡死</span><br><span class="line">             [xxHUD showError:@&quot;无法打开,清先安装QQ&quot;];</span><br><span class="line">                // &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">- (BOOL)OpenUrl:(NSString *)url&#123;</span><br><span class="line">	if([[UIApplication sharedApplication] canOpenURL:[NSURL  URLWithString:url]])&#123;</span><br><span class="line">		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];</span><br><span class="line">        return YES;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return NO;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -473,15 +480,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/01/09/html中的文本级:容器级标签与css中的块级:行内元素/" rel="next" title="html中的文本级/容器级标签与css中的块级/行内元素">
+                <i class="fa fa-chevron-left"></i> html中的文本级/容器级标签与css中的块级/行内元素
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/26/UITabBarController/" rel="prev" title="UITabBarController">
-                UITabBarController <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -620,7 +627,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。"><span class="nav-number">1.</span> <span class="nav-text">也就是说，假如你重写了某个类的load方法，同时又在该类的分类中也重写了load方法，你就会发现这个类的load被调用了两次。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言:</span></a></li></ol></div>
             
 
           </div>
