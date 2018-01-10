@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://www.z4a.net/images/2018/01/10/1967257-b2fb6cf009b3f669.png">
 <meta property="og:image" content="http://www.z4a.net/images/2018/01/10/_20180110184401.png">
 <meta property="og:image" content="http://www.z4a.net/images/2018/01/10/1967257-61458d7fbae5b96d.png">
-<meta property="og:updated_time" content="2018-01-10T12:47:10.000Z">
+<meta property="og:updated_time" content="2018-01-10T12:52:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识小程序">
 <meta name="twitter:description" content="微信小程序中就四种类型的文件  js ———- JavaScrip文件,负责页面逻辑  json ——– 项目配置文件，负责窗口颜色等等  wxml ——- 类似HTML文件,负责页面结构  wxss ——- 类似CSS文件,负责页面样式表  小程序的IDE每次编译都会自动整合这四种类型的文件,所以要求都是同名且同路径 每创建一个程序时,在根目录下就会生成app.json , app.js ,">
@@ -437,19 +437,30 @@
 </blockquote>
 <p><code>小程序的IDE每次编译都会自动整合这四种类型的文件,所以要求都是同名且同路径</code></p>
 <p>每创建一个程序时,在根目录下就会生成app.json , app.js , app.wxss  ,  app.wxml,相当于程序入口main</p>
+<blockquote>
 <p><em>app.json</em></p>
+<blockquote>
 <p>app.json文件用来对微信小程序进行全局配置，决定页面文件的路径、窗口表现、设置网络超时时间、设置多 tab 等。</p>
-<p>必须要有这个文件，如果没有这个文件，IDE会报错，因为微信框架把这个作为配置文件入口，<br>最简单只需创建这个文件，里面写个大括号就行</p>
+<p>必须要有这个文件，如果没有这个文件，IDE会报错，因为微信框架把这个作为配置文件入口，最简单只需创建这个文件，里面写个大括号就行</p>
+</blockquote>
 <p><em>app.js</em></p>
-<p>必须要有这个文件，没有也是会报错的！但是这个文件创建一下就行可以什么都不需要写<br>以后我们可以在这个文件中监听并处理小程序的生命周期函数、声明全局变量。</p>
+<blockquote>
+<p>必须要有这个文件，没有也是会报错的！但是这个文件创建一下就行可以什么都不需要写</p>
+<p>以后我们可以在这个文件中监听并处理小程序的生命周期函数、声明全局变量。</p>
+</blockquote>
 <p>app.wxss</p>
+<blockquote>
 <p>这个文件不是必须的。因为它只是个全局CSS样式文件</p>
 <p>页面的WXSS都可以覆盖它的样式</p>
+</blockquote>
 <p>app.wxml</p>
+<blockquote>
 <p>这个也不是必须的，而且这个并不是指主界面哦~因为小程序的主页面是靠在JSON文件中配置来决定的</p>
+</blockquote>
+</blockquote>
 <hr>
 <hr>
-<h2 id="app"><a href="#app" class="headerlink" title="app"></a>app</h2><hr>
+<h2 id="根目录下的-js-WXML-js"><a href="#根目录下的-js-WXML-js" class="headerlink" title="根目录下的 .js  .WXML  .js"></a>根目录下的 .js  .WXML  .js</h2><hr>
 <h4 id="app-js"><a href="#app-js" class="headerlink" title="app.js"></a>app.js</h4><h5 id="创建App实例"><a href="#创建App实例" class="headerlink" title="创建App实例"></a>创建App实例</h5><p><code>App() 函数用来注册一个小程序。接受一个 object 参数，其指定小程序的生命周期函数等。</code></p>
 <p><img src="http://www.z4a.net/images/2018/01/10/1967257-597080e04f2b3e3d.png" alt="App()参数说明"></p>
 <hr>
@@ -460,7 +471,7 @@
 </blockquote>
 <hr>
 <hr>
-<h2 id="Page"><a href="#Page" class="headerlink" title="Page"></a>Page</h2><hr>
+<h2 id="创建新的Page页面"><a href="#创建新的Page页面" class="headerlink" title="创建新的Page页面"></a>创建新的Page页面</h2><hr>
 <h4 id="js注册页面"><a href="#js注册页面" class="headerlink" title=".js注册页面"></a>.js注册页面</h4><p><code>Page() 函数用来注册一个页面。接受一个 object 参数，其指定页面的初始数据、生命周期函数、事件处理函数等。</code></p>
 <p><img src="http://www.z4a.net/images/2018/01/10/_20180110184401.png" alt="page()参数说明"></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;//页面初始数据</span><br><span class="line">    text: "This is page data."</span><br><span class="line">  &#125;,</span><br><span class="line">  onLoad: function(options) &#123;//页面加载   必须是可转json的数据类型</span><br><span class="line">    // Do some initialize when page load.</span><br><span class="line">  &#125;,</span><br><span class="line">  onReady: function() &#123;//渲染完成</span><br><span class="line">    // Do something when page ready.</span><br><span class="line">  &#125;,</span><br><span class="line">  onShow: function() &#123;//页面显示</span><br><span class="line">    // Do something when page show.</span><br><span class="line">  &#125;,</span><br><span class="line">  onHide: function() &#123;//页面隐藏</span><br><span class="line">    // Do something when page hide.</span><br><span class="line">  &#125;,</span><br><span class="line">  onUnload: function() &#123;//页面卸载/销毁</span><br><span class="line">    // Do something when page close.</span><br><span class="line">  &#125;,</span><br><span class="line">  onPullDownRefresh: function() &#123;//用户下拉动作</span><br><span class="line">    // Do something when pull down.</span><br><span class="line">  &#125;,</span><br><span class="line">  onReachBottom: function() &#123;//上拉触底</span><br><span class="line">    // Do something when page reach bottom.</span><br><span class="line">  &#125;,</span><br><span class="line">  onShareAppMessage: function () &#123;//点击右上角转发</span><br><span class="line">   // return custom share data when user share.</span><br><span class="line">  &#125;,</span><br><span class="line">  onPageScroll: function() &#123;//页面滚动时间</span><br><span class="line">    // Do something when page scroll</span><br><span class="line">  &#125;,</span><br><span class="line">  // Event handler.</span><br><span class="line">  viewTap: function() &#123;//页面其他绑定事件处理函数</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">      text: 'Set some data for updating view.'</span><br><span class="line">    &#125;, function() &#123;</span><br><span class="line">      // this is setData callback</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  customData: &#123;</span><br><span class="line">    hi: 'MINA'</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
@@ -522,7 +533,14 @@
 <li>样式导入(用<code>@import+外联样式表绝对路径</code>  可以导入外联样式表)</li>
 </ul>
 <p><strong>内联样式</strong><br>框架组件上支持使用 style、class 属性来控制组件的样式。</p>
-<p>style：静态的样式统一写到 class 中。style 接收动态的样式，在运行时会进行解析，请尽量避免将静态的样式写进 style 中，以免影响渲染速度。<br><code>&lt;view style=&quot;color:;&quot; /&gt;</code><br>class：用于指定样式规则，其属性值是样式规则中类选择器名(样式类名)的集合，样式类名不需要带上.，样式类名之间用空格分隔。(小程序基本都是通过在.WXSS中定义样式类,在.WXML标签中直接使用,在.js中改变标签类名)<br><code>&lt;view class=&quot;normal_view&quot; /&gt;</code></p>
+<ul>
+<li><p>style：静态的样式统一写到 class 中。style 接收动态的样式，在运行时会进行解析，请尽量避免将静态的样式写进 style 中，以免影响渲染速度。</p>
+<p><code>&lt;view style=&quot;color:;&quot; /&gt;</code></p>
+</li>
+<li><p>class：用于指定样式规则，其属性值是样式规则中类选择器名(样式类名)的集合，样式类名不需要带上.，样式类名之间用空格分隔。(小程序基本都是通过在.WXSS中定义样式类,在.WXML标签中直接使用,在.js中改变标签类名)</p>
+<p><code>&lt;view class=&quot;normal_view&quot; /&gt;</code></p>
+</li>
+</ul>
 
       
     </div>
@@ -700,7 +718,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#微信小程序中就四种类型的文件"><span class="nav-number">1.</span> <span class="nav-text">微信小程序中就四种类型的文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#app"><span class="nav-number"></span> <span class="nav-text">app</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#app-js"><span class="nav-number">0.1.</span> <span class="nav-text">app.js</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建App实例"><span class="nav-number">0.1.1.</span> <span class="nav-text">创建App实例</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#app-json"><span class="nav-number">0.2.</span> <span class="nav-text">app.json</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page"><span class="nav-number"></span> <span class="nav-text">Page</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#js注册页面"><span class="nav-number">0.1.</span> <span class="nav-text">.js注册页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WXML"><span class="nav-number">0.2.</span> <span class="nav-text">.WXML</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WXSS"><span class="nav-number">0.3.</span> <span class="nav-text">.WXSS</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#微信小程序中就四种类型的文件"><span class="nav-number">1.</span> <span class="nav-text">微信小程序中就四种类型的文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根目录下的-js-WXML-js"><span class="nav-number"></span> <span class="nav-text">根目录下的 .js  .WXML  .js</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#app-js"><span class="nav-number">0.1.</span> <span class="nav-text">app.js</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建App实例"><span class="nav-number">0.1.1.</span> <span class="nav-text">创建App实例</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#app-json"><span class="nav-number">0.2.</span> <span class="nav-text">app.json</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建新的Page页面"><span class="nav-number"></span> <span class="nav-text">创建新的Page页面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#js注册页面"><span class="nav-number">0.1.</span> <span class="nav-text">.js注册页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WXML"><span class="nav-number">0.2.</span> <span class="nav-text">.WXML</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WXSS"><span class="nav-number">0.3.</span> <span class="nav-text">.WXSS</span></a></li></ol></li></ol></div>
             
 
           </div>
