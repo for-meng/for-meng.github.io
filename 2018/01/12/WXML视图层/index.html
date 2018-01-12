@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="小程序," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="尛孟的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="视图层 框架的视图层由 WXML 与 WXSS 编写，由组件来进行展示。 将逻辑层的数据反应成视图，同时将视图层的事件发送给逻辑层。 结合数据绑定、列表渲染、条件渲染、模板、事件、引用，可以构建出页面的结构。   WXML  数据绑定   视图层的数据基本来自对应.js中page的data(包括初始化的数据,利用setData动态变化的数据) 在.WXML通过 Mustache 语法(双大括号)">
+<meta name="keywords" content="小程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WXML+WXSS视图层">
+<meta property="og:url" content="http://yoursite.com/2018/01/12/WXML视图层/index.html">
+<meta property="og:site_name" content="尛孟的博客">
+<meta property="og:description" content="视图层 框架的视图层由 WXML 与 WXSS 编写，由组件来进行展示。 将逻辑层的数据反应成视图，同时将视图层的事件发送给逻辑层。 结合数据绑定、列表渲染、条件渲染、模板、事件、引用，可以构建出页面的结构。   WXML  数据绑定   视图层的数据基本来自对应.js中page的data(包括初始化的数据,利用setData动态变化的数据) 在.WXML通过 Mustache 语法(双大括号)">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.z4a.net/images/2018/01/12/545651.png">
+<meta property="og:image" content="http://www.z4a.net/images/2018/01/12/_20180112185051.png">
+<meta property="og:image" content="http://www.z4a.net/images/2018/01/12/_20180112185952.png">
+<meta property="og:updated_time" content="2018-01-12T11:09:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WXML+WXSS视图层">
+<meta name="twitter:description" content="视图层 框架的视图层由 WXML 与 WXSS 编写，由组件来进行展示。 将逻辑层的数据反应成视图，同时将视图层的事件发送给逻辑层。 结合数据绑定、列表渲染、条件渲染、模板、事件、引用，可以构建出页面的结构。   WXML  数据绑定   视图层的数据基本来自对应.js中page的data(包括初始化的数据,利用setData动态变化的数据) 在.WXML通过 Mustache 语法(双大括号)">
+<meta name="twitter:image" content="http://www.z4a.net/images/2018/01/12/545651.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'ZNJ0RM31SP',
+      apiKey: '9fae47ade11c769ab25bba4061522c1d',
+      indexName: 'for_meng',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"输入关键词进行搜索","hits_empty":" 找不到关于 ”${query}“ 的文章 ","hits_stats":" 共找到${hits} 篇文章,花了${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/12/WXML视图层/"/>
+
+
+
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+
+  <title>WXML+WXSS视图层 | 尛孟的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">尛孟的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">想法总是无法付诸实践…</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/12/WXML视图层/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="尛孟">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="尛孟的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">WXML+WXSS视图层</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-12T14:16:36+08:00">
+                2018-01-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小程序/" itemprop="url" rel="index">
+                    <span itemprop="name">小程序</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小程序/框架学习/" itemprop="url" rel="index">
+                    <span itemprop="name">框架学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/12/WXML视图层/" class="leancloud_visitors" data-flag-title="WXML+WXSS视图层">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<h2 id="视图层"><a href="#视图层" class="headerlink" title="视图层"></a>视图层</h2><blockquote>
+<p>框架的视图层由 WXML 与 WXSS 编写，由组件来进行展示。</p>
+<p>将逻辑层的数据反应成视图，同时将视图层的事件发送给逻辑层。</p>
+<p>结合数据绑定、列表渲染、条件渲染、模板、事件、引用，可以构建出页面的结构。</p>
+</blockquote>
+<hr>
+<h2 id="WXML"><a href="#WXML" class="headerlink" title="WXML"></a>WXML</h2><hr>
+<ul>
+<li><h3 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h3></li>
+</ul>
+<blockquote>
+<p>视图层的数据基本来自对应.js中page的data(包括初始化的数据,利用setData动态变化的数据)</p>
+<p>在.WXML通过 <strong><em>Mustache 语法(双大括号)</em></strong>就可以使用变量</p>
+<p>数据绑定有多种绑定方式—简单绑定,组件属性,控制属性,关键字,运算表达式</p>
+<p>除了简单绑定之外其余都需要把<strong><em>双大括号</em></strong>放在<strong><em>双引号</em></strong>之内</p>
+</blockquote>
+<hr>
+<ul>
+<li><ul>
+<li><h4 id="简单绑定"><a href="#简单绑定" class="headerlink" title="简单绑定"></a>简单绑定</h4></li>
+</ul>
+<p><code>直接在标签中使用数据变量</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span> &#123;&#123; 变量名 &#125;&#125; <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ul>
+<li><ul>
+<li><h4 id="组件属性-需双引号"><a href="#组件属性-需双引号" class="headerlink" title="组件属性(需双引号)"></a>组件属性(需双引号)</h4></li>
+</ul>
+<p><code>如果数据要作为标签的属性使用,则需要用双引号括起来</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">id</span>=<span class="string">"item-&#123;&#123;变量名&#125;&#125;"</span>&gt;</span> <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ul>
+<li><ul>
+<li><h4 id="控制属性-需双引号"><a href="#控制属性-需双引号" class="headerlink" title="控制属性(需双引号)"></a>控制属性(需双引号)</h4></li>
+</ul>
+<p><code>控制属性包括wx:for遍历和wx:if条件</code></p>
+</li>
+</ul>
+<ul>
+<li><ul>
+<li><ul>
+<li><h5 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h5></li>
+</ul>
+<blockquote>
+<p>在.WXML组件上使用  <code>wx:for</code> 可以让属性绑定一个数组,相当于遍历该数组重复渲染默认数组的元素变量名为 <strong><em>item</em></strong> ,  下标变量名为  <strong><em>index</em></strong></p>
+<p>用<code>ws:for-item=&quot;xxx&quot;</code>可以指定变量名为<em>xxx</em></p>
+<p>同理<code>ws:for-index=&quot;xxx&quot;</code>可以指定下标变量名</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;array&#125;&#125;"</span>&gt;</span></span><br><span class="line">  &#123;&#123;index&#125;&#125;: &#123;&#123;item.message&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br><span class="line">.................................</span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    array: [&#123;</span><br><span class="line">      message: 'foo',</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      message: 'bar'</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<hr>
+<blockquote>
+<p>上面这种写法,是写在标签内,只能对一个标签起作用,但是如果同时需要对多个标签都使用该渲染方法的话,可以使用<em>block</em>标签.(<strong><block> 并不是一个组件，它仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性。</block></strong>)</p>
+</blockquote>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;[1 , 2 , 3]&#125;&#125; wx:for-index="</span><span class="attr">idx</span>" <span class="attr">wx:for-item</span>=<span class="string">"itemName"</span>"&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123;idx&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123;itemName&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">	...xxx</span><br><span class="line"><span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<hr>
+<blockquote>
+<p><code>wx:key</code>是一种用来做列表重用的方式,通过<code>key</code>来指定列表中cell的唯一标识符</p>
+<p>这样可以保证当列表动态改变或者有新的cell添加时,列表上的cell的状态不会改变并且不会重新创建</p>
+<p><code>wx:key</code>有两种形式</p>
+<ul>
+<li>字符串，代表在 for 循环的 array 中  item 的某个 <code>属性名</code>，该<code>属性的值</code>必须是列表中唯一的字符串或数字，且不能动态改变。</li>
+<li>保留关键字  <code>*this</code>代表在 for 循环中的 item 本身，这种表示需要 item 本身是一个唯一的字符串或者数字</li>
+</ul>
+<p><em>如不提供 wx:key，会报一个 warning， 如果明确知道该列表是静态，或者不必关注其顺序，可以选择忽略。</em></p>
+</blockquote>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//遍历一个对象数组,数组中元素有一个属性unique,它的值作为cell的标识符</span></span><br><span class="line">&lt;<span class="keyword">switch</span> wx:<span class="keyword">for</span>=<span class="string">"&#123;&#123;objectArray&#125;&#125;"</span> wx:key=<span class="string">"unique"</span> style=<span class="string">"display: block;"</span>&gt; &#123;&#123;item.id&#125;&#125; &lt;<span class="regexp">/switch&gt;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/绑定一个点击后给数组增加一个对象的事件</span></span><br><span class="line"><span class="regexp">&lt;button bindtap="addToFront"&gt; Add to the front &lt;/</span>button&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历一个普通数字数组,用'*this'表示直接拿到那个元素也就是数字作为cell的标识符</span></span><br><span class="line">&lt;<span class="keyword">switch</span> wx:<span class="keyword">for</span>=<span class="string">"&#123;&#123;numberArray&#125;&#125;"</span> wx:key=<span class="string">"*this"</span> style=<span class="string">"display: block;"</span>&gt; &#123;&#123;item&#125;&#125; &lt;<span class="regexp">/switch&gt;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/绑定一个点击后给数组增加一个数字的事件</span></span><br><span class="line"><span class="regexp">&lt;button bindtap="addNumberToFront"&gt; Add to the front &lt;/</span>button&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/****          ****/</span></span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    <span class="comment">//对象数组     对象的unique属性的值是唯一的</span></span><br><span class="line">    objectArray: [</span><br><span class="line">      &#123;<span class="attr">id</span>: <span class="number">5</span>, <span class="attr">unique</span>: <span class="string">'unique_5'</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">id</span>: <span class="number">4</span>, <span class="attr">unique</span>: <span class="string">'unique_4'</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">id</span>: <span class="number">3</span>, <span class="attr">unique</span>: <span class="string">'unique_3'</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">id</span>: <span class="number">2</span>, <span class="attr">unique</span>: <span class="string">'unique_2'</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">id</span>: <span class="number">1</span>, <span class="attr">unique</span>: <span class="string">'unique_1'</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">id</span>: <span class="number">0</span>, <span class="attr">unique</span>: <span class="string">'unique_0'</span>&#125;,</span><br><span class="line">    ],</span><br><span class="line">    <span class="comment">//数字数组      数字也必须是唯一的</span></span><br><span class="line">    numberArray: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//绑定的事件函数  给数组增加一个对象并且放到第一个</span></span><br><span class="line">  addToFront: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> length = <span class="keyword">this</span>.data.objectArray.length</span><br><span class="line">    <span class="keyword">this</span>.data.objectArray = [&#123;<span class="attr">id</span>: length, <span class="attr">unique</span>: <span class="string">'unique_'</span> + length&#125;].concat(<span class="keyword">this</span>.data.objectArray)</span><br><span class="line">    <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">      objectArray: <span class="keyword">this</span>.data.objectArray</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//绑定的事件函数   给数组增加一个数字并且放到第一个</span></span><br><span class="line">  addNumberToFront: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.data.numberArray = [ <span class="keyword">this</span>.data.numberArray.length + <span class="number">1</span> ].concat(<span class="keyword">this</span>.data.numberArray)</span><br><span class="line">    <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">      numberArray: <span class="keyword">this</span>.data.numberArray</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<hr>
+<blockquote>
+<p><strong>注意：</strong></p>
+<ul>
+<li>当 <code>wx:for</code>的值为字符串时，会将字符串解析成单个单个字符的数组</li>
+</ul>
+<p>比如<view wx:for="shitu">  会被解析成 <view wx:for="s,h,i,t,u"></view></view></p>
+<ul>
+<li>花括号和引号之间如果有空格，将最终被解析成为字符串</li>
+</ul>
+<p><view wx:for="1,2,3  ">会被解析成<view wx:for="1,2,3 "></view></view></p>
+</blockquote>
+<hr>
+</blockquote>
+<ul>
+<li><ul>
+<li><ul>
+<li><h6 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h6></li>
+</ul>
+<blockquote>
+<p>在.WXML组件上使用  <code>wx:if</code> 可以判断是否需要渲染该代码块</p>
+<p>也可以用 <code>wx:elif</code>和 <code>wx:else</code>来添加一个 条件 块</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:if</span>=<span class="string">"&#123;&#123;length &gt; 5&#125;&#125;"</span>&gt;</span> 1 <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:elif</span>=<span class="string">"&#123;&#123;length &gt; 2&#125;&#125;"</span>&gt;</span> 2 <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:else</span>&gt;</span> 3 <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<blockquote>
+<p> 跟<code>wx:for</code>一样,<code>wx:if</code>也可以使用<code>&lt;block&gt;</code>标签将多个组件包装起来</p>
+<p> 然后在block标签上使用<code>wx:if</code>控制</p>
+</blockquote>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:if</span>=<span class="string">"&#123;&#123;true&#125;&#125;"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span>&gt;</span> view1 <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span>&gt;</span> view2 <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><ul>
+<li><h4 id="关键字-需双引号"><a href="#关键字-需双引号" class="headerlink" title="关键字(需双引号)"></a>关键字(需双引号)</h4></li>
+</ul>
+<blockquote>
+<p>目前知道的关键字有true、false,代表boolean类型的真和假</p>
+<p><strong>特别注意</strong>：不要直接写 checked=”false”，其计算结果是一个字符串，要使用反而要先转类型转成 boolean 类型后才能代表真值。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;checkbox checked=<span class="string">"&#123;&#123;false&#125;&#125;"</span>&gt; <span class="xml"><span class="tag">&lt;/<span class="name">checkbox</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ul>
+<li><ul>
+<li><h4 id="运算-需双引号"><a href="#运算-需双引号" class="headerlink" title="运算(需双引号)"></a>运算(需双引号)</h4><blockquote>
+<p>目前支持的运算有:三元运算、算数运算、逻辑判断、字符串运算、数据路径运算</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/***  三元运算   ***/</span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">hidden</span>=<span class="string">"&#123;&#123;flag ? true : false&#125;&#125;"</span>&gt;</span> Hidden <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">/***  算数运算   ***/</span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span> &#123;&#123;a + b&#125;&#125; + &#123;&#123;c&#125;&#125; + d <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">/***  逻辑判断   ***/</span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:if</span>=<span class="string">"&#123;&#123;length &gt; 5&#125;&#125;"</span>&gt;</span> <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">/***  字符串运算   ***/</span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123;"hello" + name&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">/***  数据路径运算(下标、key等)  ***/</span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123;object.key&#125;&#125; &#123;&#123;array[0]&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><ul>
+<li><h4 id="组合-需双引号"><a href="#组合-需双引号" class="headerlink" title="组合(需双引号)"></a>组合(需双引号)</h4><blockquote>
+<p> 如果需要也可以WXML中在 <code>Mustache</code> 内直接进行组合，构成新的<strong>对象或者数组</strong>。</p>
+<p> 同时也可以用扩展运算符  <code>...</code>  来展开对象()</p>
+<p> 需要注意的是： <strong>花括号和引号之间如果有空格，将最终被解析成为字符串</strong></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/***  数组(除了接收.js中的变量,也可以自己添加一些默认的数据)  ***/</span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;[绑定的变量, 1, 2, 3, 4]&#125;&#125;"</span>&gt;</span> &#123;&#123;item&#125;&#125; <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">/***  对象  ***/</span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">is</span>=<span class="string">"objectCombine"</span> <span class="attr">data</span>=<span class="string">"&#123;&#123;key1: 绑定的变量, key2: 绑定的变量&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">/***  既然可以组合对象,同时也可以用扩展运算符扩展对象  ***/</span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">is</span>=<span class="string">"objectCombine"</span> <span class="attr">data</span>=<span class="string">"&#123;&#123;...obj1, ...obj2&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">template</span>&gt;</span>​</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><p><code>WXML提供模板（template），可以在模板中定义代码片段，然后在不同的地方调用。</code>(有点像React的模板)</p>
+<ul>
+<li><p>定义模板(用name属性作为模板名字)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">name</span>=<span class="string">"msgItem"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span> &#123;&#123;index&#125;&#125;: &#123;&#123;msg&#125;&#125; <span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span> Time: &#123;&#123;time&#125;&#125; <span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用模板(利用is属性声明使用的模板,data传入所需数据)</p>
+<p><code>需要先用import导入模板文件</code></p>
+<p><code>is属性中可以使用Mustache语法</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 展开.js绑定的对象 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">is</span>=<span class="string">"msgItem"</span> <span class="attr">data</span>=<span class="string">"&#123;&#123;...item&#125;&#125;"</span>/&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 也可以直接赋值 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">is</span>=<span class="string">"msgItem"</span> <span class="attr">data</span>=<span class="string">"&#123;&#123;index: 1 , msg: 'xxx' , time: 'yyyyMMdd'&#125;&#125;"</span>/&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- is属性中可以使用Mustache语法 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;[1, 2, 3, 4, 5]&#125;&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">is</span>=<span class="string">"&#123;&#123;item % 2 == 0 ? ...item1 : ...item2&#125;&#125;"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong><em>模板的数据还可以通过wxs模块传入</em></strong>(这里暂不说,另开一篇说明)</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><blockquote>
+<p>视图层的事件表示的是视图层到逻辑层的通讯方式.<br>事件可以将用户的行为反馈到逻辑层进行处理。<br>事件可以绑定在组件上，当达到触发事件，就会执行逻辑层中对应的事件处理函数。<br>事件对象可以携带额外信息，如 <code>id, dataset, touches</code>。</p>
+</blockquote>
+<ul>
+<li><h4 id="事件分类"><a href="#事件分类" class="headerlink" title="事件分类"></a>事件分类</h4><p>事件分为冒泡事件和非冒泡事件</p>
+<ul>
+<li>冒泡事件：当一个组件上的事件被触发后，该事件会向父节点传递。</li>
+<li>非冒泡事件：当一个组件上的事件被触发后，该事件不会向父节点传递。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://www.z4a.net/images/2018/01/12/545651.png" alt="所有的冒泡事件"></p>
+<blockquote>
+<p>事件绑定的写法类型组件的属性, key,value的形式</p>
+<ul>
+<li><p>key 以bind或catch开头，然后跟上事件的类型，如bindtap、catchtouchstart。自基础库版本 1.5.0 起，bind和catch后可以紧跟一个冒号，其含义不变，如bind:tap、、catch:touchstart。</p>
+<p><code>bind不会阻止冒泡事件的向上传递,catch会阻止冒泡事件的传递</code></p>
+</li>
+<li><p>value 是一个字符串，需要在对应的 Page 中定义同名的函数。不然当触发事件的时候会报错。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;   <span class="tag">&lt;<span class="name">view</span> <span class="attr">id</span>=<span class="string">"middle"</span> <span class="attr">catchtap</span>=<span class="string">"handleTap2"</span>&gt;</span></span><br><span class="line">&gt;   <span class="tag">&lt;<span class="name">view</span> <span class="attr">id</span>=<span class="string">"inner"</span> <span class="attr">bindtap</span>=<span class="string">"handleTap3"</span>&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><ul>
+<li><h4 id="事件的捕获阶段"><a href="#事件的捕获阶段" class="headerlink" title="事件的捕获阶段"></a>事件的捕获阶段</h4><p><code>自基础库版本 1.5.0 起，触摸类事件支持捕获阶段。捕获阶段位于冒泡阶段之前，且在捕获阶段中，事件到达节点的顺序与冒泡阶段恰好相反。需要在捕获阶段监听事件时，可以采用capture-bind、capture-catch关键字，后者将中断捕获阶段和取消冒泡阶段。</code></p>
+<p>也就是说,从用户点击组件开始,事件需要先从顶层向下传递,到达底层之后再向上冒泡,同样也可以被阻止</p>
+<p>用法和冒泡事件的使用相同</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">id</span>=<span class="string">"outer"</span> <span class="attr">bind:touchstart</span>=<span class="string">"handleTap1"</span> <span class="attr">capture-bind:touchstart</span>=<span class="string">"handleTap2"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">id</span>=<span class="string">"outer"</span> <span class="attr">bind:touchstart</span>=<span class="string">"handleTap1"</span> <span class="attr">capture-catch:touchstart</span>=<span class="string">"handleTap2"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><h4 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h4><p>无论是哪种事件,处理该事件的处理函数都会收到一个事件对象<strong><em>BaseEvent</em></strong></p>
+<p><code>特殊事件： &lt;canvas/&gt; 中的触摸事件不可冒泡，所以没有 currentTarget。</code></p>
+</li>
+</ul>
+<p><img src="http://www.z4a.net/images/2018/01/12/_20180112185051.png" alt="base事件对象的属性列表"></p>
+<ul>
+<li><h4 id="自定义事件对象"><a href="#自定义事件对象" class="headerlink" title="自定义事件对象"></a>自定义事件对象</h4><ul>
+<li>自定义事件对象,需要继承自BaseEvent</li>
+<li>额外的信息放在<strong><em>detail</em></strong>属性中</li>
+<li>自定义事件所携带的数据，如表单组件的提交事件会携带用户的输入，媒体的错误事件会携带错误信息等</li>
+</ul>
+</li>
+<li><h4 id="触摸事件对象"><a href="#触摸事件对象" class="headerlink" title="触摸事件对象"></a>触摸事件对象</h4><p><img src="http://www.z4a.net/images/2018/01/12/_20180112185952.png" alt="触摸事件对象属性列表"></p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="WXSS"><a href="#WXSS" class="headerlink" title="WXSS"></a>WXSS</h2><p><code>用于描述 WXML 的组件样式,用来决定 WXML 的组件应该怎么显示。WXSS 具有 CSS 大部分特性。同时为了更适合开发微信小程序，WXSS 对 CSS 进行了扩充以及修改。与 CSS 相比，WXSS 扩展的特性有：</code></p>
+<ul>
+<li>尺寸单位(小程序使用<strong><em>rpx</em></strong>,底层根据屏幕宽度进行自适应)</li>
+<li>样式导入(用<code>@import+外联样式表绝对路径</code>  可以导入外联样式表)</li>
+</ul>
+<p><strong>内联样式</strong><br>框架组件上支持使用 style、class 属性来控制组件的样式。</p>
+<ul>
+<li><p>style：静态的样式统一写到 class 中。style 接收动态的样式，在运行时会进行解析，请尽量避免将静态的样式写进 style 中，以免影响渲染速度。</p>
+<p><code>&lt;view style=&quot;color:;&quot; /&gt;</code></p>
+</li>
+<li><p>class：用于指定样式规则，其属性值是样式规则中类选择器名(样式类名)的集合，样式类名不需要带上.，样式类名之间用空格分隔。(小程序基本都是通过在.WXSS中定义样式类,在.WXML标签中直接使用,在.js中改变标签类名)</p>
+<p><code>&lt;view class=&quot;normal_view&quot; /&gt;</code></p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/小程序/" rel="tag"># 小程序</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/11/js逻辑层/" rel="next" title="js逻辑层">
+                <i class="fa fa-chevron-left"></i> js逻辑层
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">尛孟</p>
+              <p class="site-description motion-element" itemprop="description">与人联系甚少</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#视图层"><span class="nav-number">1.</span> <span class="nav-text">视图层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WXML"><span class="nav-number">2.</span> <span class="nav-text">WXML</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据绑定"><span class="nav-number">2.1.</span> <span class="nav-text">数据绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单绑定"><span class="nav-number">2.1.1.</span> <span class="nav-text">简单绑定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#组件属性-需双引号"><span class="nav-number">2.1.2.</span> <span class="nav-text">组件属性(需双引号)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#控制属性-需双引号"><span class="nav-number">2.1.3.</span> <span class="nav-text">控制属性(需双引号)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#列表渲染"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">列表渲染</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#条件渲染"><span class="nav-number">2.1.3.1.1.</span> <span class="nav-text">条件渲染</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关键字-需双引号"><span class="nav-number">2.1.4.</span> <span class="nav-text">关键字(需双引号)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运算-需双引号"><span class="nav-number">2.1.5.</span> <span class="nav-text">运算(需双引号)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#组合-需双引号"><span class="nav-number">2.1.6.</span> <span class="nav-text">组合(需双引号)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板"><span class="nav-number">2.2.</span> <span class="nav-text">模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件"><span class="nav-number">2.3.</span> <span class="nav-text">事件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#事件分类"><span class="nav-number">2.3.1.</span> <span class="nav-text">事件分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件的捕获阶段"><span class="nav-number">2.3.2.</span> <span class="nav-text">事件的捕获阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件对象"><span class="nav-number">2.3.3.</span> <span class="nav-text">事件对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义事件对象"><span class="nav-number">2.3.4.</span> <span class="nav-text">自定义事件对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#触摸事件对象"><span class="nav-number">2.3.5.</span> <span class="nav-text">触摸事件对象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WXSS"><span class="nav-number">3.</span> <span class="nav-text">WXSS</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">尛孟</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("KhsxPkrt4UYiKBnwYFY9zUTN-gzGzoHsz", "a1zezRocQqcmPxlFVdXKrhz9");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

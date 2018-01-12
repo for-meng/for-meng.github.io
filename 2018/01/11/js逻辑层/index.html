@@ -91,7 +91,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.z4a.net/images/2018/01/12/_20180112112613.png">
 <meta property="og:image" content="http://www.z4a.net/images/2018/01/12/_20180112112836.png">
-<meta property="og:updated_time" content="2018-01-12T05:23:12.000Z">
+<meta property="og:updated_time" content="2018-01-12T06:25:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js逻辑层">
 <meta name="twitter:description" content="逻辑层   在.js文件中使用了JavaScript语言,此外小程序增加了  Page(){}创建页面   data{}初始化数据  各种生命周期函数  页面相关事件处理函数(如onPullDownRefresh、onReachBottom、onPageScroll等)  setData从逻辑层向视图层异步发送数据  以及微信提供调用原生API 但是需要注意的是js在 web 中一些能力无法使用">
@@ -445,7 +445,9 @@
 </ul>
 </blockquote>
 <hr>
+<hr>
 <h4 id="Page"><a href="#Page" class="headerlink" title="Page()"></a>Page()</h4><p>  像在<code>App.js</code>中调用App()创建小程序实例一样,在<code>页面.js</code>中调用Page()就能注册该页面实例,同时要给该方法传递一个Object对象,这个对象包括了页面的初始数据、生命周期函数、事件处理函数等.</p>
+<hr>
 <h4 id="data"><a href="#data" class="headerlink" title="data:{}"></a>data:{}</h4><p>  这个对象中设置的数据是页面初始化渲染的数据,要求<em>必须是可以转json的数据类型</em></p>
 <blockquote>
 <p>在.js定义的变量名,在.WXML中可以直接使用(<strong>object 内容在页面加载时会进行一次深拷贝，需考虑数据大小对页面加载的开销</strong>)</p>
@@ -458,17 +460,16 @@
 <h4 id="页面相关事件处理函数"><a href="#页面相关事件处理函数" class="headerlink" title="页面相关事件处理函数"></a>页面相关事件处理函数</h4><p><img src="http://www.z4a.net/images/2018/01/12/_20180112112836.png" alt="页面相关事件函数"></p>
 <hr>
 <h5 id="页面绑定事件处理函数"><a href="#页面绑定事件处理函数" class="headerlink" title="页面绑定事件处理函数"></a>页面绑定事件处理函数</h5><p>​    除了上面这些处理事件,页面还可以绑定一些用户交互相关事件,比如点击、拖拽、长按等,可以通过bind/catch+事件名,具体可以参考<a href="http://for_meng.gitee.io/2018/01/10/%E5%88%9D%E8%AF%86%E5%B0%8F%E7%A8%8B%E5%BA%8F/#WXML" target="_blank" rel="noopener">事件绑定</a></p>
-<h5 id="setData"><a href="#setData" class="headerlink" title="setData()"></a>setData()</h5><ul>
-<li><p>调用setData()可以从逻辑层向视图层传递数据(异步),但是直接修改this.Data页面不会改变还会操作数据不一致的问题</p>
-</li>
-<li><p>单次设置有1024K的大小设置</p>
-</li>
-<li><p>任何的value都不能设置为undefined</p>
 <hr>
-</li>
+<h5 id="setData"><a href="#setData" class="headerlink" title="setData()"></a>setData()</h5><ul>
+<li>调用setData()可以从逻辑层向视图层传递数据(异步),但是直接修改this.Data页面不会改变还会操作数据不一致的问题</li>
+<li>单次设置有1024K的大小设置</li>
+<li>任何的value都不能设置为undefined</li>
 </ul>
+<hr>
 <h5 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h5><p>部分逻辑是公共处理的,可以抽离到一个单独的.js文件,通过 <code>module.exports</code> 或者<code>exports</code>对外暴露接口</p>
 <p>然后在需要使用的文件中使用 <code>require(path)</code>将公共代码引入</p>
+<hr>
 <h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><blockquote>
 <p>可以通过Page.prototype.route 获取当前页面的路径</p>
 <p>通过getapp()获取全局的应用实例,也就是小程序实例</p>
@@ -523,6 +524,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/12/WXML视图层/" rel="prev" title="WXML+WXSS视图层">
+                WXML+WXSS视图层 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -599,7 +604,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
