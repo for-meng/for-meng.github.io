@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://www.z4a.net/images/2018/01/10/1967257-b2fb6cf009b3f669.png">
 <meta property="og:image" content="http://www.z4a.net/images/2018/01/10/_20180110184401.png">
 <meta property="og:image" content="http://www.z4a.net/images/2018/01/10/1967257-61458d7fbae5b96d.png">
-<meta property="og:updated_time" content="2018-01-12T06:28:13.000Z">
+<meta property="og:updated_time" content="2018-01-12T11:17:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识小程序">
 <meta name="twitter:description" content="微信小程序中就四种类型的文件  js ———- JavaScrip文件,负责页面逻辑  json ——– 项目配置文件，负责窗口颜色等等  wxml ——- 类似HTML文件,负责页面结构  wxss ——- 类似CSS文件,负责页面样式表  小程序的IDE每次编译都会自动整合这四种类型的文件,所以要求都是同名且同路径 每创建一个程序时,在根目录下就会生成app.json , app.js ,">
@@ -504,13 +504,8 @@
 <li>尺寸单位(小程序使用<strong><em>rpx</em></strong>,底层根据屏幕宽度进行自适应)</li>
 <li>样式导入(用<code>@import+外联样式表绝对路径</code>  可以导入外联样式表)</li>
 </ul>
-<p><strong>内联样式</strong><br>框架组件上支持使用 style、class 属性来控制组件的样式。</p>
 <ul>
-<li><p>style：静态的样式统一写到 class 中。style 接收动态的样式，在运行时会进行解析，请尽量避免将静态的样式写进 style 中，以免影响渲染速度。</p>
-<p><code>&lt;view style=&quot;color:;&quot; /&gt;</code></p>
-</li>
-<li><p>class：用于指定样式规则，其属性值是样式规则中类选择器名(样式类名)的集合，样式类名不需要带上.，样式类名之间用空格分隔。(小程序基本都是通过在.WXSS中定义样式类,在.WXML标签中直接使用,在.js中改变标签类名)</p>
-<p><code>&lt;view class=&quot;normal_view&quot; /&gt;</code></p>
+<li><p>其他暂时不需要了解太多<a href="http://for_meng.gitee.io/2018/01/12/WXML%E8%A7%86%E5%9B%BE%E5%B1%82/#WXSS" target="_blank" rel="noopener">在视图层的时候再说</a></p>
 <hr>
 </li>
 </ul>
