@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="前言:   由于查询数据库时查询条件需要传递日期来获取某个月份的数据列表,如果传的时该月的某一天会导致拿到数据不全,如果传了该月的第一天会导致拿到的数据并不是当月的;而如果刚好查询当前月份的数据是不能用这个月的最后一天只能用当天来查询,于是有了以下的日历操作   首先,想要直接得到某个日期的NSDate,可以通过dateWithTimeInterval,与某个日期的毫秒差来获取,但是这个方法前提是">
+<meta name="description" content="前言:   由于查询数据库时查询条件需要传递日期来获取某个月份的数据列表,如果传的时该月的某一天会导致拿到数据不全,如果传了该月的第一天会导致拿到的数据并不是当月的;而如果刚好查询当前月份的数据是不能用这个月的最后一天只能用当天来查询,于是有了以下的日历操作   首先,想要直接得到某个日期的NSDate,可以通过dateWithTimeInterval,与某个日期的毫秒差来获取,但是这个方法前提">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NSdate+NSCalendar操作">
 <meta property="og:url" content="http://yoursite.com/2018/01/10/NSdate+NSCalendar操作/index.html">
 <meta property="og:site_name" content="尛孟的博客">
-<meta property="og:description" content="前言:   由于查询数据库时查询条件需要传递日期来获取某个月份的数据列表,如果传的时该月的某一天会导致拿到数据不全,如果传了该月的第一天会导致拿到的数据并不是当月的;而如果刚好查询当前月份的数据是不能用这个月的最后一天只能用当天来查询,于是有了以下的日历操作   首先,想要直接得到某个日期的NSDate,可以通过dateWithTimeInterval,与某个日期的毫秒差来获取,但是这个方法前提是">
+<meta property="og:description" content="前言:   由于查询数据库时查询条件需要传递日期来获取某个月份的数据列表,如果传的时该月的某一天会导致拿到数据不全,如果传了该月的第一天会导致拿到的数据并不是当月的;而如果刚好查询当前月份的数据是不能用这个月的最后一天只能用当天来查询,于是有了以下的日历操作   首先,想要直接得到某个日期的NSDate,可以通过dateWithTimeInterval,与某个日期的毫秒差来获取,但是这个方法前提">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-10T06:43:33.000Z">
+<meta property="og:updated_time" content="2018-01-12T13:04:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NSdate+NSCalendar操作">
-<meta name="twitter:description" content="前言:   由于查询数据库时查询条件需要传递日期来获取某个月份的数据列表,如果传的时该月的某一天会导致拿到数据不全,如果传了该月的第一天会导致拿到的数据并不是当月的;而如果刚好查询当前月份的数据是不能用这个月的最后一天只能用当天来查询,于是有了以下的日历操作   首先,想要直接得到某个日期的NSDate,可以通过dateWithTimeInterval,与某个日期的毫秒差来获取,但是这个方法前提是">
+<meta name="twitter:description" content="前言:   由于查询数据库时查询条件需要传递日期来获取某个月份的数据列表,如果传的时该月的某一天会导致拿到数据不全,如果传了该月的第一天会导致拿到的数据并不是当月的;而如果刚好查询当前月份的数据是不能用这个月的最后一天只能用当天来查询,于是有了以下的日历操作   首先,想要直接得到某个日期的NSDate,可以通过dateWithTimeInterval,与某个日期的毫秒差来获取,但是这个方法前提">
 
 
 
@@ -421,7 +421,8 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h3><p>   <strong><em>由于查询数据库时查询条件需要传递日期来获取某个月份的数据列表,如果传的时该月的某一天会导致拿到数据不全,如果传了该月的第一天会导致拿到的数据并不是当月的;而如果刚好查询当前月份的数据是不能用这个月的最后一天只能用当天来查询,于是有了以下的日历操作</em></strong></p>
+        <hr>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h3><p>   <strong><em>由于查询数据库时查询条件需要传递日期来获取某个月份的数据列表,如果传的时该月的某一天会导致拿到数据不全,如果传了该月的第一天会导致拿到的数据并不是当月的;而如果刚好查询当前月份的数据是不能用这个月的最后一天只能用当天来查询,于是有了以下的日历操作</em></strong></p>
 <hr>
 <ul>
 <li>首先,想要直接得到某个日期的NSDate,可以通过dateWithTimeInterval,与某个日期的毫秒差来获取,但是这个方法前提是需要知道基点日期,就算以当前的Date来计算,毫秒的计算也得自己去写清楚;比较麻烦,这时候可以通过<strong>日历对象的NSDateComponents来方便地定制指定日期,以下是两个NSDate分类方法</strong></li>
@@ -556,7 +557,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -567,7 +568,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

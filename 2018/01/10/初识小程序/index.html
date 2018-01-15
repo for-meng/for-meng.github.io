@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://www.z4a.net/images/2018/01/10/1967257-b2fb6cf009b3f669.png">
 <meta property="og:image" content="http://www.z4a.net/images/2018/01/10/_20180110184401.png">
 <meta property="og:image" content="http://www.z4a.net/images/2018/01/10/1967257-61458d7fbae5b96d.png">
-<meta property="og:updated_time" content="2018-01-12T11:17:39.000Z">
+<meta property="og:updated_time" content="2018-01-12T11:35:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识小程序">
 <meta name="twitter:description" content="微信小程序中就四种类型的文件  js ———- JavaScrip文件,负责页面逻辑  json ——– 项目配置文件，负责窗口颜色等等  wxml ——- 类似HTML文件,负责页面结构  wxss ——- 类似CSS文件,负责页面样式表  小程序的IDE每次编译都会自动整合这四种类型的文件,所以要求都是同名且同路径 每创建一个程序时,在根目录下就会生成app.json , app.js ,">
@@ -509,6 +509,13 @@
 <hr>
 </li>
 </ul>
+<h4 id="除了这些需要开发者知道的-框架还有其他特点"><a href="#除了这些需要开发者知道的-框架还有其他特点" class="headerlink" title="除了这些需要开发者知道的,框架还有其他特点:"></a>除了这些需要开发者知道的,框架还有其他特点:</h4><blockquote>
+<ul>
+<li><strong>分包加载</strong>    —  可以优化小程序首次启动的下载时间，以及在多团队共同开发时可以更好的解耦协作</li>
+<li><strong>基础库兼容处理</strong>  —  对接口 、参数 、 组件的兼容处理可以查看官方文档</li>
+<li><strong>运行机制</strong>    —  [冷启动] 和 [热启动]  以及重启逻辑</li>
+</ul>
+</blockquote>
 
       
     </div>
@@ -628,7 +635,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -639,7 +646,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -690,7 +697,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#微信小程序中就四种类型的文件"><span class="nav-number">1.</span> <span class="nav-text">微信小程序中就四种类型的文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根目录下的-js-WXML-js"><span class="nav-number"></span> <span class="nav-text">根目录下的 .js  .WXML  .js</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#app-js"><span class="nav-number">0.1.</span> <span class="nav-text">app.js</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建App实例"><span class="nav-number">0.1.1.</span> <span class="nav-text">创建App实例</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#app-json"><span class="nav-number">0.2.</span> <span class="nav-text">app.json</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建新的Page页面"><span class="nav-number"></span> <span class="nav-text">创建新的Page页面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#js注册页面"><span class="nav-number">0.1.</span> <span class="nav-text">.js注册页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WXML"><span class="nav-number">0.2.</span> <span class="nav-text">.WXML</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#绑定事件"><span class="nav-number">0.2.1.</span> <span class="nav-text">绑定事件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WXSS"><span class="nav-number">0.3.</span> <span class="nav-text">.WXSS</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#微信小程序中就四种类型的文件"><span class="nav-number">1.</span> <span class="nav-text">微信小程序中就四种类型的文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根目录下的-js-WXML-js"><span class="nav-number"></span> <span class="nav-text">根目录下的 .js  .WXML  .js</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#app-js"><span class="nav-number">0.1.</span> <span class="nav-text">app.js</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建App实例"><span class="nav-number">0.1.1.</span> <span class="nav-text">创建App实例</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#app-json"><span class="nav-number">0.2.</span> <span class="nav-text">app.json</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建新的Page页面"><span class="nav-number"></span> <span class="nav-text">创建新的Page页面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#js注册页面"><span class="nav-number">0.1.</span> <span class="nav-text">.js注册页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WXML"><span class="nav-number">0.2.</span> <span class="nav-text">.WXML</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#绑定事件"><span class="nav-number">0.2.1.</span> <span class="nav-text">绑定事件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WXSS"><span class="nav-number">0.3.</span> <span class="nav-text">.WXSS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#除了这些需要开发者知道的-框架还有其他特点"><span class="nav-number">0.4.</span> <span class="nav-text">除了这些需要开发者知道的,框架还有其他特点:</span></a></li></ol></li></ol></div>
             
 
           </div>
