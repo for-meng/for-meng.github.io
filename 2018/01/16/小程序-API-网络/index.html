@@ -81,20 +81,18 @@
 
 
 
-<meta name="description" content="小程序提供了一系列基础组件  组件是视图层的基本组成单元。 组件自带一些功能与微信风格的样式。 一个组件通常包括开始标签和结束标签，属性用来修饰这个组件，内容在两个标签之内。    所有组件的共同属性   属性 描述     id(String) 组件的唯一标识   class(String) 组件的样式类   style(String) 组件的内联样式   hidden(Boolean) 是">
+<meta name="description" content="小程序提供的原生API可以方便的调起微信提供的能力 大部分接口都有以下共性   wx.on 开头的 API 是监听某个事件发生的API接口，接受一个 CALLBACK 函数作为参数。当该事件触发时，会调用 CALLBACK 函数。  如未特殊约定，其他 API 接口都接受一个OBJECT作为参数。  OBJECT中可以指定success, fail, complete函数来接收接口调用结果。">
 <meta name="keywords" content="小程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小程序-组件-容器视图">
-<meta property="og:url" content="http://yoursite.com/2018/01/15/小程序-组件-视图容器/index.html">
+<meta property="og:title" content="小程序-API-网络">
+<meta property="og:url" content="http://yoursite.com/2018/01/16/小程序-API-网络/index.html">
 <meta property="og:site_name" content="尛孟的博客">
-<meta property="og:description" content="小程序提供了一系列基础组件  组件是视图层的基本组成单元。 组件自带一些功能与微信风格的样式。 一个组件通常包括开始标签和结束标签，属性用来修饰这个组件，内容在两个标签之内。    所有组件的共同属性   属性 描述     id(String) 组件的唯一标识   class(String) 组件的样式类   style(String) 组件的内联样式   hidden(Boolean) 是">
+<meta property="og:description" content="小程序提供的原生API可以方便的调起微信提供的能力 大部分接口都有以下共性   wx.on 开头的 API 是监听某个事件发生的API接口，接受一个 CALLBACK 函数作为参数。当该事件触发时，会调用 CALLBACK 函数。  如未特殊约定，其他 API 接口都接受一个OBJECT作为参数。  OBJECT中可以指定success, fail, complete函数来接收接口调用结果。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://www.z4a.net/images/2018/01/16/_20180116151733.png">
-<meta property="og:updated_time" content="2018-01-16T08:52:45.000Z">
+<meta property="og:updated_time" content="2018-01-16T12:35:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小程序-组件-容器视图">
-<meta name="twitter:description" content="小程序提供了一系列基础组件  组件是视图层的基本组成单元。 组件自带一些功能与微信风格的样式。 一个组件通常包括开始标签和结束标签，属性用来修饰这个组件，内容在两个标签之内。    所有组件的共同属性   属性 描述     id(String) 组件的唯一标识   class(String) 组件的样式类   style(String) 组件的内联样式   hidden(Boolean) 是">
-<meta name="twitter:image" content="http://www.z4a.net/images/2018/01/16/_20180116151733.png">
+<meta name="twitter:title" content="小程序-API-网络">
+<meta name="twitter:description" content="小程序提供的原生API可以方便的调起微信提供的能力 大部分接口都有以下共性   wx.on 开头的 API 是监听某个事件发生的API接口，接受一个 CALLBACK 函数作为参数。当该事件触发时，会调用 CALLBACK 函数。  如未特殊约定，其他 API 接口都接受一个OBJECT作为参数。  OBJECT中可以指定success, fail, complete函数来接收接口调用结果。">
 
 
 
@@ -124,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/15/小程序-组件-视图容器/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/16/小程序-API-网络/"/>
 
 
 
@@ -133,7 +131,7 @@
 <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
 
-  <title>小程序-组件-容器视图 | 尛孟的博客</title>
+  <title>小程序-API-网络 | 尛孟的博客</title>
   
 
 
@@ -308,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/15/小程序-组件-视图容器/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/16/小程序-API-网络/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="尛孟">
@@ -325,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">小程序-组件-容器视图</h1>
+          <h1 class="post-title" itemprop="name headline">小程序-API-网络</h1>
         
 
         <div class="post-meta">
@@ -337,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-15T14:57:52+08:00">
-                2018-01-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-16T17:55:29+08:00">
+                2018-01-16
               </time>
             
 
@@ -382,8 +380,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/小程序/框架学习/组件/" itemprop="url" rel="index">
-                    <span itemprop="name">组件</span>
+                  <a href="/categories/小程序/框架学习/API/" itemprop="url" rel="index">
+                    <span itemprop="name">API</span>
                   </a>
                 </span>
 
@@ -399,7 +397,7 @@
 
           
           
-             <span id="/2018/01/15/小程序-组件-视图容器/" class="leancloud_visitors" data-flag-title="小程序-组件-容器视图">
+             <span id="/2018/01/16/小程序-API-网络/" class="leancloud_visitors" data-flag-title="小程序-API-网络">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -437,104 +435,68 @@
       
         <hr>
 <blockquote>
-<p>小程序提供了一系列基础组件</p>
+<p>小程序提供的原生API可以方便的调起微信提供的能力</p>
+<p>大部分接口都有以下共性</p>
+<blockquote>
 <ul>
-<li>组件是视图层的基本组成单元。</li>
-<li>组件自带一些功能与微信风格的样式。</li>
-<li>一个组件通常包括开始标签和结束标签，属性用来修饰这个组件，内容在两个标签之内。</li>
+<li><p>wx.on 开头的 API 是监听某个事件发生的API接口，接受一个 CALLBACK 函数作为参数。当该事件触发时，会调用 CALLBACK 函数。</p>
+</li>
+<li><p>如未特殊约定，其他 API 接口都接受一个OBJECT作为参数。</p>
+</li>
+<li><p>OBJECT中可以指定<code>success, fail, complete</code>函数来接收接口调用结果。</p>
+<p><strong><em>注：文件的临时路径，在小程序本次启动期间可以正常使用，如需持久保存，需在主动调用 <code>wx.saveFile</code>，才能在小程序下次启动时访问得到。</em></strong></p>
+</li>
 </ul>
 </blockquote>
-<hr>
-<h3 id="所有组件的共同属性"><a href="#所有组件的共同属性" class="headerlink" title="所有组件的共同属性"></a>所有组件的共同属性</h3><table>
-<thead>
-<tr>
-<th>属性</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id(String)</td>
-<td style="text-align:center">组件的唯一标识</td>
-</tr>
-<tr>
-<td>class(String)</td>
-<td style="text-align:center">组件的样式类</td>
-</tr>
-<tr>
-<td>style(String)</td>
-<td style="text-align:center">组件的内联样式</td>
-</tr>
-<tr>
-<td>hidden(Boolean)</td>
-<td style="text-align:center">是否隐藏</td>
-</tr>
-<tr>
-<td>data-*(Any)</td>
-<td style="text-align:center">自定义属性</td>
-</tr>
-<tr>
-<td>bind*/catch*(EventHandler)</td>
-<td style="text-align:center">组件的事件</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>如果取值为Boolean,则在组件写上该属性，不管该属性等于什么，其值都为true，只有组件上没有写该属性时，属性值才为false。如果属性值为变量，变量的值会被转换为Boolean类型</p>
-<p>如: <code>&lt;scroll-view scroll-y&gt;</code>   中表示scroll-y属性为<strong>true</strong></p>
 </blockquote>
 <hr>
-<h4 id="view"><a href="#view" class="headerlink" title="view"></a>view</h4><blockquote>
-<p>视图容器</p>
-<p>类似OC中的UIView、html中的div</p>
-<p>但是可以控制点击态的出现和保留时间(<code>hover-stop-propagation、hover-start-time、hover-stay-time</code>)</p>
+<h3 id="微信网络API规定"><a href="#微信网络API规定" class="headerlink" title="微信网络API规定"></a>微信网络API规定</h3><blockquote>
+<p>1.每个微信小程序需要事先在小程序后台设置一个通讯<strong>域名</strong>(只能用域名而且需要经过ICP备案)，小程序可以跟指定的域名与进行网络通信</p>
+<p>2.超时时间都是60s,最大并发数是10个,网络请求的<code>referer</code>header 不可设置。其格式固定为 <a href="https://servicewechat.com/{appid}/{version}/page-frame.html" target="_blank" rel="noopener">https://servicewechat.com/{appid}/{version}/page-frame.html</a></p>
+<p>3.服务器返回建议使用UTF-8编码</p>
 </blockquote>
 <hr>
-<h4 id="scroll-view"><a href="#scroll-view" class="headerlink" title="scroll-view"></a>scroll-view</h4><blockquote>
-<p>可滚动视图</p>
-<p>类似OC中的UIScrollView,自带upper和lower事件(不同于下拉刷新和上拉加载,这是滚动到边缘时触发的事件),而且该事件也支持水平方向</p>
-<p>注意:</p>
-<ul>
-<li>不能在scroll-view中使用textarea、map、canvas、video组件</li>
-<li>如果要使用下拉刷新,不要用scroll-view的upper事件,要用页面的滚动(onPullDownRefresh)</li>
-</ul>
+<h4 id="wx-request-OBJECT"><a href="#wx-request-OBJECT" class="headerlink" title="wx.request(OBJECT)"></a>wx.request(OBJECT)</h4><blockquote>
+<p>发情网络请求,通过method参数设置请求方式<code>OPTIONS、GET、HEAD、POST、PUT、DELETE、TRACE、CONNECT</code></p>
+<p>发送给服务器的数据是<code>String</code></p>
+<p><strong>注意</strong>: url 中不能有端口</p>
 </blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">scroll-view</span> <span class="attr">scroll-y</span> <span class="attr">style</span>=<span class="string">"height: 200px;"</span> <span class="attr">bindscrolltoupper</span>=<span class="string">"upperAction"</span> <span class="attr">bindscrolltolower</span>=<span class="string">"lowerAction"</span> <span class="attr">bindscroll</span>=<span class="string">"scrollAction"</span> <span class="attr">scroll-into-view</span>=<span class="string">"&#123;&#123;toView_id&#125;&#125;"</span> <span class="attr">scroll-top</span>=<span class="string">"&#123;&#123;scrollTop&#125;&#125;"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> requestTask = wx.request(&#123;</span><br><span class="line">  url: <span class="string">'test.php'</span>, <span class="comment">//接口地址</span></span><br><span class="line">  <span class="comment">//参数列表</span></span><br><span class="line">  data: &#123;</span><br><span class="line">     x: <span class="string">''</span> ,</span><br><span class="line">     y: <span class="string">''</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//请求头</span></span><br><span class="line">  header: &#123;</span><br><span class="line">      <span class="string">'content-type'</span>: <span class="string">'application/json'</span></span><br><span class="line">  &#125;,</span><br><span class="line">   <span class="comment">//请求成功回调</span></span><br><span class="line">  success: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res.data)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//可以使用request方法返回的task对象取消网络任务</span></span><br><span class="line">requestTask.abort() <span class="comment">// 取消请求任务</span></span><br></pre></td></tr></table></figure>
 <hr>
-<h4 id="swiper"><a href="#swiper" class="headerlink" title="swiper"></a>swiper</h4><blockquote>
-<p>滑块视图容器,其中只能放置<code>swiperitem</code>组件(宽高默认为100%)</p>
-<p>比较适合做轮播图,因为有一个特殊的属性<code>autoplay</code>可以自动切换</p>
+<h4 id="wx-uploadFile-OBJECT"><a href="#wx-uploadFile-OBJECT" class="headerlink" title="wx.uploadFile(OBJECT)"></a>wx.uploadFile(OBJECT)</h4><blockquote>
+<p>上传文件到服务器 , <code>content-type 为 multipart/form-data</code></p>
 </blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">swiper</span> <span class="attr">indicator-dots</span>=<span class="string">"&#123;&#123;true&#125;&#125;"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">autoplay</span>=<span class="string">"&#123;&#123;true&#125;&#125;"</span> <span class="attr">interval</span>=<span class="string">"&#123;&#123;interval&#125;&#125;"</span> <span class="attr">duration</span>=<span class="string">"&#123;&#123;duration&#125;&#125;"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;imgUrls&#125;&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">swiper-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;item&#125;&#125;"</span> <span class="attr">class</span>=<span class="string">"slide-image"</span> <span class="attr">width</span>=<span class="string">"355"</span> <span class="attr">height</span>=<span class="string">"150"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">swiper-item</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">swiper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//本地选择照片</span></span><br><span class="line">wx.chooseImage(&#123;</span><br><span class="line">  success: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//资源临时文件路径</span></span><br><span class="line">    <span class="keyword">var</span> tempFilePaths = res.tempFilePaths</span><br><span class="line">    <span class="keyword">const</span> uploadTask = wx.uploadFile(&#123;</span><br><span class="line">      url: <span class="string">'https://example.weixin.qq.com/upload'</span>, <span class="comment">//接口地址</span></span><br><span class="line">      <span class="comment">//文件路径</span></span><br><span class="line">      filePath: tempFilePaths[<span class="number">0</span>],</span><br><span class="line">      <span class="comment">//接受文件的key</span></span><br><span class="line">      name: <span class="string">'file'</span>,</span><br><span class="line">      <span class="comment">//其他参数</span></span><br><span class="line">      formData:&#123;</span><br><span class="line">        <span class="string">'user'</span>: <span class="string">'test'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      success: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> data = res.data</span><br><span class="line">        <span class="comment">//do something</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//通过 uploadTask，可监听上传进度变化事件，以及取消上传任务。</span></span><br><span class="line">    uploadTask.onProgressUpdate(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    	<span class="built_in">console</span>.log(<span class="string">'上传进度'</span>, res.progress)</span><br><span class="line">    	<span class="built_in">console</span>.log(<span class="string">'已经上传的数据长度'</span>, res.totalBytesSent)</span><br><span class="line">    	<span class="built_in">console</span>.log(<span class="string">'预期需要上传的数据总长度'</span>, res.totalBytesExpectedToSend)</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	uploadTask.abort() <span class="comment">// 取消上传任务</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <hr>
-<h4 id="movable-view"><a href="#movable-view" class="headerlink" title="movable-view"></a>movable-view</h4><blockquote>
-<p>可移动的视图容器,可以在页面中拖拽滑动</p>
-<p>跟scroll-view(只能上下/左右)不同,movable-view可以根据设置任意拖拽</p>
-<p><strong>注意： movable-view必须在 <movable-area>组件中，并且必须是直接子节点，否则不能移动。</movable-area></strong></p>
-<blockquote>
-<p>movable-view 必须设置width和height属性，不设置默认为10px</p>
-<p>movable-view 默认为绝对定位，top和left属性为0px</p>
-<p>当movable-view小于movable-area时，movable-view的移动范围是在movable-area内；</p>
-<p>当movable-view大于movable-area时，movable-view的移动范围必须包含movable-area（x轴方向和y轴方向分开考虑）</p>
+<h4 id="wx-downloadFile-OBJECT"><a href="#wx-downloadFile-OBJECT" class="headerlink" title="wx.downloadFile(OBJECT)"></a>wx.downloadFile(OBJECT)</h4><blockquote>
+<p>下载文件到本地</p>
+<p>下载后的文件会存储到一个临时文件</p>
 </blockquote>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">movable-area</span> <span class="attr">style</span>=<span class="string">"height: 200px;width: 200px;background: red;"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">movable-view</span> <span class="attr">style</span>=<span class="string">"height: 50px; width: 50px; background: blue;"</span> <span class="attr">x</span>=<span class="string">"&#123;&#123;x&#125;&#125;"</span> <span class="attr">y</span>=<span class="string">"&#123;&#123;y&#125;&#125;"</span> <span class="attr">direction</span>=<span class="string">"all"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">movable-view</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">movable-area</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> downloadTask = wx.downloadFile(&#123;</span><br><span class="line">  url: <span class="string">'https://example.com/audio/123'</span>, <span class="comment">//仅为示例，并非真实的资源</span></span><br><span class="line">  success: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容</span></span><br><span class="line">    <span class="keyword">if</span> (res.statusCode === <span class="number">200</span>) &#123;</span><br><span class="line">        wx.playVoice(&#123;</span><br><span class="line">          filePath: res.tempFilePath</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//通过 downloadTask，可监听下载进度变化事件，以及取消下载任务</span></span><br><span class="line">  downloadTask.onProgressUpdate(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'下载进度'</span>, res.progress)   <span class="comment">//下载进度百分比</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'已经下载的数据长度'</span>, res.totalBytesWritten)   <span class="comment">//单位Bytes</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'预期需要下载的数据总长度'</span>, res.totalBytesExpectedToWrite) <span class="comment">// 单位 Bytes</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">downloadTask.abort() <span class="comment">// 取消下载任务</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <hr>
-<h4 id="cover-view、cover-image"><a href="#cover-view、cover-image" class="headerlink" title="cover-view、cover-image"></a>cover-view、cover-image</h4><blockquote>
-<p>覆盖在原生组件之上的文本/图片视图，可覆盖的原生组件包括<strong><em><code>map、video、canvas、camera</code></em></strong>，只支持嵌套cover-view、cover-image。</p>
-<p>可以做类似于在video组件增加定义播放、暂停的功能控件</p>
-<blockquote>
-<p>只可嵌套在原生组件map、video、canvas、camera内，避免嵌套在其他组件内。</p>
+<h4 id="wx-connectSocket-OBJECT"><a href="#wx-connectSocket-OBJECT" class="headerlink" title="wx.connectSocket(OBJECT)"></a>wx.connectSocket(OBJECT)</h4><blockquote>
+<p>创建一个 WebSocket 连接</p>
 </blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">wx.connectSocket(&#123;</span><br><span class="line">  url: <span class="string">'wss://example.qq.com'</span>,  <span class="comment">//websocket地址</span></span><br><span class="line">  data:&#123;</span><br><span class="line">    x: <span class="string">''</span>,</span><br><span class="line">    y: <span class="string">''</span></span><br><span class="line">  &#125;,</span><br><span class="line">  header:&#123; </span><br><span class="line">    <span class="string">'content-type'</span>: <span class="string">'application/json'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//子协议数组    这样做可以让一个服务器实现多种WebSocket子协议来处理不同类型的交互</span></span><br><span class="line">  protocols: [<span class="string">'protocol1'</span>],</span><br><span class="line">  method:<span class="string">"GET"</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="wx-onSocketOpen-CALLBACK"><a href="#wx-onSocketOpen-CALLBACK" class="headerlink" title="wx.onSocketOpen(CALLBACK)"></a>wx.onSocketOpen(CALLBACK)</h5><blockquote>
+<p>监听webSocket连接打开事件</p>
 </blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">cover-view</span> <span class="attr">class</span>=<span class="string">"controls"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">cover-view</span> <span class="attr">class</span>=<span class="string">"play"</span> <span class="attr">bindtap</span>=<span class="string">"playAction"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">cover-image</span> <span class="attr">class</span>=<span class="string">"img"</span> <span class="attr">src</span>=<span class="string">"/path/to/icon_play"</span> /&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">cover-view</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">cover-view</span> <span class="attr">class</span>=<span class="string">"pause"</span> <span class="attr">bindtap</span>=<span class="string">"pauseAction"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">cover-image</span> <span class="attr">class</span>=<span class="string">"img"</span> <span class="attr">src</span>=<span class="string">"/path/to/icon_pause"</span> /&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">cover-view</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">cover-view</span> <span class="attr">class</span>=<span class="string">"time"</span>&gt;</span>00:00<span class="tag">&lt;/<span class="name">cover-view</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">cover-view</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="navigator"><a href="#navigator" class="headerlink" title="navigator"></a>navigator</h4><blockquote>
-<p>页面链接,也就是跳转导航</p>
+<h5 id="wx-onSocketError-CALLBACK"><a href="#wx-onSocketError-CALLBACK" class="headerlink" title="wx.onSocketError(CALLBACK)"></a>wx.onSocketError(CALLBACK)</h5><blockquote>
+<p>监听webSocket错误</p>
 </blockquote>
-<p>open-type 的有效值</p>
-<p><img src="http://www.z4a.net/images/2018/01/16/_20180116151733.png" alt="open-type"></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"btn-area"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">navigator</span> <span class="attr">url</span>=<span class="string">"/page/navigate/navigate?title=navigate"</span> <span class="attr">hover-class</span>=<span class="string">"navigator-hover"</span>&gt;</span>跳转到新页面<span class="tag">&lt;/<span class="name">navigator</span>&gt;</span>   <span class="comment">&lt;!-- 功能等于wx.navigateTo --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">navigator</span> <span class="attr">url</span>=<span class="string">"../../redirect/redirect/redirect?title=redirect"</span> <span class="attr">open-type</span>=<span class="string">"redirect"</span> <span class="attr">hover-class</span>=<span class="string">"other-navigator-hover"</span>&gt;</span>在当前页打开<span class="tag">&lt;/<span class="name">navigator</span>&gt;</span>  <span class="comment">&lt;!-- 功能等于wx.redirectTo --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">navigator</span> <span class="attr">url</span>=<span class="string">"/page/index/index"</span> <span class="attr">open-type</span>=<span class="string">"switchTab"</span> <span class="attr">hover-class</span>=<span class="string">"other-navigator-hover"</span>&gt;</span>切换 Tab<span class="tag">&lt;/<span class="name">navigator</span>&gt;</span>  <span class="comment">&lt;!-- 功能等于wx.switchTab --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="wx-sendSocketMessage-OBJECT"><a href="#wx-sendSocketMessage-OBJECT" class="headerlink" title="wx.sendSocketMessage(OBJECT)"></a>wx.sendSocketMessage(OBJECT)</h5><blockquote>
+<p>通过WebSocket连接发送数据,要先 <code>wx.connectSocket</code>，并在 <code>wx.onSocketOpen</code>回调之后才能发送。</p>
+</blockquote>
+<h5 id="wx-onSocketMessage-CALLBACK"><a href="#wx-onSocketMessage-CALLBACK" class="headerlink" title="wx.onSocketMessage(CALLBACK)"></a>wx.onSocketMessage(CALLBACK)</h5><blockquote>
+<p>监听WebSocket接收到服务器的消息事件 (data)</p>
+</blockquote>
+<h5 id="wx-closeSocket-OBJECT"><a href="#wx-closeSocket-OBJECT" class="headerlink" title="wx.closeSocket(OBJECT)"></a>wx.closeSocket(OBJECT)</h5><blockquote>
+<p>关闭WebSocket连接</p>
+</blockquote>
+<h5 id="wx-onSocketClose-CALLBACK"><a href="#wx-onSocketClose-CALLBACK" class="headerlink" title="wx.onSocketClose(CALLBACK)"></a>wx.onSocketClose(CALLBACK)</h5><blockquote>
+<p>监听WebSocket关闭</p>
+</blockquote>
+<p><strong><em><code>除了上述的监听方法,connectSocket本身会返回一个webSocketTask任务 , 也可以发送消息监听事件等</code></em></strong></p>
 <hr>
 
       
@@ -566,8 +528,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/12/小程序-WXML+WXSS视图层/" rel="next" title="小程序-WXML+WXSS视图层">
-                <i class="fa fa-chevron-left"></i> 小程序-WXML+WXSS视图层
+              <a href="/2018/01/16/小程序-组件-地图-画布/" rel="next" title="小程序-组件-地图&画布">
+                <i class="fa fa-chevron-left"></i> 小程序-组件-地图&画布
               </a>
             
           </div>
@@ -576,8 +538,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/15/小程序-组件-基础内容/" rel="prev" title="小程序-组件-基础内容">
-                小程序-组件-基础内容 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/16/小程序-API-媒体/" rel="prev" title="小程序-API-媒体">
+                小程序-API-媒体 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -717,7 +679,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#所有组件的共同属性"><span class="nav-number">1.</span> <span class="nav-text">所有组件的共同属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#view"><span class="nav-number">1.1.</span> <span class="nav-text">view</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#scroll-view"><span class="nav-number">1.2.</span> <span class="nav-text">scroll-view</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#swiper"><span class="nav-number">1.3.</span> <span class="nav-text">swiper</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#movable-view"><span class="nav-number">1.4.</span> <span class="nav-text">movable-view</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cover-view、cover-image"><span class="nav-number">1.5.</span> <span class="nav-text">cover-view、cover-image</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#navigator"><span class="nav-number">1.6.</span> <span class="nav-text">navigator</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#微信网络API规定"><span class="nav-number">1.</span> <span class="nav-text">微信网络API规定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#wx-request-OBJECT"><span class="nav-number">1.1.</span> <span class="nav-text">wx.request(OBJECT)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wx-uploadFile-OBJECT"><span class="nav-number">1.2.</span> <span class="nav-text">wx.uploadFile(OBJECT)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wx-downloadFile-OBJECT"><span class="nav-number">1.3.</span> <span class="nav-text">wx.downloadFile(OBJECT)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wx-connectSocket-OBJECT"><span class="nav-number">1.4.</span> <span class="nav-text">wx.connectSocket(OBJECT)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#wx-onSocketOpen-CALLBACK"><span class="nav-number">1.4.1.</span> <span class="nav-text">wx.onSocketOpen(CALLBACK)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#wx-onSocketError-CALLBACK"><span class="nav-number">1.4.2.</span> <span class="nav-text">wx.onSocketError(CALLBACK)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#wx-sendSocketMessage-OBJECT"><span class="nav-number">1.4.3.</span> <span class="nav-text">wx.sendSocketMessage(OBJECT)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#wx-onSocketMessage-CALLBACK"><span class="nav-number">1.4.4.</span> <span class="nav-text">wx.onSocketMessage(CALLBACK)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#wx-closeSocket-OBJECT"><span class="nav-number">1.4.5.</span> <span class="nav-text">wx.closeSocket(OBJECT)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#wx-onSocketClose-CALLBACK"><span class="nav-number">1.4.6.</span> <span class="nav-text">wx.onSocketClose(CALLBACK)</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
