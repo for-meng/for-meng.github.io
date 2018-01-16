@@ -81,19 +81,19 @@
 
 
 
-<meta name="description" content="map 地图  不能在 scroll-view、swiper、picker-view、movable-view 中使用 map 组件。 map 组件使用的经纬度是火星坐标系，调用 wx.getLocation 接口需要指定 type 为 gcj02 可以用wx.createMapContext获取地图上下文   12&amp;lt;map id=&quot;map&quot; longitude=&quot;&amp;#123;&amp;#123;">
+<meta name="description" content="map 地图  不能在 scroll-view、swiper、picker-view、movable-view 中使用 map 组件。 map 组件使用的经纬度是火星坐标系，调用 wx.getLocation 接口需要指定 type 为 gcj02 可以用wx.createMapContext获取地图上下文   12345&amp;lt;map id=&quot;map&quot; longitude=&quot;&amp;#123;&amp;#1">
 <meta name="keywords" content="小程序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小程序-组件-地图&amp;画布">
 <meta property="og:url" content="http://yoursite.com/2018/01/16/小程序-组件-地图-画布/index.html">
 <meta property="og:site_name" content="尛孟的博客">
-<meta property="og:description" content="map 地图  不能在 scroll-view、swiper、picker-view、movable-view 中使用 map 组件。 map 组件使用的经纬度是火星坐标系，调用 wx.getLocation 接口需要指定 type 为 gcj02 可以用wx.createMapContext获取地图上下文   12&amp;lt;map id=&quot;map&quot; longitude=&quot;&amp;#123;&amp;#123;">
+<meta property="og:description" content="map 地图  不能在 scroll-view、swiper、picker-view、movable-view 中使用 map 组件。 map 组件使用的经纬度是火星坐标系，调用 wx.getLocation 接口需要指定 type 为 gcj02 可以用wx.createMapContext获取地图上下文   12345&amp;lt;map id=&quot;map&quot; longitude=&quot;&amp;#123;&amp;#1">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.z4a.net/images/2018/01/16/_20180116162650.png">
-<meta property="og:updated_time" content="2018-01-16T08:53:46.000Z">
+<meta property="og:updated_time" content="2018-01-16T09:03:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小程序-组件-地图&amp;画布">
-<meta name="twitter:description" content="map 地图  不能在 scroll-view、swiper、picker-view、movable-view 中使用 map 组件。 map 组件使用的经纬度是火星坐标系，调用 wx.getLocation 接口需要指定 type 为 gcj02 可以用wx.createMapContext获取地图上下文   12&amp;lt;map id=&quot;map&quot; longitude=&quot;&amp;#123;&amp;#123;">
+<meta name="twitter:description" content="map 地图  不能在 scroll-view、swiper、picker-view、movable-view 中使用 map 组件。 map 组件使用的经纬度是火星坐标系，调用 wx.getLocation 接口需要指定 type 为 gcj02 可以用wx.createMapContext获取地图上下文   12345&amp;lt;map id=&quot;map&quot; longitude=&quot;&amp;#123;&amp;#1">
 <meta name="twitter:image" content="http://www.z4a.net/images/2018/01/16/_20180116162650.png">
 
 
@@ -444,7 +444,7 @@
 <p>可以用<code>wx.createMapContext</code>获取地图上下文</p>
 </blockquote>
 </blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">map</span> <span class="attr">id</span>=<span class="string">"map"</span> <span class="attr">longitude</span>=<span class="string">"&#123;&#123;longitude&#125;&#125;"</span> <span class="attr">latitude</span>=<span class="string">"&#123;&#123;latitude&#125;&#125;"</span> <span class="attr">scale</span>=<span class="string">"14"</span> <span class="attr">controls</span>=<span class="string">"&#123;&#123;controls&#125;&#125;"</span> <span class="attr">bindcontroltap</span>=<span class="string">"controltap"</span> <span class="attr">markers</span>=<span class="string">"&#123;&#123;markers&#125;&#125;"</span> <span class="attr">bindmarkertap</span>=<span class="string">"markertap"</span> <span class="attr">polyline</span>=<span class="string">"&#123;&#123;polyline&#125;&#125;"</span> <span class="attr">circles</span>=<span class="string">"&#123;&#123;circles&#125;&#125;"</span> <span class="attr">bindregionchange</span>=<span class="string">"regionchange"</span> <span class="attr">show-location</span> <span class="attr">style</span>=<span class="string">"width: 100%; height: 350px;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">map</span>&gt;</span>   <span class="comment">&lt;!-- 显示基本地图 --&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">map</span> <span class="attr">id</span>=<span class="string">"map"</span> <span class="attr">longitude</span>=<span class="string">"&#123;&#123;longitude&#125;&#125;"</span> <span class="attr">latitude</span>=<span class="string">"&#123;&#123;latitude&#125;&#125;"</span> <span class="attr">scale</span>=<span class="string">"14"</span> <span class="attr">controls</span>=<span class="string">"&#123;&#123;controls&#125;&#125;"</span></span></span><br><span class="line"><span class="tag"><span class="attr">bindcontroltap</span>=<span class="string">"controltap"</span> <span class="attr">markers</span>=<span class="string">"&#123;&#123;markers&#125;&#125;"</span> <span class="attr">bindmarkertap</span>=<span class="string">"markertap"</span></span></span><br><span class="line"><span class="tag"><span class="attr">polyline</span>=<span class="string">"&#123;&#123;polyline&#125;&#125;"</span> <span class="attr">circles</span>=<span class="string">"&#123;&#123;circles&#125;&#125;"</span> <span class="attr">bindregionchange</span>=<span class="string">"regionchange"</span> </span></span><br><span class="line"><span class="tag"><span class="attr">show-location</span> <span class="attr">style</span>=<span class="string">"width: 100%; height: 350px;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">map</span>&gt;</span>   <span class="comment">&lt;!-- 显示基本地图 --&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="markers–标注，polyline–折线，circles–圆形，controls–控件"><a href="#markers–标注，polyline–折线，circles–圆形，controls–控件" class="headerlink" title="markers–标注，polyline–折线，circles–圆形，controls–控件"></a>markers–标注，polyline–折线，circles–圆形，controls–控件</h4><ul>
 <li><h5 id="markers"><a href="#markers" class="headerlink" title="markers"></a>markers</h5><p>除了显示基本的地图,还可以在地图上添加大头针标识</p>
 <blockquote>
